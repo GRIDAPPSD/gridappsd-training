@@ -6,8 +6,8 @@ jupyter nbconvert installation/windows10/1.3W--Lesson-1.3--Running-GridAPPS-D.ip
 jupyter nbconvert installation/windows10/1.4W--Lesson-1.4--Installing-Python-Tutorials.ipynb --output-dir='./docs/source/installation/windows10' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 #jupyter nbconvert 1.0W--Module-1--Windows-10-Installation-Complete.ipynb --output-dir='./docs/source/' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 
-jupyter nbconvert overview/1.5--Lesson-1.5--Using-GridAPPS-D-Viz.ipynb --output-dir='./docs/source/installation' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
-jupyter nbconvert overview/1.6--Lesson-1.6--Docker-Shortcuts.ipynb --output-dir='./docs/source/installation' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
+jupyter nbconvert installation/1.5--Lesson-1.5--Using-GridAPPS-D-Viz.ipynb --output-dir='./docs/source/installation' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
+jupyter nbconvert installation/1.6--Lesson-1.6--Docker-Shortcuts.ipynb --output-dir='./docs/source/installation' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 cp -vr ./installation/images ./docs/source/installation/images
 
 jupyter nbconvert overview/2.1--Lesson-2.1--Intro-to-GridAPPS-D.ipynb --output-dir='./docs/source/overview' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
