@@ -34,8 +34,6 @@ This will be on the main page here!
 
 .. toctree::
    :caption: GridAPPS-D API Usage
-   :hidden:
-   :titlesonly:
    :maxdepth: 2
 
    api_usage/3.1--Lesson-3.1--API-Communication-Channels
