@@ -2,10 +2,10 @@
 
 jupyter nbconvert installation/windows10/1.1W--Lesson-1.1--Virtual-Machine-Docker-Setup.ipynb --output-dir='./docs/source/installation/windows10' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --EmbedImagesPreprocessor.embed_images=True  --to notebook
 jupyter nbconvert installation/windows10/1.2W--Lesson-1.2--Installing-GridAPPS-D.ipynb --output-dir='./docs/source/installation/windows10' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
-jupyter nbconvert installation/windows10/1.3W--Lesson-1.3--Running-GridAPPS-D.ipynb --output-dir='./docs/source/installation/windows10' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
-jupyter nbconvert installation/windows10/1.4W--Lesson-1.4--Installing-Python-Tutorials.ipynb --output-dir='./docs/source/installation/windows10' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
+jupyter nbconvert installation/windows10/1.3W--Lesson-1.3--Installing-Python-Tutorials.ipynb --output-dir='./docs/source/installation/windows10' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 #jupyter nbconvert 1.0W--Module-1--Windows-10-Installation-Complete.ipynb --output-dir='./docs/source/' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 
+jupyter nbconvert installation/1.4--Lesson-1.4--Running-GridAPPS-D.ipynb --output-dir='./docs/source/installation' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 jupyter nbconvert installation/1.5--Lesson-1.5--Using-GridAPPS-D-Viz.ipynb --output-dir='./docs/source/installation' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 jupyter nbconvert installation/1.6--Lesson-1.6--Docker-Shortcuts.ipynb --output-dir='./docs/source/installation' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 cp -vr ./installation/images ./docs/source/installation

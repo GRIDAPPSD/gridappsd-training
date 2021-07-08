@@ -14,6 +14,4 @@ This section contains detailed installation instructions and runtime environment
 
    1.2W--Lesson-1.2--Installing-GridAPPS-D.ipynb
 
-   1.3W--Lesson-1.3--Running-GridAPPS-D.ipynb
-
-   1.4W--Lesson-1.4--Installing-Python-Tutorials.ipynb
+   1.3W--Lesson-1.3--Installing-Python-Tutorials.ipynb
