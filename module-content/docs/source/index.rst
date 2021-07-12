@@ -19,6 +19,7 @@ This will be on the main page here!
    installation/1.4--Lesson-1.4--Running-GridAPPS-D
    installation/1.5--Lesson-1.5--Using-GridAPPS-D-Viz
    installation/1.6--Lesson-1.6--Docker-Shortcuts
+   installation/1.7--Lesson-1.7--Cloud-Server-Configuration
 
 
 .. toctree::

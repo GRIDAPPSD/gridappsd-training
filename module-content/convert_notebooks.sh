@@ -8,6 +8,7 @@ jupyter nbconvert installation/windows10/1.3W--Lesson-1.3--Installing-Python-Tut
 jupyter nbconvert installation/1.4--Lesson-1.4--Running-GridAPPS-D.ipynb --output-dir='./docs/source/installation' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 jupyter nbconvert installation/1.5--Lesson-1.5--Using-GridAPPS-D-Viz.ipynb --output-dir='./docs/source/installation' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 jupyter nbconvert installation/1.6--Lesson-1.6--Docker-Shortcuts.ipynb --output-dir='./docs/source/installation' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
+jupyter nbconvert installation/1.7--Lesson-1.7--Cloud-Server-Configuration.ipynb --output-dir='./docs/source/installation' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 cp -vr ./installation/images ./docs/source/installation
 
 jupyter nbconvert overview/2.1--Lesson-2.1--Intro-to-GridAPPS-D.ipynb --output-dir='./docs/source/overview' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook

@@ -10,4 +10,5 @@ Images embedded in the python notebooks must be formatted correctly to be conver
 * Must have a unique alt text caption that
    * Does not contain any underscores (_)
    * Is not the same as the filename
-* example: `![Example-image](../images/new_image.png)
+* example: `![Example-image](../images/new_image.png)`
+
