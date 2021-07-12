@@ -17,9 +17,7 @@ This will be on the main page here!
    installation/linux/index
    installation/macos/index
    installation/1.4--Lesson-1.4--Running-GridAPPS-D
-   installation/1.5--Lesson-1.5--Using-GridAPPS-D-Viz
-   installation/1.6--Lesson-1.6--Docker-Shortcuts
-   installation/1.7--Lesson-1.7--Cloud-Server-Configuration
+
 
 
 .. toctree::
@@ -41,9 +39,6 @@ This will be on the main page here!
    api_usage/3.2--Lesson-3.2--API-Message-Structure
    api_usage/3.3--Lesson-3.3--Using-the-PowerGrid-Models-API
    api_usage/3.4--Lesson-3.4--Using-the-Configuration-File-API
-   api_usage/3.5--Lesson-3.5--Creating-Running-Simulation-API
-   api_usage/3.6--Lesson-3.6--Controlling-Simulation-API
-   api_usage/3.7--Lesson-3.7--Using-the-Timeseries-API
 
    
 Indices and tables
