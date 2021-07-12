@@ -42,6 +42,8 @@ This will be on the main page here!
    api_usage/3.3--Lesson-3.3--Using-the-PowerGrid-Models-API
    api_usage/3.4--Lesson-3.4--Using-the-Configuration-File-API
    api_usage/3.5--Lesson-3.5--Creating-Running-Simulation-API
+   api_usage/3.6--Lesson-3.6--Controlling-Simulation-API
+   api_usage/3.7--Lesson-3.7--Using-the-Timeseries-API
 
    
 Indices and tables
