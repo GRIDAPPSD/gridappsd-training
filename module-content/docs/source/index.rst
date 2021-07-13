@@ -5,9 +5,33 @@ GridAPPS-D's Documentation
 ==========================
 
 .. image:: GridAPPS-D_Logo.png
+GridAPPS-D™ is an open-source platform that accelerates development and deployment of portable applications for advanced distribution management and operations. It is built in a linux environment using Docker, which allows large software packages to be distributed as containers. 
 
-This will be on the main page here!
+Its purpose is to reduce the time and cost to integrate advanced functionality into distribution operations, to create a more reliable and resilient grid.
 
+GridAPPS-D enables standardization of data models, programming interfaces, and the data exchange interfaces for:
+
+ * devices in the field
+ * distributed apps in the systems
+ * applications in the control room
+
+The platform provides
+
+ * robust testing tools for applications 
+ * distribution system simulation capabilities
+ * standardized research capability
+ * reference architecture for the industry
+ * application development kit
+
+The GridAPPS-D source code is publically available from `GitHub <https://github.com/GRIDAPPSD>`_. The GridAPPS-D™ project is sponsored by the U.S. Department of Energy and receives ongoing updates from a team of core developers at PNNL. 
+
+The GridAPPS-D team encourages and appreciates community involvement, including issues and pull requests on GitHub, participation in monthly app developers meetings, and posts on the discussion board.
+
+Questions and support requests should be filed in the `GridAPPS-D Forum Discussion Board <https://github.com/GRIDAPPSD/gridappsd-forum/discussions>_`
+
+General issues and bugs can be reported in the `GridAPPS-D Forum Issues Page <https://github.com/GRIDAPPSD/gridappsd-forum/issues>`
+
+Bugs in the GridAPPS-D platform can be reported in full detail using the `GOSS-GridAPPS-D Issues Page <https://github.com/GRIDAPPSD/GOSS-GridAPPS-D/issues>_`
 
 .. toctree::
    :caption: Installation & Runtime
