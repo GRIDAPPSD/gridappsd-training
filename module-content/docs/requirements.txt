@@ -1,4 +1,4 @@
-sphinx
+sphinx == 4.0.2
 nbsphinx >= 0.8.5
 pandoc
 jinja2 == 2.11
