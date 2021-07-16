@@ -27,11 +27,11 @@ The GridAPPS-D source code is publically available from `GitHub <https://github.
 
 The GridAPPS-D team encourages and appreciates community involvement, including issues and pull requests on GitHub, participation in monthly app developers meetings, and posts on the discussion board.
 
-Questions and support requests should be filed in the `GridAPPS-D Forum Discussion Board <https://github.com/GRIDAPPSD/gridappsd-forum/discussions>_`
+Questions and support requests should be filed in the `GridAPPS-D Forum Discussion Board <https://github.com/GRIDAPPSD/gridappsd-forum/discussions>`_
 
-General issues and bugs can be reported in the `GridAPPS-D Forum Issues Page <https://github.com/GRIDAPPSD/gridappsd-forum/issues>`
+General issues and bugs can be reported in the `GridAPPS-D Forum Issues Page <https://github.com/GRIDAPPSD/gridappsd-forum/issues>`_
 
-Bugs in the GridAPPS-D platform can be reported in full detail using the `GOSS-GridAPPS-D Issues Page <https://github.com/GRIDAPPSD/GOSS-GridAPPS-D/issues>_`
+Bugs in the GridAPPS-D platform can be reported in full detail using the `GOSS-GridAPPS-D Issues Page <https://github.com/GRIDAPPSD/GOSS-GridAPPS-D/issues>`_
 
 .. toctree::
    :caption: Installation & Runtime
@@ -68,6 +68,14 @@ Bugs in the GridAPPS-D platform can be reported in full detail using the `GOSS-G
    api_usage/3.5--Lesson-3.5--Creating-Running-Simulation-API
    api_usage/3.6--Lesson-3.6--Controlling-Simulation-API
    api_usage/3.7--Lesson-3.7--Using-the-Timeseries-API
+
+
+.. toctree::
+   :caption: GridAPPS-D Applications
+   :maxdepth: 2
+
+   https://github.com/shpoudel/WSU-Restoration/blob/master/docs/source/index.rst
+
 
    
 Indices and tables
