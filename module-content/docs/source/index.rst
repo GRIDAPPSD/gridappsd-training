@@ -74,7 +74,7 @@ Bugs in the GridAPPS-D platform can be reported in full detail using the `GOSS-G
    :caption: GridAPPS-D Applications
    :maxdepth: 2
 
-   https://github.com/shpoudel/WSU-Restoration/blob/master/docs/source/index.rst
+   applications/restoration-WSU/source/index.rst
 
 
    

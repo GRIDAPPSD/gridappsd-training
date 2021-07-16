@@ -35,7 +35,9 @@ cp -vr ./images ./docs/source
 
 #cp -vr ./images/ ./docs/source/overview/images
 
-
+git clone https://github.com/shpoudel/WSU-Restoration.git
+cp -vr ./WSU-Restoration/docs/source ./docs/source/applications/restoration-WSU/
+rm -rf WSU-Restoration
 
 
 
