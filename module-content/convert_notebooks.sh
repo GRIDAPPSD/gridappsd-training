@@ -36,8 +36,12 @@ cp -vr ./images ./docs/source
 #cp -vr ./images/ ./docs/source/overview/images
 
 git clone https://github.com/shpoudel/WSU-Restoration.git
-cp -vr ./WSU-Restoration/docs/source ./docs/source/applications/restoration-WSU/
+cp -vr ./WSU-Restoration/docs/source/ ./docs/source/applications/restoration-WSU/
 rm -rf WSU-Restoration
+
+#curl --url https://github.com/shpoudel/WSU-Restoration/trunk/docs/source --output ./docs/source/applications/restoration-WSU --create-dirs
+
+curl --url https://github.com/NREL/DER-Dispatch/blob/master/README.md --output ./docs/source/applications/DER-dispatch-NREL/README.md --create-dirs
 
 
 

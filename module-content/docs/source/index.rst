@@ -75,6 +75,7 @@ Bugs in the GridAPPS-D platform can be reported in full detail using the `GOSS-G
    :maxdepth: 2
 
    applications/restoration-WSU/source/index.rst
+   applications/DER-dispatch-NREL/README.md
 
 
    
