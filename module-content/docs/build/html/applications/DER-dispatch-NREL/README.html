@@ -1,0 +1,432 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>DER Dispatch (NREL) &mdash; GridAPPS-D 2021_05.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Solar Forecasting (NREL)" href="../solar-forecast-NREL/README.html" />
+    <link rel="prev" title="Volt-Var Optimization (WSU)" href="../VVO-WSU/README.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> GridAPPS-D
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation &amp; Runtime</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/windows10/index.html">Windows 10 Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/1.4--Lesson-1.4--Running-GridAPPS-D.html">Running GridAPPS-D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/1.5--Lesson-1.5--Using-GridAPPS-D-Viz.html">Using the GridAPPS-D Viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/1.6--Lesson-1.6--Docker-Shortcuts.html">Docker Shortcuts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/1.7--Lesson-1.7--Cloud-Server-Configuration.html">Cloud Server Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/2.1--Lesson-2.1--Intro-to-GridAPPS-D.html">GridAPPS-D Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/2.2--Lesson-2.2--GridAPPS-D-Architecture.html">GridAPPS-D Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/2.3--Lesson-2.3--GridAPPS-D-Python-Library.html">GridAPPS-D Python Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/2.4--Lesson-2.4--GridAPPS-D-Application-Structure.html">GridAPPS-D Application Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/2.5--Lesson-2.5--GridAPPS-D-Service-Structure.html">GridAPPS-D Service Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/2.6--Lesson-2.6--Common-Information-Model.html">Introduction to the Common Information Model</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D API Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api_usage/3.1--Lesson-3.1--API-Communication-Channels.html">API Communication Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_usage/3.2--Lesson-3.2--API-Message-Structure.html">API Message Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_usage/3.3--Lesson-3.3--Using-the-PowerGrid-Models-API.html">Using the PowerGrid Models API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_usage/3.4--Lesson-3.4--Using-the-Configuration-File-API.html">Using the Configuration File API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_usage/3.5--Lesson-3.5--Creating-Running-Simulation-API.html">Running Simulations with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_usage/3.6--Lesson-3.6--Controlling-Simulation-API.html">Publishing and Subscribing with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_usage/3.7--Lesson-3.7--Using-the-Timeseries-API.html">Timeseries API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Applications</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../restoration-WSU/source/index.html">Resilient Restoration (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VVO-WSU/README.html">Volt-Var Optimization (WSU)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DER Dispatch (NREL)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#purpose">Purpose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-the-der-dispatch-app-application-container">Creating the der-dispatch-app application container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#application-configuration">Application Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#baseline-run">Baseline run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optimal-powerflow-on-run">Optimal Powerflow on Run</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../solar-forecast-NREL/README.html">Solar Forecasting (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grid-forecast-NREL/README.html">Grid Forecasting (NREL)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../services/dnp3/source/index.html">GridAPPS-D DNP3 Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/sensor-simulator/source/index.html">GridAPPS-D Sensor Simulator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/voltage-violation/README.html">GridAPPS-D Voltage Violation Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/state-estimator/README.html">GridAPPS-D State Estimator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/alarms/README.html">GridAPPS-D Alarm Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">GridAPPS-D</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>DER Dispatch (NREL)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/applications/DER-dispatch-NREL/README.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="tex2jax_ignore mathjax_ignore section" id="der-dispatch-nrel">
+<h1>DER Dispatch (NREL)<a class="headerlink" href="#der-dispatch-nrel" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<p>The purpose of this repository is to document the chosen way of registering and running applications within a
+GridAPPS-D deployment.</p>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Docker ce version 17.12 or better.  You can install this via the docker_install_ubuntu.sh script.  (note for mint you will need to modify the file to work with xenial rather than ubuntu generically)</p></li>
+</ol>
+</div>
+<div class="section" id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Please clone the repository <a class="reference external" href="https://github.com/GRIDAPPSD/gridappsd-docker">https://github.com/GRIDAPPSD/gridappsd-docker</a> (refered to as gridappsd-docker repository) next to this repository (they should both have the same parent folder)</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/GRIDAPPSD/gridappsd-docker</span>
+<span class="go">git clone https://github.com/GRIDAPPSD/DER-Dispatch-app</span>
+
+<span class="go">ls -l</span>
+
+<span class="go">drwxrwxr-x  7 osboxes osboxes 4096 Sep  4 14:56 gridappsd-docker</span>
+<span class="go">drwxrwxr-x  5 osboxes osboxes 4096 Sep  4 19:06 DER-Dispatch-app</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="creating-the-der-dispatch-app-application-container">
+<h2>Creating the der-dispatch-app application container<a class="headerlink" href="#creating-the-der-dispatch-app-application-container" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>From the command line execute the following commands to build the der-dispatch-app container</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">osboxes@osboxes&gt; cd DER-Dispatch-app</span>
+<span class="go">osboxes@osboxes&gt; docker build --network=host -t der-dispatch-app .</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add the following to the gridappsd-docker/docker-compose.yml file</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>  <span class="nt">derdispatch</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">der-dispatch-app</span>
+    <span class="nt">ports</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">9001:9001</span>
+    <span class="nt">environment</span><span class="p">:</span>
+      <span class="nt">GRIDAPPSD_URI</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp://gridappsd:61613</span>
+    <span class="nt">depends_on</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">gridappsd</span>
+    <span class="nt">volumes</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">$HOME/git/DER-Dispatch-app-Public:/usr/src/gridappsd-der-dispatch</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run the docker application</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">osboxes@osboxes&gt; cd gridappsd-docker</span>
+<span class="go">osboxes@osboxes&gt; ./run.sh</span>
+
+<span class="gp"># </span>you will now be inside the container, the following starts gridappsd
+
+<span class="gp">gridappsd@f4ede7dacb7d:/gridappsd$ </span>./run-gridappsd.sh
+</pre></div>
+</div>
+</li>
+<li><p>Test opt_function.pyc file.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker <span class="nb">exec</span> -it gridappsd-docker_derdispatch_1 bash
+
+<span class="nb">cd</span> der_dispatch_app
+<span class="c1">## This function is slow but it should not hang </span>
+python test_opt_function.py
+</pre></div>
+</div>
+<p>Example output</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">python</span> <span class="n">test_opt_function</span><span class="o">.</span><span class="n">py</span> 
+<span class="p">(</span><span class="s1">&#39;gridappsd&#39;</span><span class="p">,</span> <span class="mi">61613</span><span class="p">)</span>
+<span class="n">Mon</span> <span class="n">Feb</span> <span class="mi">24</span> <span class="mi">18</span><span class="p">:</span><span class="mi">20</span><span class="p">:</span><span class="mi">24</span> <span class="mi">2020</span>
+<span class="p">(</span><span class="mi">9480</span><span class="p">,</span> <span class="mi">9480</span><span class="p">)</span> <span class="p">(</span><span class="mi">9480</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">Mon</span> <span class="n">Feb</span> <span class="mi">24</span> <span class="mi">18</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">22</span> <span class="mi">2020</span>
+<span class="n">Mon</span> <span class="n">Feb</span> <span class="mi">24</span> <span class="mi">18</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">29</span> <span class="mi">2020</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="application-configuration">
+<h2>Application Configuration<a class="headerlink" href="#application-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Set start time to 2013-07-22 10:30:00</p>
+<p>Options:
+Run with OPF = 0  and a specific time and duration first to get the baseline for comparison.
+Then Run with OPF = 1 and the same time and duration evaluate the applications performance against the baseline.
+run_freq - Number of seconds between appliction runs.
+run_on_host - True then run on the host machine. False then run in the container.</p>
+<p>The baseline will be in this folder in the container:
+/usr/src/gridappsd-der-dispatch/der_dispatch_app/adms_result_ieee123pv_house_1563893400_OPF_0_</p>
+<div class="section" id="baseline-run">
+<h3>Baseline run<a class="headerlink" href="#baseline-run" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>    <span class="p">{</span>
+      <span class="nt">&quot;OPF&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;run_freq&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+      <span class="nt">&quot;run_on_host&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;run_realtime&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;stepsize_xp&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+      <span class="nt">&quot;stepsize_xq&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nt">&quot;coeff_p&quot;</span><span class="p">:</span> <span class="mf">0.005</span><span class="p">,</span>
+      <span class="nt">&quot;coeff_q&quot;</span><span class="p">:</span> <span class="mf">0.0005</span><span class="p">,</span>
+      <span class="nt">&quot;Vupper&quot;</span><span class="p">:</span> <span class="mf">1.025</span><span class="p">,</span>
+      <span class="nt">&quot;Vlower&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span>
+      <span class="nt">&quot;stepsize_mu&quot;</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
+      <span class="nt">&quot;optimizer_num_iterations&quot;</span><span class="p">:</span> <span class="mi">10</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="optimal-powerflow-on-run">
+<h3>Optimal Powerflow on Run<a class="headerlink" href="#optimal-powerflow-on-run" title="Permalink to this headline">¶</a></h3>
+<p>Set OPF to 1 and run again.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>    <span class="p">{</span>
+      <span class="nt">&quot;OPF&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;run_freq&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+      <span class="nt">&quot;run_on_host&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;run_realtime&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;stepsize_xp&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+      <span class="nt">&quot;stepsize_xq&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nt">&quot;coeff_p&quot;</span><span class="p">:</span> <span class="mf">0.005</span><span class="p">,</span>
+      <span class="nt">&quot;coeff_q&quot;</span><span class="p">:</span> <span class="mf">0.0005</span><span class="p">,</span>
+      <span class="nt">&quot;Vupper&quot;</span><span class="p">:</span> <span class="mf">1.025</span><span class="p">,</span>
+      <span class="nt">&quot;Vlower&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span>
+      <span class="nt">&quot;stepsize_mu&quot;</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
+      <span class="nt">&quot;optimizer_num_iterations&quot;</span><span class="p">:</span> <span class="mi">10</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>docker copy command</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker cp 422635e932bb:/usr/src/gridappsd-der-dispatch/der_dispatch_app/adms_result_test9500new_1374510720_OPF_1_stepsize_xp_0_2_stepsize_xq_2_coeff_p_0_1_coeff_q_5e_neg_05_stepsize_mu_500/ <span class="nv">$HOME</span>/
+</pre></div>
+</div>
+<p>Next to start the application through the viz follow the directions here: https://gridappsd.readthedocs.io/en/latest/using_gridappsd/index.html#start-gridapps-d-platform</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python /usr/src/gridappsd-der-dispatch/der_dispatch_app/main_app_new.py <span class="m">952325492</span> <span class="s1">&#39;{&quot;power_system_config&quot;:{&quot;SubGeographicalRegion_name&quot;:&quot;_1CD7D2EE-3C91-3248-5662-A43EFEFAC224&quot;,&quot;GeographicalRegion_name&quot;:&quot;_24809814-4EC6-29D2-B509-7F8BFB646437&quot;,&quot;Line_name&quot;:&quot;_EBDB5A4A-543C-9025-243E-8CAD24307380&quot;},&quot;simulation_config&quot;:{&quot;power_flow_solver_method&quot;:&quot;NR&quot;,&quot;duration&quot;:600,&quot;simulation_name&quot;:&quot;ieee123&quot;,&quot;simulator&quot;:&quot;GridLAB-D&quot;,&quot;start_time&quot;:1374510720,&quot;run_realtime&quot;:false,&quot;simulation_output&quot;:{},&quot;model_creation_config&quot;:{&quot;load_scaling_factor&quot;:1.0,&quot;triplex&quot;:&quot;y&quot;,&quot;encoding&quot;:&quot;u&quot;,&quot;system_frequency&quot;:60,&quot;voltage_multiplier&quot;:1.0,&quot;power_unit_conversion&quot;:1.0,&quot;unique_names&quot;:&quot;y&quot;,&quot;schedule_name&quot;:&quot;ieeezipload&quot;,&quot;z_fraction&quot;:0.0,&quot;i_fraction&quot;:1.0,&quot;p_fraction&quot;:0.0,&quot;randomize_zipload_fractions&quot;:false,&quot;use_houses&quot;:false},&quot;simulation_broker_port&quot;:59469,&quot;simulation_broker_location&quot;:&quot;127.0.0.1&quot;},&quot;application_config&quot;:{&quot;applications&quot;:[{&quot;name&quot;:&quot;der_dispatch_app&quot;,&quot;config_string&quot;:&quot;{\&quot;OPF\&quot;: 0, \&quot;run_freq\&quot;: 60, \&quot;run_on_host\&quot;: false, \&quot;run_realtime\&quot;: false, \&quot;stepsize_xp\&quot;: 0.2, \&quot;stepsize_xq\&quot;: 2, \&quot;coeff_p\&quot;: 0.1, \&quot;coeff_q\&quot;: 5e-05, \&quot;stepsize_mu\&quot;: 500}&quot;}]},&quot;simulation_request_type&quot;:&quot;NEW&quot;}&#39;</span> <span class="s1">&#39;{OPF:0,run_freq:60,run_on_host:false,run_realtime:false,stepsize_xp:0.2,stepsize_xq:2,coeff_p:0.1,coeff_q:5e-05,stepsize_mu:500}&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python /usr/src/gridappsd-der-dispatch/der_dispatch_app/main_app_new.py <span class="m">1522305637</span> <span class="s1">&#39;{&quot;power_system_config&quot;:{&quot;SubGeographicalRegion_name&quot;:&quot;_1CD7D2EE-3C91-3248-5662-A43EFEFAC224&quot;,&quot;GeographicalRegion_name&quot;:&quot;_24809814-4EC6-29D2-B509-7F8BFB646437&quot;,&quot;Line_name&quot;:&quot;_E407CBB6-8C8D-9BC9-589C-AB83FBF0826D&quot;},&quot;simulation_config&quot;:{&quot;power_flow_solver_method&quot;:&quot;NR&quot;,&quot;duration&quot;:600,&quot;simulation_name&quot;:&quot;ieee123&quot;,&quot;simulator&quot;:&quot;GridLAB-D&quot;,&quot;start_time&quot;:1374510720,&quot;run_realtime&quot;:false,&quot;simulation_output&quot;:{},&quot;model_creation_config&quot;:{&quot;load_scaling_factor&quot;:1.0,&quot;triplex&quot;:&quot;y&quot;,&quot;encoding&quot;:&quot;u&quot;,&quot;system_frequency&quot;:60,&quot;voltage_multiplier&quot;:1.0,&quot;power_unit_conversion&quot;:1.0,&quot;unique_names&quot;:&quot;y&quot;,&quot;schedule_name&quot;:&quot;ieeezipload&quot;,&quot;z_fraction&quot;:0.0,&quot;i_fraction&quot;:1.0,&quot;p_fraction&quot;:0.0,&quot;randomize_zipload_fractions&quot;:false,&quot;use_houses&quot;:false},&quot;simulation_broker_port&quot;:59469,&quot;simulation_broker_location&quot;:&quot;127.0.0.1&quot;},&quot;application_config&quot;:{&quot;applications&quot;:[{&quot;name&quot;:&quot;der_dispatch_app&quot;,&quot;config_string&quot;:&quot;{\&quot;OPF\&quot;: 0, \&quot;run_freq\&quot;: 60, \&quot;run_on_host\&quot;: false, \&quot;run_realtime\&quot;: false, \&quot;stepsize_xp\&quot;: 0.2, \&quot;stepsize_xq\&quot;: 2, \&quot;coeff_p\&quot;: 0.1, \&quot;coeff_q\&quot;: 5e-05, \&quot;stepsize_mu\&quot;: 500}&quot;}]},&quot;simulation_request_type&quot;:&quot;NEW&quot;}&#39;</span> <span class="s1">&#39;{OPF:0,run_freq:60,run_on_host:false,run_realtime:false,stepsize_xp:0.2,stepsize_xq:2,coeff_p:0.1,coeff_q:5e-05,stepsize_mu:500}&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;OPF&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;run_freq&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span> <span class="nt">&quot;run_on_host&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nt">&quot;run_realtime&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nt">&quot;stepsize_xp&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="nt">&quot;stepsize_xq&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nt">&quot;coeff_p&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="nt">&quot;coeff_q&quot;</span><span class="p">:</span> <span class="mf">5e-05</span><span class="p">,</span> <span class="nt">&quot;stepsize_mu&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../solar-forecast-NREL/README.html" class="btn btn-neutral float-right" title="Solar Forecasting (NREL)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../VVO-WSU/README.html" class="btn btn-neutral float-left" title="Volt-Var Optimization (WSU)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2017-2021, Battelle Memorial Institute, All rights reserved..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

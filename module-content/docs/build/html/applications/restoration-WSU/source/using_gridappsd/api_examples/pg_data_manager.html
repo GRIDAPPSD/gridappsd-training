@@ -1,0 +1,620 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Query Request Queue &mdash; GridAPPS-D 2021_05.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> GridAPPS-D
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation &amp; Runtime</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation/windows10/index.html">Windows 10 Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation/1.4--Lesson-1.4--Running-GridAPPS-D.html">Running GridAPPS-D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation/1.5--Lesson-1.5--Using-GridAPPS-D-Viz.html">Using the GridAPPS-D Viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation/1.6--Lesson-1.6--Docker-Shortcuts.html">Docker Shortcuts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation/1.7--Lesson-1.7--Cloud-Server-Configuration.html">Cloud Server Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.1--Lesson-2.1--Intro-to-GridAPPS-D.html">GridAPPS-D Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.2--Lesson-2.2--GridAPPS-D-Architecture.html">GridAPPS-D Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.3--Lesson-2.3--GridAPPS-D-Python-Library.html">GridAPPS-D Python Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.4--Lesson-2.4--GridAPPS-D-Application-Structure.html">GridAPPS-D Application Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.5--Lesson-2.5--GridAPPS-D-Service-Structure.html">GridAPPS-D Service Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.6--Lesson-2.6--Common-Information-Model.html">Introduction to the Common Information Model</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D API Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.1--Lesson-3.1--API-Communication-Channels.html">API Communication Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.2--Lesson-3.2--API-Message-Structure.html">API Message Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.3--Lesson-3.3--Using-the-PowerGrid-Models-API.html">Using the PowerGrid Models API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.4--Lesson-3.4--Using-the-Configuration-File-API.html">Using the Configuration File API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.5--Lesson-3.5--Creating-Running-Simulation-API.html">Running Simulations with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.6--Lesson-3.6--Controlling-Simulation-API.html">Publishing and Subscribing with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.7--Lesson-3.7--Using-the-Timeseries-API.html">Timeseries API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Resilient Restoration (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../VVO-WSU/README.html">Volt-Var Optimization (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../DER-dispatch-NREL/README.html">DER Dispatch (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../solar-forecast-NREL/README.html">Solar Forecasting (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../grid-forecast-NREL/README.html">Grid Forecasting (NREL)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/dnp3/source/index.html">GridAPPS-D DNP3 Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/sensor-simulator/source/index.html">GridAPPS-D Sensor Simulator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/voltage-violation/README.html">GridAPPS-D Voltage Violation Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/state-estimator/README.html">GridAPPS-D State Estimator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/alarms/README.html">GridAPPS-D Alarm Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">GridAPPS-D</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Query Request Queue</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/applications/restoration-WSU/source/using_gridappsd/api_examples/pg_data_manager.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<p>The Powergrid Model Data Manager API allows you to query the powergrid model data store.</p>
+<div class="section" id="query-request-queue">
+<h1>Query Request Queue<a class="headerlink" href="#query-request-queue" title="Permalink to this headline">¶</a></h1>
+<p>Query request should be sent on following queue: goss.gridappsd.process.request.data.powergridmodel</p>
+</div>
+<div class="section" id="query-model-info">
+<h1>Query Model Info<a class="headerlink" href="#query-model-info" title="Permalink to this headline">¶</a></h1>
+<p>Returns list of names/ids for models, substations, subregions, and regions for all available feeders.</p>
+<p>Allowed parameter is:</p>
+<ul class="simple">
+<li><p>Result Format – XML/JSON/CSV, Will return results as a list in the format selected.</p></li>
+</ul>
+<p>Example Request:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_MODEL_INFO&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Example Response for result format JSON:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;models&quot;</span><span class="p">:</span> <span class="p">[{</span>
+                <span class="s2">&quot;modelName&quot;</span><span class="p">:</span> <span class="s2">&quot;ieee123&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;modelId&quot;</span><span class="p">:</span> <span class="s2">&quot;_C1C3E687-6FFD-C753-582B-632A27E28507&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;stationName&quot;</span><span class="p">:</span> <span class="s2">&quot;ieee123_Substation&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;stationId&quot;</span><span class="p">:</span> <span class="s2">&quot;_FE44B314-385E-C2BF-3983-3A10C6060022&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;subRegionName&quot;</span><span class="p">:</span> <span class="s2">&quot;large&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;subRegionId&quot;</span><span class="p">:</span> <span class="s2">&quot;_1CD7D2EE-3C91-3248-5662-A43EFEFAC224&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;regionName&quot;</span><span class="p">:</span> <span class="s2">&quot;ieee&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;regionId&quot;</span><span class="p">:</span> <span class="s2">&quot;_24809814-4EC6-29D2-B509-7F8BFB646437&quot;</span>
+<span class="p">},</span> <span class="o">.......</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="query-model-names">
+<h1>Query Model Names<a class="headerlink" href="#query-model-names" title="Permalink to this headline">¶</a></h1>
+<p>Returns list of names for all available models.</p>
+<p>Allowed parameter is:</p>
+<ul class="simple">
+<li><p>Result Format – XML/JSON/CSV, Will return results as a list in the format selected.</p></li>
+</ul>
+<p>Example Request:    goss.gridappsd.process.request.data.powergridmodel</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_MODEL_NAMES&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Example Response for result format JSON:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;modelNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;_49AD8E07-3BF9-A4E2-CB8F-C3722F837B62&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;_5B816B93-7A5F-B64C-8460-47C17D6E4B0F&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;_67AB291F-DCCD-31B7-B499-338206B9828F&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;_9CE150A8-8CC5-A0F9-B67E-BBD8C79D3095&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;_C1C3E687-6FFD-C753-582B-632A27E28507&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Python API function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">query_model_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_id</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="query">
+<h1>Query<a class="headerlink" href="#query" title="Permalink to this headline">¶</a></h1>
+<p>Returns results from a generic SPARQL query against one or all models.</p>
+<p>Allowed parameters are:</p>
+<ul class="simple">
+<li><p>modelId  (optional)  - when specified it searches against that model, if empty it will search against all models</p></li>
+<li><p>queryString  - SPARQL query, for more information see <a class="reference external" href="https://www.w3.org/TR/rdf-sparql-query/">https://www.w3.org/TR/rdf-sparql-query/</a>   See below for example.</p></li>
+<li><p>resultFormat – XML/JSON ,   The format you wish the result to be returned in.  Can be either JSON or XML.  Will return result bindings based on the select part of the query string.  See below for example.</p></li>
+</ul>
+<p>Example Request:  goss.gridappsd.process.request.data.powergridmodel</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;queryString&quot;</span><span class="p">:</span> <span class="s2">&quot;select ?feeder_name ?subregion_name ?region_name WHERE {?line r:type c:Feeder.?line c:IdentifiedObject.name  ?feeder_name.?line c:Feeder.NormalEnergizingSubstation ?substation.?substation r:type c:Substation.?substation c:Substation.Region ?subregion.?subregion  c:IdentifiedObject.name  ?subregion_name .?subregion c:SubGeographicalRegion.Region  ?region . ?region   c:IdentifiedObject.name  ?region_name}&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Example Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="s2">&quot;head&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="s2">&quot;vars&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;line_name&quot;</span> <span class="p">,</span> <span class="s2">&quot;subregion_name&quot;</span> <span class="p">,</span> <span class="s2">&quot;region_name&quot;</span> <span class="p">]</span>
+ <span class="p">}</span> <span class="p">,</span>
+<span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;bindings&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">{</span>
+                <span class="s2">&quot;line_name&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;literal&quot;</span> <span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;ieee8500&quot;</span> <span class="p">}</span> <span class="p">,</span>
+                <span class="s2">&quot;subregion_name&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;literal&quot;</span> <span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;ieee8500_SubRegion&quot;</span> <span class="p">},</span>
+                <span class="s2">&quot;region_name&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;literal&quot;</span> <span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;ieee8500_Region&quot;</span> <span class="p">}</span>
+          <span class="p">}</span>
+          <span class="p">]</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Python API function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">query_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">database_type</span><span class="o">=</span><span class="n">POWERGRID_MODEL</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="query-object">
+<h1>Query Object<a class="headerlink" href="#query-object" title="Permalink to this headline">¶</a></h1>
+<p>Returns details for a particular object based on the object Id.</p>
+<p>Allowed parameters are:</p>
+<ul class="simple">
+<li><p>modelId (optional) - when specified it searches against that model, if empty it will search against all models</p></li>
+<li><p>objectID – mrid of the object you wish to return details for.</p></li>
+<li><p>resultFormat – XML/JSON ,  Will return result bindings based on the select part of the query string.</p></li>
+</ul>
+<p>Example Request:  goss.gridappsd.process.request.data.powergridmodel</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_OBJECT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;objectId&quot;</span><span class="p">:</span> <span class="s2">&quot;_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Example Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;head&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;vars&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;property&quot;</span> <span class="p">,</span> <span class="s2">&quot;value&quot;</span> <span class="p">]</span>
+  <span class="p">}</span> <span class="p">,</span>
+  <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;bindings&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;property&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span> <span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#Feeder.NormalEnergizingSubstation&quot;</span> <span class="p">}</span> <span class="p">,</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span> <span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:9999/blazegraph/namespace/kb/sparql#_F1E8E479-5FA0-4BFF-8173-B375D25B0AA2&quot;</span> <span class="p">}</span>
+      <span class="p">}</span> <span class="p">,</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;property&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span> <span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#IdentifiedObject.mRID&quot;</span> <span class="p">}</span> <span class="p">,</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;literal&quot;</span> <span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3&quot;</span> <span class="p">}</span>
+      <span class="p">}</span> <span class="p">,</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;property&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span> <span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#IdentifiedObject.name&quot;</span> <span class="p">}</span> <span class="p">,</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;literal&quot;</span> <span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;ieee8500&quot;</span> <span class="p">}</span>
+      <span class="p">}</span> <span class="p">,</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;property&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span> <span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#PowerSystemResource.Location&quot;</span> <span class="p">}</span> <span class="p">,</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span> <span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:9999/blazegraph/namespace/kb/sparql#_AD650B25-8A04-EA09-95D4-4F78DD0A05E7&quot;</span> <span class="p">}</span>
+      <span class="p">}</span> <span class="p">,</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;property&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span> <span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&quot;</span> <span class="p">}</span> <span class="p">,</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uri&quot;</span> <span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#Feeder&quot;</span> <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Python API function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">query_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">object_id</span><span class="p">,</span> <span class="n">model_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="query-object-types">
+<h1>Query Object Types<a class="headerlink" href="#query-object-types" title="Permalink to this headline">¶</a></h1>
+<p>Returns the available object types in the model</p>
+<p>Allowed parameters are:</p>
+<ul class="simple">
+<li><p>modelId (optional) - when specified it searches against that model, if empty it will search against all models</p></li>
+<li><p>resultFormat – XML/JSON /CSV,  Will return results as a list in the format selected.</p></li>
+</ul>
+<p>Example Request:   goss.gridappsd.process.request.data.powergridmodel</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_OBJECT_TYPES&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;modelId&quot;</span><span class="p">:</span> <span class="s2">&quot;_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Example Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;objectTypes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#ConnectivityNode&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#TransformerTank&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#PowerTransformer&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#LinearShuntCompensator&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#EnergySource&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#ACLineSegment&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#LoadBreakSwitch&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#EnergyConsumer&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Python API function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">query_object_types</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_id</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="query-model">
+<h1>Query Model<a class="headerlink" href="#query-model" title="Permalink to this headline">¶</a></h1>
+<p>Returns all or part of the specified model.  Can be filtered by object type</p>
+<p>Allowed parameters are:</p>
+<ul class="simple">
+<li><p>modelId - when specified it searches against that model, if empty it will search against all models</p></li>
+<li><p>objectType (optional) – type of objects you wish to return details for.</p></li>
+<li><p>filter – SPARQL formatted filter string</p></li>
+<li><p>resultFormat – XML/JSON,  Will return result in the format selected.</p></li>
+</ul>
+<p>Example Request:   goss.gridappsd.process.request.data.powergridmodel</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_MODEL&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;modelId&quot;</span><span class="p">:</span> <span class="s2">&quot;_49AD8E07-3BF9-A4E2-CB8F-C3722F837B62&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;filter&quot;</span><span class="p">:</span> <span class="s2">&quot;?s cim:IdentifiedObject.name &#39;650z&#39;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;objectType&quot;</span><span class="p">:</span> <span class="s2">&quot;http://iec.ch/TC57/CIM100#ConnectivityNode&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Example Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;_0F9BF9EE-B900-71C2-B892-0287A875A158&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#ConnectivityNode.ConnectivityNodeContainer&quot;</span><span class="p">:</span> <span class="s2">&quot;_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#ConnectivityNode.TopologicalNode&quot;</span><span class="p">:</span> <span class="s2">&quot;_AE5EDB3A-9177-AEA6-78EF-3DDBA4557D94&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#IdentifiedObject.mRID&quot;</span><span class="p">:</span> <span class="s2">&quot;_0F9BF9EE-B900-71C2-B892-0287A875A158&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#IdentifiedObject.name&quot;</span><span class="p">:</span> <span class="s2">&quot;q14733&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&quot;</span><span class="p">:</span> <span class="s2">&quot;http://iec.ch/TC57/2012/CIM-schema-cim17#ConnectivityNode&quot;</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="query-object-ids">
+<h1>Query Object Ids<a class="headerlink" href="#query-object-ids" title="Permalink to this headline">¶</a></h1>
+<p>Returns details for a particular object based on the object Id.</p>
+<p>Allowed parameters are:</p>
+<ul class="simple">
+<li><p>modelId - when specified it searches against that model, if empty it will search against all models</p></li>
+<li><p>objectType (optional) – type of objects you wish to return details for.</p></li>
+<li><p>resultFormat – XML/JSON/CSV ,  Will return result bindings based on the select part of the query string.</p></li>
+</ul>
+<p>Example Request:   goss.gridappsd.process.request.data.powergridmodel</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;modelId&quot;</span><span class="p">:</span> <span class="s2">&quot;_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_OBJECT_IDS&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;objectType&quot;</span><span class="p">:</span> <span class="s2">&quot;LoadBreakSwitch&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Example Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;objectIds&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;_0D2157F2-CD4D-9F68-9212-F663C472AF1C&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;_18D43D9E-36D1-3A2C-AC8F-439232FC1EE2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;_323C2BDB-69AA-A10C-CEC5-628C77B83268&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;_D7AA7B55-E700-F1E8-B3EB-CB2FB07F8A37&quot;</span><span class="p">,</span>
+        <span class="o">.......</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="query-object-dictionary">
+<h1>Query Object Dictionary<a class="headerlink" href="#query-object-dictionary" title="Permalink to this headline">¶</a></h1>
+<p>Returns details for either all objects of a particular type or a particular object based on the object Id.  Either the object type or id is required, but not both.</p>
+<p>Allowed parameters are:</p>
+<ul class="simple">
+<li><p>modelId - model that you wish to return objects from.</p></li>
+<li><p>objectType (not required if objectId is set) – type of object you wish to return details for.</p></li>
+<li><p>objectId (not required if objectType is set) - mrid of the object you wish to return details for, if set this will override objectType.</p></li>
+<li><p>resultFormat – XML/JSON ,  Will return result bindings based on the select part of the query string.</p></li>
+</ul>
+<p>Example Request:   goss.gridappsd.process.request.data.powergridmodel</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;modelId&quot;</span><span class="p">:</span> <span class="s2">&quot;_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_OBJECT_DICT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;objectType&quot;</span><span class="p">:</span> <span class="s2">&quot;LinearShuntCompensator&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;objectId&quot;</span><span class="p">:</span> <span class="s2">&quot;_EF2FF8C1-A6A6-4771-ADDD-A371AD929D5B&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Example Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+ <span class="p">[</span>
+   <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;_2199D08B-9352-2085-102F-6B207E0BEBA3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ConductingEquipment.BaseVoltage&quot;</span><span class="p">:</span> <span class="s2">&quot;_C0A00494-BB68-7476-57E3-9741545AE287&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Equipment.EquipmentContainer&quot;</span><span class="p">:</span> <span class="s2">&quot;_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;IdentifiedObject.mRID&quot;</span><span class="p">:</span> <span class="s2">&quot;_2199D08B-9352-2085-102F-6B207E0BEBA3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;IdentifiedObject.name&quot;</span><span class="p">:</span> <span class="s2">&quot;capbank0a&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;PowerSystemResource.Location&quot;</span><span class="p">:</span> <span class="s2">&quot;_19B9D45D-F556-01D4-8094-3AE64D5E63A0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;LinearShuntCompensator.b0PerSection&quot;</span><span class="p">:</span> <span class="s2">&quot;100&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;LinearShuntCompensator.bPerSection&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0077160494&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;LinearShuntCompensator.g0PerSection&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;LinearShuntCompensator.gPerSection&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ShuntCompensator.aVRDelay&quot;</span><span class="p">:</span> <span class="s2">&quot;100&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ShuntCompensator.grounded&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ShuntCompensator.maximumSections&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ShuntCompensator.nomU&quot;</span><span class="p">:</span> <span class="s2">&quot;7200&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ShuntCompensator.normalSections&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ShuntCompensator.phaseConnection&quot;</span><span class="p">:</span> <span class="s2">&quot;PhaseShuntConnectionKind.Y&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;LinearShuntCompensator&quot;</span>
+   <span class="p">},</span><span class="o">....</span>
+ <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="query-object-measurements">
+<h1>Query Object Measurements<a class="headerlink" href="#query-object-measurements" title="Permalink to this headline">¶</a></h1>
+<p>Returns details for measurements within a model, can be for all objects of a particular type or for those connected to a particular object based on the objectId. If neither objectType or objectId is provided it will provide all measurements belonging to the model.</p>
+<p>Allowed parameters are:</p>
+<ul class="simple">
+<li><p>modelId - model that you wish to return measurements from.</p></li>
+<li><p>objectType (optional) – type of object you wish to return measurements for.</p></li>
+<li><p>objectId (optional) - mrid of the object you wish to return measurements for.  If set this will override objectType.</p></li>
+<li><p>resultFormat – XML/JSON ,  Will return result bindings based on the select part of the query string.</p></li>
+</ul>
+<p>Example Request:   goss.gridappsd.process.request.data.powergridmodel</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;modelId&quot;</span><span class="p">:</span> <span class="s2">&quot;_4F76A5F9-271D-9EB8-5E31-AA362D86F2C3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_OBJECT_MEASUREMENTS&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;objectType&quot;</span><span class="p">:</span> <span class="s2">&quot;LinearShuntCompensator&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;objectId&quot;</span><span class="p">:</span> <span class="s2">&quot;_2199D08B-9352-2085-102F-6B207E0BEBA3&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Example Response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">[</span>
+<span class="p">{</span>
+      <span class="s2">&quot;measid&quot;</span><span class="p">:</span> <span class="s2">&quot;_59d526ff-32c0-4947-ab58-45f283636786&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PNV&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;Analog&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ACLineSegment_ln5532752-2_Voltage&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;bus&quot;</span><span class="p">:</span> <span class="s2">&quot;m1047534&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;phases&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;eqtype&quot;</span><span class="p">:</span> <span class="s2">&quot;ACLineSegment&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;eqname&quot;</span><span class="p">:</span> <span class="s2">&quot;ln5532752-2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;eqid&quot;</span><span class="p">:</span> <span class="s2">&quot;_7A02B3B0-2746-EB24-45A5-C3FBA8ACB88E&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;trmid&quot;</span><span class="p">:</span> <span class="s2">&quot;_6B5B889C-E7E1-3444-CC63-7A589AC0DA8F&quot;</span>
+  <span class="p">},</span><span class="o">....</span>
+   <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put-model">
+<h1>Put Model<a class="headerlink" href="#put-model" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Future Capability. Not yet available.</p>
+</div>
+<p>Inserts a new model into the model repository. This could validate model format during insertion  <strong>Keep cim/model version in mind</strong></p>
+<p>Allowed parameters are:</p>
+<ul class="simple">
+<li><p>modelId – id to store the new model under, or update existing model</p></li>
+<li><p>modelContent – expects either RDF/XML or JSON formatted powergrid model</p></li>
+<li><p>inputFormat – XML/JSON</p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2017-2021, Battelle Memorial Institute, All rights reserved..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

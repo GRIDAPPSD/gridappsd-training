@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Start GridAPPS-D platform &mdash; GridAPPS-D 2021_05.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> GridAPPS-D
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation &amp; Runtime</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/windows10/index.html">Windows 10 Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/1.4--Lesson-1.4--Running-GridAPPS-D.html">Running GridAPPS-D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/1.5--Lesson-1.5--Using-GridAPPS-D-Viz.html">Using the GridAPPS-D Viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/1.6--Lesson-1.6--Docker-Shortcuts.html">Docker Shortcuts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/1.7--Lesson-1.7--Cloud-Server-Configuration.html">Cloud Server Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/2.1--Lesson-2.1--Intro-to-GridAPPS-D.html">GridAPPS-D Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/2.2--Lesson-2.2--GridAPPS-D-Architecture.html">GridAPPS-D Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/2.3--Lesson-2.3--GridAPPS-D-Python-Library.html">GridAPPS-D Python Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/2.4--Lesson-2.4--GridAPPS-D-Application-Structure.html">GridAPPS-D Application Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/2.5--Lesson-2.5--GridAPPS-D-Service-Structure.html">GridAPPS-D Service Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/2.6--Lesson-2.6--Common-Information-Model.html">Introduction to the Common Information Model</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D API Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_usage/3.1--Lesson-3.1--API-Communication-Channels.html">API Communication Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_usage/3.2--Lesson-3.2--API-Message-Structure.html">API Message Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_usage/3.3--Lesson-3.3--Using-the-PowerGrid-Models-API.html">Using the PowerGrid Models API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_usage/3.4--Lesson-3.4--Using-the-Configuration-File-API.html">Using the Configuration File API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_usage/3.5--Lesson-3.5--Creating-Running-Simulation-API.html">Running Simulations with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_usage/3.6--Lesson-3.6--Controlling-Simulation-API.html">Publishing and Subscribing with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_usage/3.7--Lesson-3.7--Using-the-Timeseries-API.html">Timeseries API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Resilient Restoration (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VVO-WSU/README.html">Volt-Var Optimization (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DER-dispatch-NREL/README.html">DER Dispatch (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../solar-forecast-NREL/README.html">Solar Forecasting (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grid-forecast-NREL/README.html">Grid Forecasting (NREL)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../services/dnp3/source/index.html">GridAPPS-D DNP3 Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../services/sensor-simulator/source/index.html">GridAPPS-D Sensor Simulator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../services/voltage-violation/README.html">GridAPPS-D Voltage Violation Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../services/state-estimator/README.html">GridAPPS-D State Estimator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../services/alarms/README.html">GridAPPS-D Alarm Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">GridAPPS-D</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Start GridAPPS-D platform</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/applications/restoration-WSU/source/using_gridappsd/rc1_overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="start-gridapps-d-platform">
+<h1>Start GridAPPS-D platform<a class="headerlink" href="#start-gridapps-d-platform" title="Permalink to this headline">¶</a></h1>
+<p>Connect to the running GridAPPS-D container</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>user@foo&gt;docker <span class="nb">exec</span> -it gridappsddocker_gridappsd_1 bash
+</pre></div>
+</div>
+<p>Now we are inside the executing container. Start the platform.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@737c30c82df7:/gridappsd# ./run-docker.sh
+</pre></div>
+</div>
+<p>Open your browser to <a class="reference external" href="http://localhost:8080/">http://localhost:8080/</a> and click the menu button.</p>
+<div class="align-left figure">
+<img alt="home-image" src="../../../../_images/home.png" />
+</div>
+</div>
+<div class="section" id="start-a-simulation">
+<h1>Start a Simulation<a class="headerlink" href="#start-a-simulation" title="Permalink to this headline">¶</a></h1>
+<p>Choose Simulations from the menu.</p>
+<div class="align-left figure">
+<img alt="menu-image" src="../../../../_images/simulation.png" />
+</div>
+<p>To run a demo simulation keep the selected and entered values as it is. Otherwise select/enter Powergrid, Simulation and Application configuration values.
+Click the submit button to save the configuration.</p>
+<div class="align-left figure">
+<img alt="config-image" src="../../../../_images/config1.png" />
+</div>
+<div class="align-left figure">
+<img alt="config-image" src="../../../../_images/config2.png" />
+</div>
+<div class="align-left figure">
+<img alt="config-image" src="../../../../_images/config3.png" />
+</div>
+<p>Click the triangle to start the simulation.</p>
+<div class="align-left figure">
+<img alt="start-image" src="../../../../_images/start.png" />
+</div>
+<p>The demo simulation runs 2 minutes of load variations with the sample-app
+controlling capacitor banks on the IEEE 8500-node test system <a class="reference internal" href="../overview/index.html#cit2" id="id1"><span>[CIT2]</span></a>.
+Most of Figure 1 is devoted to a map layout view of the test circuit, with updated
+labels for capacitor banks and voltage regulators.  On the right-hand side, strip
+chart plots of the phase ABC voltages at capacitors and regulators, phase
+ABC substation power levels, and phase ABC regulator taps are continually
+updated.  Capacitor bank labels on the circuit map view change between
+OPEN and CLOSED to show the bank status as load varies and the VVO
+application issues control commands.  While GridAPPS-D runs the demo,
+GridLAB-D <a class="reference internal" href="../overview/index.html#cit8" id="id2"><span>[CIT8]</span></a> simulates power system operation and exchanges
+information with the sample-app using GOSS <a class="reference internal" href="../overview/index.html#cit6" id="id3"><span>[CIT6]</span></a> and FNCS <a class="reference internal" href="../overview/index.html#cit7" id="id4"><span>[CIT7]</span></a>.</p>
+<p>Following image shows the demo simulation output of the sample-app running on the IEEE 8500-node test system.
+Simulation Status at the bottom of the screen will display the simulation log messages. The simulation can be paused or stopped using the play and stop button.</p>
+<p><img alt="rc3_overview_image0" src="../../../../_images/rc3_demo.png" /></p>
+</div>
+<div class="section" id="stop-gridapps-d-platform">
+<h1>Stop GridAPPS-D platform<a class="headerlink" href="#stop-gridapps-d-platform" title="Permalink to this headline">¶</a></h1>
+<p>For an orderly shutdown of the platform:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Use Ctrl+C to stop gridappsd from running
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-events">
+<h1>Adding Events<a class="headerlink" href="#adding-events" title="Permalink to this headline">¶</a></h1>
+<p>Communication outage and fault events can be added using the Test Configuration page</p>
+<p>Select the CommOutage radio button for adding Communication Outage Events</p>
+<div class="align-left figure">
+<img alt="config-image" src="../../../../_images/test_config.png" />
+</div>
+<p>Select the Fault radio button for adding Fault Events</p>
+<div class="align-left figure">
+<img alt="config-image" src="../../../../_images/faults.png" />
+</div>
+<p>Added events can be viewed in a tabular format on the right side of the page</p>
+<div class="align-left figure">
+<img alt="config-image" src="../../../../_images/event_table.png" />
+</div>
+<p>The added events for a simulation can be seen in the events view</p>
+<div class="align-left figure">
+<img alt="config-image" src="../../../../_images/event_view.png" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2017-2021, Battelle Memorial Institute, All rights reserved..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

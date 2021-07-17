@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>State Estimator Service &mdash; GridAPPS-D 2021_05.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> GridAPPS-D
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation &amp; Runtime</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation/windows10/index.html">Windows 10 Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation/1.4--Lesson-1.4--Running-GridAPPS-D.html">Running GridAPPS-D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation/1.5--Lesson-1.5--Using-GridAPPS-D-Viz.html">Using the GridAPPS-D Viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation/1.6--Lesson-1.6--Docker-Shortcuts.html">Docker Shortcuts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation/1.7--Lesson-1.7--Cloud-Server-Configuration.html">Cloud Server Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.1--Lesson-2.1--Intro-to-GridAPPS-D.html">GridAPPS-D Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.2--Lesson-2.2--GridAPPS-D-Architecture.html">GridAPPS-D Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.3--Lesson-2.3--GridAPPS-D-Python-Library.html">GridAPPS-D Python Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.4--Lesson-2.4--GridAPPS-D-Application-Structure.html">GridAPPS-D Application Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.5--Lesson-2.5--GridAPPS-D-Service-Structure.html">GridAPPS-D Service Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.6--Lesson-2.6--Common-Information-Model.html">Introduction to the Common Information Model</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D API Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.1--Lesson-3.1--API-Communication-Channels.html">API Communication Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.2--Lesson-3.2--API-Message-Structure.html">API Message Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.3--Lesson-3.3--Using-the-PowerGrid-Models-API.html">Using the PowerGrid Models API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.4--Lesson-3.4--Using-the-Configuration-File-API.html">Using the Configuration File API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.5--Lesson-3.5--Creating-Running-Simulation-API.html">Running Simulations with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.6--Lesson-3.6--Controlling-Simulation-API.html">Publishing and Subscribing with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.7--Lesson-3.7--Using-the-Timeseries-API.html">Timeseries API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Resilient Restoration (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../VVO-WSU/README.html">Volt-Var Optimization (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../DER-dispatch-NREL/README.html">DER Dispatch (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../solar-forecast-NREL/README.html">Solar Forecasting (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../grid-forecast-NREL/README.html">Grid Forecasting (NREL)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/dnp3/source/index.html">GridAPPS-D DNP3 Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/sensor-simulator/source/index.html">GridAPPS-D Sensor Simulator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/voltage-violation/README.html">GridAPPS-D Voltage Violation Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/state-estimator/README.html">GridAPPS-D State Estimator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/alarms/README.html">GridAPPS-D Alarm Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">GridAPPS-D</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>State Estimator Service</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/applications/restoration-WSU/source/hosted_applications/PNNL_Apps/StateEstimatorDocumentation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="state-estimator-service">
+<h1>State Estimator Service<a class="headerlink" href="#state-estimator-service" title="Permalink to this headline">¶</a></h1>
+<p>Given a perfect and complete set of voltage magnitude and angle
+measurements, along with a detailed and accurate power system model, one
+could calculate the real power, or any other electrical variable of
+interest, anywhere in the system. In practice, measurements have errors,
+time delays, and may even be missing. State estimation refers to the
+process of minimizing the errors and filling in gaps [1]. One state
+estimation method is called “weighted least squares”, and it’s analogous
+to drawing the best-fit line through a set of scattered points. Other
+methods may perform better [2]. Also, on distribution systems, it may be
+better to estimate branch currents instead of node voltages, but the
+principle is the same. In GridAPPS-D, the visualizations and
+applications ought to use the best available state estimator outputs,
+instead of raw SCADA values, for both accuracy and consistency.
+Therefore, the state estimator is not an application but a service in
+GridAPPS-D, sitting between emulated SCADA and the GOSS bus.</p>
+<p><img alt="image0" src="applications/restoration-WSU/source/hosted_applications/PNNL_Apps/PNNL_Apps/media/SE_Service.png" /></p>
+<p>Figure 1: The state estimator processes noisy and incomplete
+measurements, then posting estimated voltage (V), current (I), real
+power (P), reactive power (Q) and switch status (S) values onto the
+GridAPPS-D message / data bus.</p>
+<p>In Figure 1, the power system model (upper left) will include a limited
+number of sensors, corresponding to actual voltage and current
+transformers, line post sensors, wireless sensors, etc. In some
+scenarios, smart meters can also be sensors. Each such sensor will have
+different performance characteristics (e.g. precision, accuracy,
+sampling rate). Distribution systems typically do not have enough
+sensors to make the system observable, so there will be measurement gaps
+in the topology. The state estimator might fill these gaps with
+interpolation and graph-tracing methods on the power system model.</p>
+<p>The supervisory control and data acquisition (SCADA) system in Figure 1
+introduces more errors and failure points. Eventually, GridAPPS-D may
+simulate these impacts by federating ns-3 as a co-simulator. Until then,
+a placeholder module could be used to insert variable errors, time
+delays and dropouts in each measurement, whether due to sensor
+characteristics or the communication system. The output represents data
+as it would come into an operations center, and feeds the state
+estimator. Internally, the data flows between simulator, SCADA and state
+estimator might be implemented with FNCS, but this is an implementation
+detail. The state estimator will provide two outputs to the GOSS bus
+used by all GridAPPS-D applications:</p>
+<ol class="arabic simple">
+<li><p>At a time step configured by the platform, publish the best-estimate
+VIPQS values wherever sensors actually exist in the model, with
+quality attributes that still have to be established. Sensor
+locations delineate circuit segments, and note that all VIPQS values
+will be estimated at the boundaries, even if the sensor measures only
+V or I, for example.</p></li>
+<li><p>Upon request by another application or service, publish the estimated
+VIPQS values for all nodes and components in the model, even at
+locations where no sensors exist. A variant is to publish the
+estimates only for selected nodes and components.</p></li>
+</ol>
+<p>As indicated in Figure 1, other applications need to obtain estimated
+VIPQS values from the GOSS bus. Switch open/close states are a special
+case; they might be considered known values, but in practice the switch
+state is a measurement, which could lead to topology errors in the
+model. For GridAPPS-D, switch state estimates need to be a point of
+emphasis. Given that most distribution systems lack redundant
+measurements, It would be possible for an application to query these
+VIPQS values directly from the simulator or SCADA, bypassing the state
+estimator, but this is “cheating” in most situations. However, in the
+application development process, idealized VIPQS values could be
+obtained through a combination of two methods:</p>
+<ol class="arabic simple">
+<li><p>Add more sensors to the power system model</p></li>
+<li><p>Set the sensor and channel errors to zero</p></li>
+</ol>
+<p>Because the sensor outputs in GridAPPS-D come from a power flow solution
+that enforces Kirchhoff’s Laws, the state estimator will produce ideally
+accurate values whenever the sensor and channel errors have been
+specified to be zero. The state estimator may still exhibit
+interpolation errors between sensor locations, but that is readily
+mitigated for testing purposes by adding more sensors.</p>
+<p>With reference to RC1, the visualization and VVO applications should now
+subscribe to VIPQS values from the state estimator, not from the
+distribution simulator. They may also use or display quality metrics on
+the estimated values.</p>
+<div class="section" id="design-objectives">
+<h2>Design Objectives<a class="headerlink" href="#design-objectives" title="Permalink to this headline">¶</a></h2>
+<p>State estimation is widely used in transmission system operations but is
+less common in distribution system operations due to a relatively
+limited value in traditional distribution systems, additional
+computational complexity, and a lack of sensors. Advanced distribution
+management platforms like GridAPPS-D provide access to model and sensor
+data that can be leveraged to overcome barriers to adoption and open the
+door to distribution system state estimators that are fast and accurate
+enough to be useful in utility operations.</p>
+<p>A distribution system state estimator computes the most likely state
+given a set of present and/or past measurements. The full state of a
+distribution system consists of either the full set of complex bus
+voltages or the full set of complex branch currents; given the system
+model (admittance matrix), the remaining system parameters can be
+computed given the full system state.</p>
+</div>
+<div class="section" id="use-cases">
+<h2>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Assist power factor optimization: Utility objective is unity
+power-factor at the substation.</p></li>
+<li><p>Assist voltage optimization (planning): Utility objective is 1 p.u.
+voltage at last house primary.</p></li>
+<li><p>Real-time state estimation for advanced applications: applications
+can access the state estimate at a sufficient resolution to capture
+e.g. insolation variation caused by clouds.</p></li>
+</ul>
+</div>
+<div class="section" id="algorithms">
+<h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h2>
+<p>State estimation uses system model information to produce an estimate of
+the state vector x given a measurement vector z. The measurement vector
+is related to the state vector and an error vector by the measurement
+function, which may be non-linear.</p>
+<div class="math notranslate nohighlight">
+\[z = h(x) + e\]</div>
+<p>Multiple formulations of the distribution system state estimation
+problem are possible:</p>
+<ol class="arabic simple">
+<li><p><em>Node Voltage State Estimation (NVSE):</em> The state vector consists of
+node voltage magnitudes and angles for each node in the system (one
+reference angle can be eliminated from the state vector). This
+formulation of the state estimation problem is general to any
+topology and it is the standard for transmission system state
+estimation.</p></li>
+<li><p><em>Branch Current State Estimation (BCSE):</em> Radial topology and
+assumptions about shunt losses create a linear formulation of the
+state estimation problem. The state vector contains branch currents
+and, for a fully-constrained problem, requires one state per load,
+which can be less than the number of branches in the system.</p></li>
+</ol>
+<p>Different algorithms provide different advantages for distribution
+system state estimation. A subset of the state estimation algorithms
+below will be used to achieve these goals.</p>
+<ol class="arabic simple">
+<li><p><em>Weighted Least Squares Estimation (WLSE)</em>: a concurrent set of
+measurements are used to find a state vector that minimizes the
+weighted least squares objective function. The algorithm is
+memoryless with respect to previous solutions and measurements should
+be synchronized.</p></li>
+<li><p><em>Kalman Filter Estimation (KFE) and Extended Kalman Filter Estimation
+(EKFE)</em>: The Kalman filter provides a mechanism to consider past
+state estimates alongside present measurements. This provides
+additional noise rejection and allows asynchronous measurements can
+be considered individually. KFE is appropriate for linear BCSE and
+EKFE is compatible with nonlinear NVSE.</p></li>
+<li><p><em>Unscented Kalman Filter Estimation (UKFE)</em>: The unscented transform
+estimates the expected value and variance of the system state by
+observing the system outputs for inputs spanning the full
+dimensionality of the measurement space. Again, the Kalman filter
+provides a mechanism to consider past estimates.</p></li>
+</ol>
+</div>
+<div class="section" id="trl">
+<h2>TRL<a class="headerlink" href="#trl" title="Permalink to this headline">¶</a></h2>
+<p>The state estimator application will provide the capability to estimate
+the full system state using asynchronous measurement data. In addition a
+model order reduction technique will be implemented to greatly speed up
+the state estimation computation and to reduce the dependence on
+forecast-based pseudo-measurements. A paper (<em>Reduced-Order State
+Estimation for Power Distribution Systems with Sparse Sensing</em>) is
+targeted for IEEE Transactions on Power Systems.</p>
+</div>
+<div class="section" id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
+<p>The state estimation service is being developed in c++. A modern c++
+implementation allows the application to adapt to an evolving interface.
+The program architecture is shown below.</p>
+<p><img alt="image1" src="applications/restoration-WSU/source/hosted_applications/PNNL_Apps/PNNL_Apps/media/SE_image1.png" /></p>
+<p>Topology Processor: initializes the measurement function and its
+Jacobian and determines the size of the measurement vector, the
+measurement covariance matrix, and the state vector.</p>
+<p>Meter Interface: updates the measurement vector and the measurement
+covariance matrix as new measurement data comes available.</p>
+<p>State Estimator: performs the state estimation operation according to
+the specified algorithm.</p>
+<p>Output Interface: formats the state vector and any implicit states as an
+output stream.</p>
+</div>
+<div class="section" id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<p>Upon initialization, the topology processor will receive the Y-bus from
+the GridLAB-D service and will query contextual information and sensor
+locations from the CIM database.</p>
+<p>Periodic measurement data, including any forecasts to be used a
+pseudo-measurements will be required as inputs.</p>
+<p>A “terminate” command from the platform will end the state estimation
+process.</p>
+</div>
+<div class="section" id="outputs">
+<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+<p>The output will include the full system state (node voltages and/or
+branch currents TBD).</p>
+</div>
+<div class="section" id="testing-and-validation">
+<h2>Testing and Validation<a class="headerlink" href="#testing-and-validation" title="Permalink to this headline">¶</a></h2>
+<p><strong>Evaluation metrics</strong></p>
+<ul class="simple">
+<li><p>State Error: compare state estimation output to “true” system state.</p></li>
+<li><p>Accuracy over baseline: compare state error of state estimator to
+state error of a QSTS load-flow model.</p></li>
+<li><p>Execution Time</p></li>
+<li><p>Bad Sensor Detection (binary)</p></li>
+</ul>
+<p><strong>Scenarios</strong></p>
+<ul class="simple">
+<li><p>Full sensor deployment: verify that the true system state can be
+reproduced.</p></li>
+<li><p>Sparse sensor deployment: verify that the state estimator performs
+better than a QSTS load-flow model.</p></li>
+<li><p>Breaker trip: verify that switch state can be detected even when it
+is reported incorrectly.</p></li>
+<li><p>Bad sensor detection: verify that a sensor that is producing bad data
+can be identified.</p></li>
+<li><p>Dependent application support: verify that the state estimator can
+support e.g. the VVO application.</p></li>
+<li><p>Fault: for a radial system, determine the nearest common bus from
+multiple emulated customer calls.</p></li>
+</ul>
+</div>
+<div class="section" id="operating-running">
+<h2>Operating/Running<a class="headerlink" href="#operating-running" title="Permalink to this headline">¶</a></h2>
+<p>The state estimator will execute the topology processor at
+initialization and will enter a stat estimation loop. The state
+estimation loop will exit and the process will end upon receiving a
+‘terminate’ command from the platform.</p>
+<p>At initialization, a configuration file will be read for:</p>
+<ul class="simple">
+<li><p>State estimation mode (state vector and algorithm) selection</p></li>
+<li><p>Normalized residual threshold for bad measurement / sensor detection</p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>[1] T. E. McDermott, “Grid Monitoring and State Estimation,” in <em>Smart Grid Handbook</em>, ed: John Wiley &amp; Sons, Ltd, 2016.</p>
+<p>[2] A. Abur and A. Gómez Expósito, <em>Power system state estimation : theory and implementation</em>. New York, NY: Marcel Dekker, 2004.</p>
+<p>[3] M. E. Baran and A. W. Kelley, “A branch-current-based state estimation method for distribution systems,” in <em>IEEE Transactions on Power Systems</em>, vol. 10, no. 1, pp. 483-491, Feb 1995.</p>
+<p>[4] Z. Jia, J. Chen and Y. Liao, “State estimation in distribution system considering effects of AMI data,” <em>2013 Proceedings of IEEE Southeastcon</em>, Jacksonville, FL, 2013, pp. 1-6.</p>
+<p>[5] S. C. Huang, C. N. Lu and Y. L. Lo, “Evaluation of AMI and SCADA Data Synergy for Distribution Feeder Modeling,” in <em>IEEE Transactions on Smart Grid</em>, vol. 6, no. 4, pp. 1639-1647, July 2015.</p>
+<p>[6] M. Kettner; M. Paolone, “Sequential Discrete Kalman Filter for Real-Time State Estimation in Power Distribution Systems: Theory and Implementation,” in <em>IEEE Transactions on Instrumentation and Measurement</em>, vol.PP, no.99, pp. 1-13, Jun. 2017.</p>
+<p>[7] G. Valverde and V. Terzija, “Unscented kalman filter for power system dynamic state estimation,” in <em>IET Generation, Transmission &amp; Distribution</em>, vol. 5, no. 1, pp. 29-37, Jan.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2017-2021, Battelle Memorial Institute, All rights reserved..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

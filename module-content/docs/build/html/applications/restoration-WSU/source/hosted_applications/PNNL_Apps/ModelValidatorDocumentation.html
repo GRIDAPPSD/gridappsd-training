@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Model Validation Application &mdash; GridAPPS-D 2021_05.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> GridAPPS-D
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation &amp; Runtime</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation/windows10/index.html">Windows 10 Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation/1.4--Lesson-1.4--Running-GridAPPS-D.html">Running GridAPPS-D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation/1.5--Lesson-1.5--Using-GridAPPS-D-Viz.html">Using the GridAPPS-D Viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation/1.6--Lesson-1.6--Docker-Shortcuts.html">Docker Shortcuts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../installation/1.7--Lesson-1.7--Cloud-Server-Configuration.html">Cloud Server Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.1--Lesson-2.1--Intro-to-GridAPPS-D.html">GridAPPS-D Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.2--Lesson-2.2--GridAPPS-D-Architecture.html">GridAPPS-D Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.3--Lesson-2.3--GridAPPS-D-Python-Library.html">GridAPPS-D Python Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.4--Lesson-2.4--GridAPPS-D-Application-Structure.html">GridAPPS-D Application Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.5--Lesson-2.5--GridAPPS-D-Service-Structure.html">GridAPPS-D Service Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../overview/2.6--Lesson-2.6--Common-Information-Model.html">Introduction to the Common Information Model</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D API Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.1--Lesson-3.1--API-Communication-Channels.html">API Communication Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.2--Lesson-3.2--API-Message-Structure.html">API Message Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.3--Lesson-3.3--Using-the-PowerGrid-Models-API.html">Using the PowerGrid Models API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.4--Lesson-3.4--Using-the-Configuration-File-API.html">Using the Configuration File API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.5--Lesson-3.5--Creating-Running-Simulation-API.html">Running Simulations with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.6--Lesson-3.6--Controlling-Simulation-API.html">Publishing and Subscribing with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../api_usage/3.7--Lesson-3.7--Using-the-Timeseries-API.html">Timeseries API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Resilient Restoration (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../VVO-WSU/README.html">Volt-Var Optimization (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../DER-dispatch-NREL/README.html">DER Dispatch (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../solar-forecast-NREL/README.html">Solar Forecasting (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../grid-forecast-NREL/README.html">Grid Forecasting (NREL)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/dnp3/source/index.html">GridAPPS-D DNP3 Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/sensor-simulator/source/index.html">GridAPPS-D Sensor Simulator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/voltage-violation/README.html">GridAPPS-D Voltage Violation Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/state-estimator/README.html">GridAPPS-D State Estimator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/alarms/README.html">GridAPPS-D Alarm Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">GridAPPS-D</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Model Validation Application</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/applications/restoration-WSU/source/hosted_applications/PNNL_Apps/ModelValidatorDocumentation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="model-validation-application">
+<h1>Model Validation Application<a class="headerlink" href="#model-validation-application" title="Permalink to this headline">¶</a></h1>
+<p>The state estimator basically attempts to fit measured data to a power
+flow model, usually assuming that the model is correct. However, a model
+attribute (e.g. line impedance) could also be estimated by minimizing
+its error residual in the state estimator’s power flow solution. This
+process works best when applied to just one or a few suspect attributes,
+and/or when an archive is available to provide enough redundant
+measurements. The Model Validation Application will use these state
+estimator features off-line to help identify and correct the following
+types of model errors:</p>
+<ol class="arabic simple">
+<li><p>Unknown or incorrect service transformer sizes</p></li>
+<li><p>Unknown or incorrect secondary circuit lengths</p></li>
+<li><p>Incorrect phase identification of single-phase components</p></li>
+<li><p>Phase wiring errors in line segments and switches</p></li>
+<li><p>Transformer connection errors, especially reversed primary and
+secondary</p></li>
+<li><p>Primary conductor sizes that don’t decrease monotonically with
+distance from the source</p></li>
+<li><p>Missing regulator and capacitor control settings (i.e. supply
+defaults from heuristic rules)</p></li>
+<li><p>More than one of these on the same pole: recloser, line regulator,
+capacitor</p></li>
+<li><p>Substation transformer impedance and turns ratio</p></li>
+</ol>
+<p>These types of errors often appear upon the initial model import from a
+geographic information system (GIS), or in periodic model updates from
+GIS. Other error types may be added later. Many utilities do not have
+their secondary circuits modeled at all, but this has an important
+impact on AMI data. The service transformers and secondary circuits
+insert significant impedance between AMI meters and the primary circuit,
+where most of the other sensors are installed. Therefore, the first two
+items will require AMI data, and also enable its more effective use.</p>
+<p>As shown in Figure 1, the Model Validator integrates with GridAPPS-D as
+a hosted application on the GOSS bus. Internally, it will use some of
+the same algorithms as the State Estimator and may share some code or
+binary files, but this is an implementation detail. It will need to
+access an archive of state-estimated VIPQS data, which may include AMI
+data. It will also use or incorporate an off-line power flow model, not
+the same one running in the GridAPPS-D distribution simulator. This may
+be EPRI’s OpenDSS simulator [1]; compared to GridLAB-D, it’s more
+tolerant of model errors and provides more diagnostic information about
+model errors.</p>
+<p><img alt="mv_image1" src="applications/restoration-WSU/source/hosted_applications/PNNL_Apps/PNNL_Apps/media/MV_App.png" /></p>
+<p>Figure 1: The Model Validator works with an archive from the state
+estimator, and an off-line power flow model.</p>
+<div class="section" id="design-objectives">
+<h2>Design Objectives<a class="headerlink" href="#design-objectives" title="Permalink to this headline">¶</a></h2>
+<p>The model validator will detect and attempt to correct unreasonable
+component interconnections and network parameters.  The model validation
+application will be implemented in Python.</p>
+</div>
+<div class="section" id="use-cases">
+<h2>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Valid transformer size and orientation (Utility): orientation is not
+captured explicitly in their GIS system.</p></li>
+<li><p>Discover secondary line impedance parameters (Utility) conductor type
+and line length are currently based on generic assumptions.</p></li>
+<li><p>Sanity check or estimate transformer size and impedance.</p></li>
+<li><p>Verify that the nominal voltage of nodes matches the base voltage of
+the segment: generally the winding voltage of the upstream
+transformer or swing bus voltage.</p></li>
+<li><p>Sanity check conductor sizes and line current ratings.</p></li>
+<li><p>Validate and fill in regulator and capacitor control settings.</p></li>
+<li><p>Check phase continuity (GridLAB-D may not model phase
+discontinuities)</p></li>
+</ul>
+</div>
+<div class="section" id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<p>The model validator will have access to the CIM database and archived
+data from the state estimator.</p>
+</div>
+<div class="section" id="outputs">
+<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+<p>The model validator will one or both of the following outputs:</p>
+<ul class="simple">
+<li><p>Model status: log file or GUI pipe for identified issues.</p></li>
+<li><p>Model correction: CIM updates to correct identified issues.</p></li>
+</ul>
+</div>
+<div class="section" id="testing-and-validation">
+<h2>Testing and Validation<a class="headerlink" href="#testing-and-validation" title="Permalink to this headline">¶</a></h2>
+<p><strong>Evaluation metrics</strong></p>
+<ul class="simple">
+<li><p>Ability to detect known issues.</p></li>
+</ul>
+<p><strong>Scenarios</strong></p>
+<ul class="simple">
+<li><p>Utility merger: models with different format may be interpreted
+differently, creating issues a CIM model.</p></li>
+<li><p>Data entry issue: model update does not match upgrade performed in
+the field</p></li>
+</ul>
+</div>
+<div class="section" id="operating-running">
+<h2>Operating/Running<a class="headerlink" href="#operating-running" title="Permalink to this headline">¶</a></h2>
+<p>The model validator script will execute once when called by the
+platform.</p>
+<p>At initialization, a configuration file will be read for:</p>
+<ul class="simple">
+<li><p>Mode (status, quiet, verbose; see outputs section)</p></li>
+<li><p>Selectable validation items (use cases)</p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>[1] R. C. Dugan and T. E. McDermott, “An open source platform for collaborating on smart grid research,” in <em>Power and Energy Society General Meeting, 2011 IEEE</em>, 2011, pp. 1-7.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2017-2021, Battelle Memorial Institute, All rights reserved..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -8,3 +8,4 @@ sphinx-autobuild
 sphinx-rtd-theme
 recommonmark
 gitpython
+myst-parser

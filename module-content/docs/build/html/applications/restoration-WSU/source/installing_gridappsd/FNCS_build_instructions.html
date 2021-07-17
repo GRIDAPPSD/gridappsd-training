@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>FNCS &mdash; GridAPPS-D 2021_05.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> GridAPPS-D
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation &amp; Runtime</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/windows10/index.html">Windows 10 Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/1.4--Lesson-1.4--Running-GridAPPS-D.html">Running GridAPPS-D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/1.5--Lesson-1.5--Using-GridAPPS-D-Viz.html">Using the GridAPPS-D Viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/1.6--Lesson-1.6--Docker-Shortcuts.html">Docker Shortcuts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation/1.7--Lesson-1.7--Cloud-Server-Configuration.html">Cloud Server Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/2.1--Lesson-2.1--Intro-to-GridAPPS-D.html">GridAPPS-D Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/2.2--Lesson-2.2--GridAPPS-D-Architecture.html">GridAPPS-D Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/2.3--Lesson-2.3--GridAPPS-D-Python-Library.html">GridAPPS-D Python Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/2.4--Lesson-2.4--GridAPPS-D-Application-Structure.html">GridAPPS-D Application Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/2.5--Lesson-2.5--GridAPPS-D-Service-Structure.html">GridAPPS-D Service Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../overview/2.6--Lesson-2.6--Common-Information-Model.html">Introduction to the Common Information Model</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D API Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_usage/3.1--Lesson-3.1--API-Communication-Channels.html">API Communication Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_usage/3.2--Lesson-3.2--API-Message-Structure.html">API Message Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_usage/3.3--Lesson-3.3--Using-the-PowerGrid-Models-API.html">Using the PowerGrid Models API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_usage/3.4--Lesson-3.4--Using-the-Configuration-File-API.html">Using the Configuration File API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_usage/3.5--Lesson-3.5--Creating-Running-Simulation-API.html">Running Simulations with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_usage/3.6--Lesson-3.6--Controlling-Simulation-API.html">Publishing and Subscribing with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api_usage/3.7--Lesson-3.7--Using-the-Timeseries-API.html">Timeseries API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Resilient Restoration (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../VVO-WSU/README.html">Volt-Var Optimization (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DER-dispatch-NREL/README.html">DER Dispatch (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../solar-forecast-NREL/README.html">Solar Forecasting (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grid-forecast-NREL/README.html">Grid Forecasting (NREL)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../services/dnp3/source/index.html">GridAPPS-D DNP3 Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../services/sensor-simulator/source/index.html">GridAPPS-D Sensor Simulator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../services/voltage-violation/README.html">GridAPPS-D Voltage Violation Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../services/state-estimator/README.html">GridAPPS-D State Estimator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../services/alarms/README.html">GridAPPS-D Alarm Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">GridAPPS-D</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>FNCS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../_sources/applications/restoration-WSU/source/installing_gridappsd/FNCS_build_instructions.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="tex2jax_ignore mathjax_ignore section" id="fncs">
+<h1>FNCS<a class="headerlink" href="#fncs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>FNCS is the co-simulation engine used by GridAPP-D’s simulation manager class to facilitating real-time synchonization and message passing between the GridLAB-D simulation and the GOSS message bus.</p>
+</div>
+<div class="section" id="source-code">
+<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<p>FNCS is maintained by PNNL. The repository is located at https://github.com/FNCS/fncs. GridAPPS-D is using the latest release of FNCS which is v2.3.2.</p>
+</div>
+<div class="section" id="fncs-documentation">
+<h2>FNCS Documentation<a class="headerlink" href="#fncs-documentation" title="Permalink to this headline">¶</a></h2>
+<p>The documentation for FNCS is located at https://github.com/FNCS/fncs/wiki.</p>
+</div>
+<div class="section" id="building-and-installing-the-source">
+<h2>Building and Installing the Source<a class="headerlink" href="#building-and-installing-the-source" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="prerequisites">
+<h4>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h4>
+<p>FNCS requires both the ZeroMQ and CZMQ libraries. For the purposes of the tutorial FNCS and it’s prerequisites will be installed a custom location refered to by <span class="math notranslate nohighlight">\(FNCS_INSTALL. All source code is downloaded to the \)</span>HOME directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># download and install ZeroMQ</span>
+:~$ wget http://download.zeromq.org/zeromq-3.2.4.tar.gz
+<span class="c1"># if you do not have wget, use</span>
+<span class="c1"># curl -O http://download.zeromq.org/zeromq-3.2.4.tar.gz</span>
+
+<span class="c1"># unpack zeromq, change to its directory</span>
+:~$ tar -xzf zeromq-3.2.4.tar.gz
+:~$ <span class="nb">cd</span> zeromq-3.2.4
+
+<span class="c1"># configure, make, and make install </span>
+:~/zeromq-3.2.4$ ./configure --prefix<span class="o">=</span><span class="nv">$FNCS_INSTALL</span>
+:~/zeromq-3.2.4$ make
+:~/zeromq-3.2.4$ make install
+
+<span class="c1"># download and install CZMQ</span>
+:~/zeromq-3.2.4$ <span class="nb">cd</span> <span class="nv">$HOME</span>
+
+:~$ wget http://download.zeromq.org/czmq-3.0.0-rc1.tar.gz
+<span class="c1"># if you do not have wget, use</span>
+<span class="c1"># curl -O http://download.zeromq.org/czmq-3.0.0-rc1.tar.gz</span>
+
+<span class="c1"># unpack czmq, change to its directory</span>
+:~$ tar -xzf czmq-3.0.0-rc1.tar.gz
+:~$ <span class="nb">cd</span> czmq-3.0.0
+
+<span class="c1"># configure, make, and make install </span>
+:~/czmq-3.0.0$ ./configure --prefix<span class="o">=</span><span class="nv">$FNCS_INSTALL</span> --with-libzmq<span class="o">=</span><span class="nv">$FNCS_INSTALL</span>
+:~/czmq-3.0.0$ make
+:~/czmq-3.0.0$ make install
+</pre></div>
+</div>
+</div>
+<div class="section" id="building-fncs">
+<h4>Building FNCS<a class="headerlink" href="#building-fncs" title="Permalink to this headline">¶</a></h4>
+<p>In this tutorial FNCS source code will be downloaded using git to the <span class="math notranslate nohighlight">\(HOME directory. The code will be installed at t/FNCShe loacation \)</span>FNCS_INSTALL.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># download FNCS</span>
+:~$ git clone https://github.com/FNCS/fncs.git
+
+<span class="c1"># change to FNCS directory</span>
+:~$ <span class="nb">cd</span> fncs
+
+<span class="c1"># configure, make, and make install </span>
+:~/fncs$ ./configure --prefix<span class="o">=</span><span class="nv">$FNCS_INSTALL</span> --with-zmq<span class="o">=</span><span class="nv">$FNCS_INSTALL</span>
+:~/fncs$ make
+:~/fncs$ make install
+</pre></div>
+</div>
+</div>
+<div class="section" id="environment-setup">
+<h4>Environment Setup<a class="headerlink" href="#environment-setup" title="Permalink to this headline">¶</a></h4>
+<p>In order for GridAPPS-D to be able to run FNCS and for GridLAB-D to be built with FNCS The following environment variables need to be setup:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(PATH must contain \)</span>FNCS_INSTALL/bin</p></li>
+<li><p><span class="math notranslate nohighlight">\(LD_LIBRARY_PATH must contain \)</span>FNCS_INSTALL/lib</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2017-2021, Battelle Memorial Institute, All rights reserved..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

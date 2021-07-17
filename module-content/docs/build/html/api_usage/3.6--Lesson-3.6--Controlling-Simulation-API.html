@@ -1,0 +1,1194 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Publishing and Subscribing with the Simulation API &mdash; GridAPPS-D 2021_05.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Timeseries API" href="3.7--Lesson-3.7--Using-the-Timeseries-API.html" />
+    <link rel="prev" title="Running Simulations with the Simulation API" href="3.5--Lesson-3.5--Creating-Running-Simulation-API.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GridAPPS-D
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation &amp; Runtime</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/windows10/index.html">Windows 10 Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/1.4--Lesson-1.4--Running-GridAPPS-D.html">Running GridAPPS-D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/1.5--Lesson-1.5--Using-GridAPPS-D-Viz.html">Using the GridAPPS-D Viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/1.6--Lesson-1.6--Docker-Shortcuts.html">Docker Shortcuts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/1.7--Lesson-1.7--Cloud-Server-Configuration.html">Cloud Server Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.1--Lesson-2.1--Intro-to-GridAPPS-D.html">GridAPPS-D Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.2--Lesson-2.2--GridAPPS-D-Architecture.html">GridAPPS-D Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.3--Lesson-2.3--GridAPPS-D-Python-Library.html">GridAPPS-D Python Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.4--Lesson-2.4--GridAPPS-D-Application-Structure.html">GridAPPS-D Application Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.5--Lesson-2.5--GridAPPS-D-Service-Structure.html">GridAPPS-D Service Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.6--Lesson-2.6--Common-Information-Model.html">Introduction to the Common Information Model</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D API Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="3.1--Lesson-3.1--API-Communication-Channels.html">API Communication Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.2--Lesson-3.2--API-Message-Structure.html">API Message Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.3--Lesson-3.3--Using-the-PowerGrid-Models-API.html">Using the PowerGrid Models API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.4--Lesson-3.4--Using-the-Configuration-File-API.html">Using the Configuration File API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.5--Lesson-3.5--Creating-Running-Simulation-API.html">Running Simulations with the Simulation API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Publishing and Subscribing with the Simulation API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Introduction-to-the-Simulation-API">Introduction to the Simulation API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Using-the-Simulation-API">Using the Simulation API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#2.1.-Specifying-the-Topic">2.1. Specifying the Topic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#2.2.-Structure-of-a-Simulation-Message">2.2. Structure of a Simulation Message</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#3.-Publishing-to-Simulation-Input">3. Publishing to Simulation Input</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#3.1.-Topic-to-Publish-to-Simulation-Input">3.1. Topic to Publish to Simulation Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#3.2.-Obtain-Equipment-Control-mRIDs">3.2. Obtain Equipment Control mRIDs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#3.3.-Format-of-a-Difference-Message">3.3. Format of a Difference Message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#3.4.-Using-GridAPPSD-Python-DifferenceBuilder">3.4. Using GridAPPSD-Python <code class="docutils literal notranslate"><span class="pre">DifferenceBuilder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Subscribing-to-Simulation-Output">Subscribing to Simulation Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#4.1.-Specify-the-Topic">4.1. Specify the Topic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#4.2.-Obtain-Measurement-mRIDs">4.2. Obtain Measurement mRIDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#4.3.-Structure-of-Simulation-Output-Message">4.3. Structure of Simulation Output Message</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#4.4.-Subscribe-using-a-Function-Definition">4.4. Subscribe using a Function Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#4.5.-Subscribe-using-a-Class-Definition">4.5. Subscribe using a Class Definition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#This-class-definition-is-also-the-core-code-block-of-your-application!"><em>This class definition is also the core code block of your application!</em></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#4.6.-Using-the-GridAPPSD-Python-Simulation-Library-Shortcuts">4.6. Using the GridAPPSD-Python Simulation Library Shortcuts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#4.7.-Comparison-of-Approaches">4.7. Comparison of Approaches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3.7--Lesson-3.7--Using-the-Timeseries-API.html">Timeseries API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../applications/restoration-WSU/source/index.html">Resilient Restoration (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/VVO-WSU/README.html">Volt-Var Optimization (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/DER-dispatch-NREL/README.html">DER Dispatch (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/solar-forecast-NREL/README.html">Solar Forecasting (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/grid-forecast-NREL/README.html">Grid Forecasting (NREL)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../services/dnp3/source/index.html">GridAPPS-D DNP3 Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/sensor-simulator/source/index.html">GridAPPS-D Sensor Simulator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/voltage-violation/README.html">GridAPPS-D Voltage Violation Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/state-estimator/README.html">GridAPPS-D State Estimator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/alarms/README.html">GridAPPS-D Alarm Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GridAPPS-D</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Publishing and Subscribing with the Simulation API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api_usage/3.6--Lesson-3.6--Controlling-Simulation-API.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Publishing-and-Subscribing-with-the-Simulation-API">
+<h1>Publishing and Subscribing with the Simulation API<a class="headerlink" href="#Publishing-and-Subscribing-with-the-Simulation-API" title="Permalink to this headline">¶</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Establish connection to GridAPPS-D Platform:</span>
+<span class="kn">from</span> <span class="nn">gridappsd</span> <span class="kn">import</span> <span class="n">GridAPPSD</span>
+
+<span class="n">viz_simulation_id</span> <span class="o">=</span> <span class="s2">&quot;paste id here&quot;</span>
+
+<span class="n">model_mrid</span> <span class="o">=</span> <span class="s2">&quot;_C1C3E687-6FFD-C753-582B-632A27E28507&quot;</span>
+
+<span class="n">gapps</span> <span class="o">=</span> <span class="n">GridAPPSD</span><span class="p">(</span><span class="n">viz_simulation_id</span><span class="p">,</span> <span class="s2">&quot;(&#39;localhost&#39;, 61613)&quot;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s1">&#39;system&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;manager&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="Introduction-to-the-Simulation-API">
+<h2>Introduction to the Simulation API<a class="headerlink" href="#Introduction-to-the-Simulation-API" title="Permalink to this headline">¶</a></h2>
+<p>The Simulation API is used for all actions related to a power system simulation. It is used to start, pause, restart, and stop a simulation from the command line or inside an application. It is all used to subscribe to measurements of equipment (such as line flows, loads, and DG setpoints) and the statuses of switches, capacitors, transformer taps, etc. It is also used to publish equipment control and other simulation input commands.</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="Using-the-Simulation-API">
+<h2>Using the Simulation API<a class="headerlink" href="#Using-the-Simulation-API" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="2.1.-Specifying-the-Topic">
+<h3>2.1. Specifying the Topic<a class="headerlink" href="#2.1.-Specifying-the-Topic" title="Permalink to this headline">¶</a></h3>
+<p>In the previous lessons all the queries passed to other APIs all used static <code class="docutils literal notranslate"><span class="pre">/queue/</span></code> channels to pass API calls to the GOSS message bus and the GridAPPS-D Platform.</p>
+<p>However, the Simulation API is used to communicate with a broad range of subscribers. The list of topics covered by the Simulation API cover both static <code class="docutils literal notranslate"><span class="pre">/queue/</span></code> and dynamic <code class="docutils literal notranslate"><span class="pre">/topic/</span></code> communication channel names.</p>
+<p>Extreme care is needed to use the correct topic. For a review of GridAPPS-D topics, see <a class="reference external" href="Lesson%201.4.%20GridAPPS-D%20Topics.ipynb">Lesson 1.4.</a></p>
+<p>The correct topic for each Simulation API call will be provided in the corresponding section for each API task below.</p>
+</div>
+<div class="section" id="2.2.-Structure-of-a-Simulation-Message">
+<h3>2.2. Structure of a Simulation Message<a class="headerlink" href="#2.2.-Structure-of-a-Simulation-Message" title="Permalink to this headline">¶</a></h3>
+<p>Due to the wide range of tasks accomplished by the Simualtion API, there is no single message format that is used across all API Calls.</p>
+<p>Each message takes the form of a python dictionary or equivalent JSON script wrapped as a python string.</p>
+<p>The structure of each Simulation API call message will be provided in the corresponding section for each API task below.</p>
+<p><a class="reference external" href="#Table-of-Contents">Return to Top</a></p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.-Publishing-to-Simulation-Input">
+<h2>3. Publishing to Simulation Input<a class="headerlink" href="#3.-Publishing-to-Simulation-Input" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="3.1.-Topic-to-Publish-to-Simulation-Input">
+<h3>3.1. Topic to Publish to Simulation Input<a class="headerlink" href="#3.1.-Topic-to-Publish-to-Simulation-Input" title="Permalink to this headline">¶</a></h3>
+<p>This is a dynamic <code class="docutils literal notranslate"><span class="pre">/topic/</span></code> communication channel that is best implemented by importing the GriAPPSD-Python library function for generating the correct topic.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">gridappsd.topics</span> <span class="pre">import</span> <span class="pre">simulation_input_topic</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input_topic</span> <span class="pre">=</span> <span class="pre">simulation_input_topic(simulation_id)</span></code></p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">gridappsd.topics</span> <span class="kn">import</span> <span class="n">simulation_input_topic</span>
+
+<span class="n">input_topic</span> <span class="o">=</span> <span class="n">simulation_input_topic</span><span class="p">(</span><span class="n">viz_simulation_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="3.2.-Obtain-Equipment-Control-mRIDs">
+<h3>3.2. Obtain Equipment Control mRIDs<a class="headerlink" href="#3.2.-Obtain-Equipment-Control-mRIDs" title="Permalink to this headline">¶</a></h3>
+<p>The mRIDs for controlling equipment are generally the same as those obtained using the <code class="docutils literal notranslate"><span class="pre">QUERY_OBJECT_TYPES</span></code> key with the PowerGrid Models API, which was covered in <a class="reference external" href="Lesson%202.2.%20PowerGrid%20Models%20API%20-%20Using%20JSON%20Queries.ipynb#4.4.-Query-for-Object-Dictionary">Lesson 2.2, Section 4.4</a>.</p>
+<p>However, the control attributes for each class of equipment in CIM use a different naming convention than those for the object types. Below is a list of <code class="docutils literal notranslate"><span class="pre">&quot;objectType&quot;</span></code> used to query for mRIDs and the associated control attribute used in a difference message for each category of power system equipment:</p>
+<ul class="simple">
+<li><p><strong>Switches</strong></p>
+<ul>
+<li><p>CIM Class Key: <code class="docutils literal notranslate"><span class="pre">&quot;objectType&quot;:</span> <span class="pre">&quot;LoadBreakSwitch&quot;</span></code></p></li>
+<li><p>Control Attribute: <code class="docutils literal notranslate"><span class="pre">&quot;attribute&quot;:</span> <span class="pre">&quot;Switch.open&quot;</span></code></p></li>
+<li><p>Values: <code class="docutils literal notranslate"><span class="pre">1</span></code> is open, <code class="docutils literal notranslate"><span class="pre">0</span></code> is closed</p></li>
+</ul>
+</li>
+<li><p><strong>Capacitor Banks:</strong></p>
+<ul>
+<li><p>CIM Class Key: <code class="docutils literal notranslate"><span class="pre">&quot;objectType&quot;:</span> <span class="pre">&quot;LinearShuntCompensator&quot;</span></code></p></li>
+<li><p>Control Attribute: <code class="docutils literal notranslate"><span class="pre">&quot;attribute&quot;:</span> <span class="pre">&quot;ShuntCompensator.sections&quot;</span></code></p></li>
+<li><p>Values: <code class="docutils literal notranslate"><span class="pre">0</span></code> is off/open, <code class="docutils literal notranslate"><span class="pre">1</span></code> is on/closed</p></li>
+</ul>
+</li>
+<li><p><strong>Inverter-based DERs:</strong></p>
+<ul>
+<li><p>CIM Class Key: <code class="docutils literal notranslate"><span class="pre">&quot;objectType&quot;:</span> <span class="pre">&quot;PowerElectronicsConnection&quot;</span></code></p></li>
+<li><p>Control Attribute: <code class="docutils literal notranslate"><span class="pre">&quot;attribute&quot;:</span> <span class="pre">&quot;PowerElectronicsConnection.p&quot;</span></code></p></li>
+<li><p>Control Attribute: <code class="docutils literal notranslate"><span class="pre">&quot;attribute&quot;:</span> <span class="pre">&quot;PowerElectronicsConnection.q&quot;</span></code></p></li>
+<li><p>Values: number in Watts or VArs (not kW)</p></li>
+</ul>
+</li>
+<li><p><strong>Synchronous Rotating (diesel) DGs:</strong></p>
+<ul>
+<li><p>CIM Class Key: <code class="docutils literal notranslate"><span class="pre">&quot;objectType&quot;:</span> <span class="pre">&quot;SynchronousMachine&quot;</span></code></p></li>
+<li><p>Control Attribute: <code class="docutils literal notranslate"><span class="pre">&quot;attribute&quot;:</span> <span class="pre">&quot;RotatingMachine.p&quot;</span></code></p></li>
+<li><p>Control Attribute: <code class="docutils literal notranslate"><span class="pre">&quot;attribute&quot;:</span> <span class="pre">&quot;RotatingMachine.q&quot;</span></code></p></li>
+<li><p>Values: number in Watts or VArs (not kW)</p></li>
+</ul>
+</li>
+<li><p><strong>Regulating Transformer Tap:</strong></p>
+<ul>
+<li><p>CIM Class Key: <code class="docutils literal notranslate"><span class="pre">&quot;objectType&quot;:</span> <span class="pre">&quot;RatioTapChanger&quot;</span></code></p></li>
+<li><p>Control Attribute: <code class="docutils literal notranslate"><span class="pre">&quot;attribute&quot;:</span> <span class="pre">&quot;TapChanger.step&quot;</span></code></p></li>
+<li><p>Values: integer value for tap step</p></li>
+</ul>
+</li>
+</ul>
+<p>Note on releases_2020.09.0: The query for RatioTapChanger is not supported in the PowerGrid Models API at the current time. A custom SPARQL query needs to be done, as illustrated in Lesson 2.3, Section X.XX</p>
+<p>The example below shows a query to obtain the correct mRID for switch SW2 in the IEEE 123 node model:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">gridappsd</span> <span class="kn">import</span> <span class="n">topics</span> <span class="k">as</span> <span class="n">t</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;modelId&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">,</span>
+    <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_OBJECT_DICT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;objectType&quot;</span><span class="p">:</span> <span class="s2">&quot;LoadBreakSwitch&quot;</span>
+<span class="p">}</span>
+
+<span class="n">response_obj</span> <span class="o">=</span> <span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">REQUEST_POWERGRID_DATA</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">switch_dict</span> <span class="o">=</span> <span class="n">response_obj</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+
+<span class="c1"># Filter to get mRID for switch SW2:</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">switch_dict</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">index</span><span class="p">[</span><span class="s2">&quot;IdentifiedObject.name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;sw2&#39;</span><span class="p">:</span>
+        <span class="n">sw_mrid</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="s2">&quot;IdentifiedObject.mRID&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p><a class="reference external" href="#Table-of-Contents">Return to Top</a></p>
+</div>
+<div class="section" id="3.3.-Format-of-a-Difference-Message">
+<h3>3.3. Format of a Difference Message<a class="headerlink" href="#3.3.-Format-of-a-Difference-Message" title="Permalink to this headline">¶</a></h3>
+<p>The general format for a difference message is a python dictionary or equivalent JSON string that specifies the reverse difference and the forward difference, in compliance with the CIM standard:</p>
+<p>The <strong>reverse difference</strong> is the current status / value associated with the control attribute. It is a formatted as a list of dictionary constructs, with each dictionary specifying the equipment mRID associated with the CIM class keys above, the control attribute, and the current value of that control attribute. The list can contain reverse differences for multiple pieces of equipment.</p>
+<p>The <strong>forward difference</strong> is the desired new status / value associated with the control attribute. It is a formatted as a list of dictionary constructs, with each dictionary specifying the equipment mRID associated with the CIM class keys above, the control attribute, and the current value of that control attribute. The list can contain foward differences for multiple pieces of equipment.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>message = {
+  &quot;command&quot;: &quot;update&quot;,
+  &quot;input&quot;: {
+      &quot;simulation_id&quot;: &quot;simulation id as string&quot;,
+      &quot;message&quot;: {
+          &quot;timestamp&quot;: epoch time number,
+          &quot;difference_mrid&quot;: &quot;optional unique mRID for command logs&quot;,
+          &quot;reverse_differences&quot;: [{
+
+                  &quot;object&quot;: &quot;first equipment mRID&quot;,
+                  &quot;attribute&quot;: &quot;control attribute&quot;,
+                  &quot;value&quot;: current value
+              },
+              {
+
+                  &quot;object&quot;: &quot;second equipment mRID&quot;,
+                  &quot;attribute&quot;: &quot;control attribute&quot;,
+                  &quot;value&quot;: current value
+              }
+          ],
+          &quot;forward_differences&quot;: [{
+
+                  &quot;object&quot;: &quot;first equipment mRID&quot;,
+                  &quot;attribute&quot;: &quot;control attribute&quot;,
+                  &quot;value&quot;: new value
+              },
+              {
+
+                  &quot;object&quot;: &quot;second equipment mRID&quot;,
+                  &quot;attribute&quot;: &quot;control attribute&quot;,
+                  &quot;value&quot;: new value
+              }
+              ]
+              }
+      }
+}
+</pre></div>
+</div>
+<p>Note: The GridAPPS-D platform does not validate whether <code class="docutils literal notranslate"><span class="pre">&quot;reverse_differences&quot;:</span></code> has the correct equipment control values for the current time. It is used just for compliance with the CIM standard.</p>
+<p><a class="reference external" href="#Table-of-Contents">Return to Top</a></p>
+</div>
+<div class="section" id="3.4.-Using-GridAPPSD-Python-DifferenceBuilder">
+<h3>3.4. Using GridAPPSD-Python <code class="docutils literal notranslate"><span class="pre">DifferenceBuilder</span></code><a class="headerlink" href="#3.4.-Using-GridAPPSD-Python-DifferenceBuilder" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">DifferenceBuilder</span></code> class is a GridAPPSD-Python tool that can be used to automatically build the difference message with correct formatting.</p>
+<p>First import DifferenceBuilder from the GridAPPSD-Python Library and create an object that will be used to create the desired difference messages.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">gridappsd</span> <span class="kn">import</span> <span class="n">DifferenceBuilder</span>
+
+<span class="n">my_diff_build</span> <span class="o">=</span> <span class="n">DifferenceBuilder</span><span class="p">(</span><span class="n">viz_simulation_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>We then use two methods associated with the DifferenceBuilder object: * <code class="docutils literal notranslate"><span class="pre">.add_difference(self,</span> <span class="pre">object_mrid,</span> <span class="pre">control_attribute,</span> <span class="pre">new_value,</span> <span class="pre">old_value)</span></code> – Generates a correctly formatted difference message. * <code class="docutils literal notranslate"><span class="pre">.get_message()</span></code> – Saves the message as a python dictionary that can be published using gapps.send()</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">my_diff_build</span><span class="o">.</span><span class="n">add_difference</span><span class="p">(</span><span class="n">sw_mrid</span><span class="p">,</span> <span class="s2">&quot;Switch.open&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># Open switch given by sw_mrid</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="n">my_diff_build</span><span class="o">.</span><span class="n">get_message</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>The difference message is then published to the GOSS Message Bus and the Simulation API using the <code class="docutils literal notranslate"><span class="pre">.send()</span></code> method associated with the GridAPPS-D connection object.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">gapps</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">input_topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><a class="reference external" href="#Table-of-Contents">Return to Top</a></p>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="Subscribing-to-Simulation-Output">
+<h2>Subscribing to Simulation Output<a class="headerlink" href="#Subscribing-to-Simulation-Output" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="4.1.-Specify-the-Topic">
+<h2>4.1. Specify the Topic<a class="headerlink" href="#4.1.-Specify-the-Topic" title="Permalink to this headline">¶</a></h2>
+<p>This is a dynamic <code class="docutils literal notranslate"><span class="pre">/topic/</span></code> communication channel that is best implemented by importing the GriAPPSD-Python library function for generating the correct topic.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">gridappsd.topics</span> <span class="kn">import</span> <span class="n">simulation_output_topic</span>
+
+<span class="n">output_topic</span> <span class="o">=</span> <span class="n">simulation_output_topic</span><span class="p">(</span><span class="n">viz_simulation_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><a class="reference external" href="#Table-of-Contents">Return to Top</a></p>
+</div>
+<div class="section" id="4.2.-Obtain-Measurement-mRIDs">
+<h2>4.2. Obtain Measurement mRIDs<a class="headerlink" href="#4.2.-Obtain-Measurement-mRIDs" title="Permalink to this headline">¶</a></h2>
+<p>The second step is to obtain the correct measurement mRIDs using the PowerGrid Models API, which was covered in <a class="reference external" href="Lesson%202.2.%20PowerGrid%20Models%20API%20-%20Using%20JSON%20Queries.ipynb#5.2.-Querying-for-Measurements">Lesson 2.2, Section 5.2</a>.</p>
+<p>These mRIDs will be needed to parse the simulation output message and filter it to just the desired set of measurements.</p>
+<p>For the example below, we will be interested in only the measurement associated with switches, so we will use the PowerGrid Models API to query for the set of measurements associated with the CIM Class <code class="docutils literal notranslate"><span class="pre">LoadBreakSwitch</span></code>. We then will filter those values to just the mRIDs associated with each type of measurement.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">gridappsd</span> <span class="kn">import</span> <span class="n">topics</span> <span class="k">as</span> <span class="n">t</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;modelId&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">,</span>
+    <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_OBJECT_MEASUREMENTS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;objectType&quot;</span><span class="p">:</span> <span class="s2">&quot;LoadBreakSwitch&quot;</span>
+<span class="p">}</span>
+
+<span class="n">response_obj</span> <span class="o">=</span> <span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">REQUEST_POWERGRID_DATA</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+
+<span class="n">measurements_obj</span> <span class="o">=</span> <span class="n">response_obj</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+
+<span class="n">Pos_obj</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">measurements_obj</span> <span class="k">if</span> <span class="n">k</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Pos&#39;</span><span class="p">]</span>
+<span class="n">PNV_obj</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">measurements_obj</span> <span class="k">if</span> <span class="n">k</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;PNV&#39;</span><span class="p">]</span>
+<span class="n">VA_obj</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">measurements_obj</span> <span class="k">if</span> <span class="n">k</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;VA&#39;</span><span class="p">]</span>
+<span class="n">A_obj</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">measurements_obj</span> <span class="k">if</span> <span class="n">k</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Pos&#39;</span><span class="p">]</span>
+
+</pre></div>
+</div>
+</div>
+<p><a class="reference external" href="#Table-of-Contents">Return to Top</a></p>
+</div>
+<div class="section" id="4.3.-Structure-of-Simulation-Output-Message">
+<h2>4.3. Structure of Simulation Output Message<a class="headerlink" href="#4.3.-Structure-of-Simulation-Output-Message" title="Permalink to this headline">¶</a></h2>
+<p>The general format of the messages received by the Simulation API is a python dictionary with the following key-value pairs:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{         KEY                    VALUE
+    &quot;simulation_id&quot; :           string,
+    &quot;message&quot; : {
+        &quot;timestamp&quot; :           epoch time number,
+        &quot;measurements&quot; : {
+            &quot;meas mrid 1&quot;:{
+                                &quot;measurement_mrid&quot;: &quot;meas mrid 1&quot;
+                                &quot;magnitude&quot;: number,
+                                &quot;angle&quot;: number },
+            &quot;meas mrid 2&quot;:{
+                                &quot;measurement_mrid&quot;: &quot;meas mrid 2&quot;
+                                &quot;magnitude&quot;: number,
+                                &quot;angle&quot;: number },
+                           .
+                           .
+                           .
+            &quot;meas mrid n&quot;:{
+                                &quot;measurement_mrid&quot;: &quot;meas mrid n&quot;
+                                &quot;magnitude&quot;: number,
+                                &quot;angle&quot;: number },
+    }
+}
+</pre></div>
+</div>
+<p>It is the responsibility of the application to parse and filter the message to obtain the desired measurements.</p>
+<p><a class="reference external" href="#Table-of-Contents">Return to Top</a></p>
+</div>
+<div class="section" id="4.4.-Subscribe-using-a-Function-Definition">
+<h2>4.4. Subscribe using a Function Definition<a class="headerlink" href="#4.4.-Subscribe-using-a-Function-Definition" title="Permalink to this headline">¶</a></h2>
+<p>The first approach used to subscribe to measurements is to define a function with the correct set of arguments that is then passed to the <code class="docutils literal notranslate"><span class="pre">.subscribe()</span></code> method associated with the <code class="docutils literal notranslate"><span class="pre">GridAPPPSD()</span></code> object.</p>
+<p>The function does not require a specific name, and is somewhat easier to define and use. However, the arguments of the function need to be named correctly for the GridAPPSD-Python library to process the simulation output correctly.</p>
+<p>The format for the function definition is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def mySubscribeFunction(header, message):
+    # do something when receive a message
+    # parse to get measurments
+    # do something else
+</pre></div>
+</div>
+<p>That function handle is then passed as an argument to the <code class="docutils literal notranslate"><span class="pre">.subscribe(topic,</span> <span class="pre">function_handle)</span></code> method:</p>
+<p><strong>Note on Jupyter Notebook environment:</strong> In the examples below, the Jupyter Notebook environment does not update definitions of the subscription object or function definitions. As a result, it is necessary to restart the notebook kernel. The gapps connection object definition is included again for convenience in executing the notebook code blocks</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Re-establish connection to GridAPPS-D Platform if Notebook Kernel was restarted:</span>
+<span class="kn">from</span> <span class="nn">gridappsd</span> <span class="kn">import</span> <span class="n">GridAPPSD</span><span class="p">,</span> <span class="n">topics</span> <span class="k">as</span> <span class="n">t</span>
+
+<span class="n">viz_simulation_id</span> <span class="o">=</span> <span class="s2">&quot;paste id here&quot;</span>
+<span class="n">model_mrid</span> <span class="o">=</span> <span class="s2">&quot;_C1C3E687-6FFD-C753-582B-632A27E28507&quot;</span>
+
+<span class="n">gapps</span> <span class="o">=</span> <span class="n">GridAPPSD</span><span class="p">(</span><span class="n">viz_simulation_id</span><span class="p">,</span> <span class="s2">&quot;(&#39;localhost&#39;, 61613)&quot;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s1">&#39;system&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;manager&#39;</span><span class="p">)</span>
+
+<span class="c1"># Re-run query for switch measurement mRIDs if Notebook Kernel was restarted</span>
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;modelId&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">,</span>
+    <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_OBJECT_MEASUREMENTS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;objectType&quot;</span><span class="p">:</span> <span class="s2">&quot;LoadBreakSwitch&quot;</span>
+<span class="p">}</span>
+<span class="n">response_obj</span> <span class="o">=</span> <span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">REQUEST_POWERGRID_DATA</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">measurements_obj</span> <span class="o">=</span> <span class="n">response_obj</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>Note that the subscription function definition does not allow any additional parameters to be passed. The only allowed arguments are <code class="docutils literal notranslate"><span class="pre">header</span></code> and <code class="docutils literal notranslate"><span class="pre">message</span></code>. Any other parameters, such as measurement mRIDs will need to be defined as global variables:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">global</span> <span class="n">Pos_obj</span> <span class="c1"># Define global python dictionary of position measurements</span>
+<span class="n">Pos_obj</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">measurements_obj</span> <span class="k">if</span> <span class="n">k</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Pos&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">demoSubscription1</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="c1"># Extract time and measurement values from message</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;timestamp&quot;</span><span class="p">]</span>
+    <span class="n">meas_value</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;measurements&quot;</span><span class="p">]</span>
+
+    <span class="n">meas_mrid</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">meas_value</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="c1">#obtain list of all mrid from message</span>
+
+    <span class="c1"># Filter to measurements with value of zero</span>
+    <span class="n">open_switches</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">Pos_obj</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">index</span><span class="p">[</span><span class="s2">&quot;measid&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">meas_value</span><span class="p">:</span>
+            <span class="n">mrid</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="s2">&quot;measid&quot;</span><span class="p">]</span>
+            <span class="n">power</span> <span class="o">=</span> <span class="n">meas_value</span><span class="p">[</span><span class="n">mrid</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">power</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">open_switches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index</span><span class="p">[</span><span class="s2">&quot;eqname&quot;</span><span class="p">])</span>
+
+    <span class="c1"># Print message to command line</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;............&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of open switches at time&quot;</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">,</span> <span class="s1">&#39; is &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">open_switches</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">gapps</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">output_topic</span><span class="p">,</span> <span class="n">demoSubscription1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><a class="reference external" href="#Table-of-Contents">Return to Top</a></p>
+</div>
+<div class="section" id="4.5.-Subscribe-using-a-Class-Definition">
+<h2>4.5. Subscribe using a Class Definition<a class="headerlink" href="#4.5.-Subscribe-using-a-Class-Definition" title="Permalink to this headline">¶</a></h2>
+<p>The second approach used to subscribe to measurements is to define a class with <code class="docutils literal notranslate"><span class="pre">__init__</span></code> and <code class="docutils literal notranslate"><span class="pre">on_message</span></code> methods.</p>
+<p>These methods specify 1) how your app would initialize variables and attributes at the start of the simulation and 2) how your app behaves when it receives various messages.</p>
+<p><strong>IMPORTANT!</strong> The GridAPPS-D Platform use the exact names and syntax for the methods:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__(self,</span> <span class="pre">simulation_id,</span> <span class="pre">gapps_object,</span> <span class="pre">optional_objects)</span></code> – This method requires the simulation_id and GridAPPS-D connection object. It is also possible add other user-defined arguments, such as measurement mRIDs or other information required by your application.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">on_message(self,</span> <span class="pre">headers,</span> <span class="pre">message)</span></code> – This method allows the class to subscribe to simulation measurements. It also contains the core behavior of your application and how it responds to each type of message.</p></li>
+</ul>
+<p>It is also possible to use the same class definition to subscribe to other topics, such as Simulation Logs. This is done by creating additional user-defined methods and then passing those methods to the <code class="docutils literal notranslate"><span class="pre">.subcribe()</span></code> method associated with the GridAPPS-D connection object. An example of how this is done is provided for subcribing to simulation logs in <a class="reference external" href="Lesson%202.8.%20Logging%20API.ipynb#4.3.-Create-Subscription-Method">Lesson 2.8, Section 4.3</a></p>
+<div class="section" id="This-class-definition-is-also-the-core-code-block-of-your-application!">
+<h3><em>This class definition is also the core code block of your application!</em><a class="headerlink" href="#This-class-definition-is-also-the-core-code-block-of-your-application!" title="Permalink to this headline">¶</a></h3>
+<p>The structure of the class is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>class YourSimulationClassName(object):
+    # Your documentation text here on what app does
+
+    def __init__(self, simulation_id, gapps_obj, meas_obj, your_obj):
+        # Instantiate class with specific initial state
+
+        # Attributes required by Simulation API
+        self._gapps = gapps_obj
+        self._simulation_id = simulation_id
+
+        # Attributes to publish difference measurements
+        self.diff = DifferenceBuilder(simulation_id)
+
+        # Custom attributes for measurements, custom info
+        self.meas_mrid = meas_obj
+        self.your_attribute1 = your_obj[&quot;key1&quot;]
+        self.your_attribute2 = your_obj[&quot;key2&quot;]
+
+    def on_message(self, headers, message):
+        # What app should do when it receives a subscription message
+
+        variable1 = message[&quot;message&quot;][&quot;key1&quot;]
+        variable2 = message[&quot;message&quot;][&quot;key2&quot;]
+
+        # Insert your custom app behavior here
+        if variable1 == foo:
+            bar = my_optimization_result
+
+        # Insert your custom equipment commands here
+        if variable2 == bar:
+            self.diff.add_difference(object_mrid, control_attribute, new_value, old_value)
+
+    def my_custom_method_1(self, headers, message):
+        # Use extra methods to subscribe to other topics, such as simulation logs
+        variable1 = message[&quot;key1&quot;]
+        variable2 = message[&quot;key2&quot;]
+
+    def my_custom_method_2(self, param1, param2):
+        # Use extra methods as desired
+        variable1 = foo
+        variable2 = bar
+</pre></div>
+</div>
+<p><strong>Note on Jupyter Notebook environment:</strong> In the examples below, the Jupyter Notebook environment does not update definitions of the subscription object or function definitions. As a result, it is necessary to restart the notebook kernel. The gapps connection object definition and query for measurement mRIDs is included again for convenience in executing the notebook code blocks</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Re-establish connection to GridAPPS-D Platform if Notebook Kernel was restarted:</span>
+<span class="kn">from</span> <span class="nn">gridappsd</span> <span class="kn">import</span> <span class="n">GridAPPSD</span><span class="p">,</span> <span class="n">topics</span> <span class="k">as</span> <span class="n">t</span>
+
+<span class="n">viz_simulation_id</span> <span class="o">=</span> <span class="s2">&quot;paste id here&quot;</span>
+<span class="n">model_mrid</span> <span class="o">=</span> <span class="s2">&quot;_C1C3E687-6FFD-C753-582B-632A27E28507&quot;</span>
+
+<span class="n">gapps</span> <span class="o">=</span> <span class="n">GridAPPSD</span><span class="p">(</span><span class="n">viz_simulation_id</span><span class="p">,</span> <span class="s2">&quot;(&#39;localhost&#39;, 61613)&quot;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s1">&#39;system&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;manager&#39;</span><span class="p">)</span>
+
+<span class="c1"># Re-run query for switch measurement mRIDs if Notebook Kernel was restarted:</span>
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;modelId&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">,</span>
+    <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_OBJECT_MEASUREMENTS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;objectType&quot;</span><span class="p">:</span> <span class="s2">&quot;LoadBreakSwitch&quot;</span>
+<span class="p">}</span>
+<span class="n">response_obj</span> <span class="o">=</span> <span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">REQUEST_POWERGRID_DATA</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">measurements_obj</span> <span class="o">=</span> <span class="n">response_obj</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">class</span> <span class="nc">ApplicationDemo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="c1"># A simple class for interacting with simulation</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">simulation_id</span><span class="p">,</span> <span class="n">gapps_obj</span><span class="p">,</span> <span class="n">meas_obj</span><span class="p">):</span>
+        <span class="c1"># Subscription callback from GridAPPSD object</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gapps</span> <span class="o">=</span> <span class="n">gapps_obj</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_simulation_id</span> <span class="o">=</span> <span class="n">simulation_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meas_mrid</span> <span class="o">=</span> <span class="n">meas_obj</span>
+
+    <span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+
+        <span class="c1"># Extract time and measurement values from message</span>
+        <span class="n">timestamp</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;timestamp&quot;</span><span class="p">]</span>
+        <span class="n">meas_value</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;measurements&quot;</span><span class="p">]</span>
+
+        <span class="c1"># Filter measurement mRIDs to just position</span>
+        <span class="n">Pos_obj</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">meas_mrid</span> <span class="k">if</span> <span class="n">k</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Pos&#39;</span><span class="p">]</span>
+
+        <span class="c1"># Filter to measurements with value of zero</span>
+        <span class="n">open_switches</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">Pos_obj</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">index</span><span class="p">[</span><span class="s2">&quot;measid&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">meas_value</span><span class="p">:</span>
+                <span class="n">mrid</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="s2">&quot;measid&quot;</span><span class="p">]</span>
+                <span class="n">power</span> <span class="o">=</span> <span class="n">meas_value</span><span class="p">[</span><span class="n">mrid</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">power</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">open_switches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index</span><span class="p">[</span><span class="s2">&quot;eqname&quot;</span><span class="p">])</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;............&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of open switches at time&quot;</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">,</span> <span class="s1">&#39; is &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">open_switches</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<p>After defining the class, we create an object that will be passed to the <code class="docutils literal notranslate"><span class="pre">.subscribe(topic,</span> <span class="pre">object)</span></code> method associated with the GridAPPS-D connection object:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">demo_obj</span> <span class="o">=</span> <span class="n">ApplicationDemo</span><span class="p">(</span><span class="n">viz_simulation_id</span><span class="p">,</span> <span class="n">gapps</span><span class="p">,</span> <span class="n">measurements_obj</span><span class="p">)</span>
+
+<span class="n">gapps</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">subscribe_topic</span><span class="p">,</span> <span class="n">demo_obj</span><span class="p">)</span> <span class="c1"># only measurements simulation_output_topic</span>
+</pre></div>
+</div>
+</div>
+<p>If we wish to subscribe to an additional topic (such as the Simulation Logs, a side communication channel between two different applications, or a communication with a particular service), we can define an additional method in the class (such as my_custom_method_1 in the pseudo-code above) and then pass it to to the <code class="docutils literal notranslate"><span class="pre">.subscribe(topic,</span> <span class="pre">object.method)</span></code> method associated with the GridAPPS-D connection object:</p>
+<p><code class="docutils literal notranslate"><span class="pre">gapps.subscribe(other_topic,</span> <span class="pre">demo_obj.my_custom_method_1)</span></code></p>
+<p><a class="reference external" href="#Table-of-Contents">Return to Top</a></p>
+</div>
+</div>
+<div class="section" id="4.6.-Using-the-GridAPPSD-Python-Simulation-Library-Shortcuts">
+<h2>4.6. Using the GridAPPSD-Python Simulation Library Shortcuts<a class="headerlink" href="#4.6.-Using-the-GridAPPSD-Python-Simulation-Library-Shortcuts" title="Permalink to this headline">¶</a></h2>
+<p><strong>Release_2020.09.0 Note:</strong> If the simulation was started from within the application by importing and using the <code class="docutils literal notranslate"><span class="pre">Simulation</span></code> library in GridAPPSD-Python (as shown in <a class="reference external" href="Lesson%202.5.%20Simulation%20API%20-%20Running%20Simulations.ipynb#3.3.-Starting-the-Simulation">Lesson 2.5, Section 3.3</a>), then several shortcut functions can be used. These methods currently cannot interact with a simulation started from the Viz. This functionality will be added in a future release.</p>
+<p>The GridAPPSD-Python library provides several shortcut methods can be used by importing the Simulation library for GridAPPS-D:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">gridappsd</span> <span class="kn">import</span> <span class="n">GridAPPSD</span>
+<span class="kn">from</span> <span class="nn">gridappsd.simulation</span> <span class="kn">import</span> <span class="n">Simulation</span>
+
+<span class="n">gapps</span> <span class="o">=</span> <span class="n">GridAPPSD</span><span class="p">()</span> <span class="c1"># Create GridAPPS-D connection object</span>
+
+<span class="n">run123_config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;Run123NodeFileSimAPI.json&quot;</span><span class="p">))</span> <span class="c1"># Pull simulation config from saved file</span>
+
+<span class="n">simulation_obj</span> <span class="o">=</span> <span class="n">Simulation</span><span class="p">(</span><span class="n">gapps</span><span class="p">,</span> <span class="n">run123_config</span><span class="p">)</span> <span class="c1"># Create Simulation object</span>
+
+<span class="n">simulation_obj</span><span class="o">.</span><span class="n">start_simulation</span><span class="p">()</span> <span class="c1"># Start Simulation</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Successfully started simulation with simulation_id: &quot;</span><span class="p">,</span> <span class="n">simulation_obj</span><span class="o">.</span><span class="n">simulation_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The Simulation library provides four methods that can be used to define how the platform interacts with the simulation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.add_ontimestep_callback(myfunction1)</span></code> – Run the desired function on each timestep</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.add_onmesurement_callback(myfunction2)</span></code> – Run the desired function when a measurement is received. <strong>Note on releases_2020.09.0: method name is misspelled in the library definition!!</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.add_oncomplete_callback(myfunction3)</span></code> – Run the desired function when simulation is</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.add_onstart_callback(myfunction4)</span></code> – Run desired function when simulation is started</p></li>
+</ul>
+<p>Note that the measurement callback method returns just the measurements and timestamps without any of the message formatting used in the messages received by using the <code class="docutils literal notranslate"><span class="pre">gapps.subscribe(output_topic,</span> <span class="pre">object)</span></code> approach.</p>
+<p>To use use these methods, we define a set of functions that determine the behavior of the application for each of the four types of callbacks listed above:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def onmeasurement(sim, timestamp, measurements):
+    # Do something when app receives a measurement
+    # Insert your custom app behavior here
+    if measurements[object_mrid] == foo:
+        bar = my_optimization_result
+
+def oncomplete(sim):
+    # Do something when simulation is complete
+    # example: delete all variables, close files
+</pre></div>
+</div>
+<p><strong>Note on Jupyter Notebook environment:</strong> In the examples below, the Jupyter Notebook environment does not update definitions of the subscription object or function definitions. As a result, it is necessary to restart the notebook kernel. The query to get measurement mRIDS is included again for convenience in executing the notebook code blocks</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Re-run PowerGrid Models API query to get measurement mRIDS if Notebook Kernel was cleared between simulations</span>
+<span class="kn">from</span> <span class="nn">gridappsd</span> <span class="kn">import</span> <span class="n">topics</span> <span class="k">as</span> <span class="n">t</span>
+
+<span class="n">model_mrid</span> <span class="o">=</span> <span class="s2">&quot;_C1C3E687-6FFD-C753-582B-632A27E28507&quot;</span>
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;modelId&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">,</span>
+    <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_OBJECT_MEASUREMENTS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;objectType&quot;</span><span class="p">:</span> <span class="s2">&quot;LoadBreakSwitch&quot;</span>
+<span class="p">}</span>
+<span class="n">response_obj</span> <span class="o">=</span> <span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">REQUEST_POWERGRID_DATA</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">measurements_obj</span> <span class="o">=</span> <span class="n">response_obj</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+<span class="k">global</span> <span class="n">Pos_obj</span>
+<span class="n">Pos_obj</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">measurements_obj</span> <span class="k">if</span> <span class="n">k</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Pos&#39;</span><span class="p">]</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">onmeasurement</span><span class="p">(</span><span class="n">sim</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">,</span> <span class="n">measurements</span><span class="p">):</span>
+    <span class="c1"># Filter to measurements with value of zero</span>
+    <span class="n">open_switches</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">Pos_obj</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">index</span><span class="p">[</span><span class="s2">&quot;measid&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">measurements</span><span class="p">:</span>
+            <span class="n">mrid</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="s2">&quot;measid&quot;</span><span class="p">]</span>
+            <span class="n">power</span> <span class="o">=</span> <span class="n">measurements</span><span class="p">[</span><span class="n">mrid</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">power</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">open_switches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index</span><span class="p">[</span><span class="s2">&quot;eqname&quot;</span><span class="p">])</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;............&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of open switches at time&quot;</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">,</span> <span class="s1">&#39; is &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">open_switches</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">simulation_obj</span><span class="o">.</span><span class="n">add_onmesurement_callback</span><span class="p">(</span><span class="n">onmeasurement</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><a class="reference external" href="#Table-of-Contents">Return to Top</a></p>
+</div>
+<div class="section" id="4.7.-Comparison-of-Approaches">
+<h2>4.7. Comparison of Approaches<a class="headerlink" href="#4.7.-Comparison-of-Approaches" title="Permalink to this headline">¶</a></h2>
+<p>Each approach has its advantages and disadvantages.</p>
+<ul class="simple">
+<li><p>The function-based approach is simpler and easier to implement. However, any parameters obtained from other APIs or methods to be used inside the function currently need to be defined as global variables.</p></li>
+<li><p>The class-based approach is more complex, but also more powerful. It provides greater flexibility in creating additional methods, arguments, etc.</p></li>
+<li><p>The Simulation Library-based approach is easiest, but only works currently for simulations started using the simulation_obj.start_simulation() method.</p></li>
+</ul>
+<p>The choice of which approach is used depends on the personal preferences of the application developer.</p>
+<p><a class="reference external" href="#Table-of-Contents">Return to Top</a></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="3.7--Lesson-3.7--Using-the-Timeseries-API.html" class="btn btn-neutral float-right" title="Timeseries API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="3.5--Lesson-3.5--Creating-Running-Simulation-API.html" class="btn btn-neutral float-left" title="Running Simulations with the Simulation API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2017-2021, Battelle Memorial Institute, All rights reserved..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

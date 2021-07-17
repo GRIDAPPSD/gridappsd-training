@@ -1,0 +1,773 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>API Message Structure &mdash; GridAPPS-D 2021_05.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using the PowerGrid Models API" href="3.3--Lesson-3.3--Using-the-PowerGrid-Models-API.html" />
+    <link rel="prev" title="API Communication Channels" href="3.1--Lesson-3.1--API-Communication-Channels.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GridAPPS-D
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation &amp; Runtime</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/windows10/index.html">Windows 10 Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/1.4--Lesson-1.4--Running-GridAPPS-D.html">Running GridAPPS-D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/1.5--Lesson-1.5--Using-GridAPPS-D-Viz.html">Using the GridAPPS-D Viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/1.6--Lesson-1.6--Docker-Shortcuts.html">Docker Shortcuts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/1.7--Lesson-1.7--Cloud-Server-Configuration.html">Cloud Server Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.1--Lesson-2.1--Intro-to-GridAPPS-D.html">GridAPPS-D Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.2--Lesson-2.2--GridAPPS-D-Architecture.html">GridAPPS-D Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.3--Lesson-2.3--GridAPPS-D-Python-Library.html">GridAPPS-D Python Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.4--Lesson-2.4--GridAPPS-D-Application-Structure.html">GridAPPS-D Application Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.5--Lesson-2.5--GridAPPS-D-Service-Structure.html">GridAPPS-D Service Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.6--Lesson-2.6--Common-Information-Model.html">Introduction to the Common Information Model</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D API Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="3.1--Lesson-3.1--API-Communication-Channels.html">API Communication Channels</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Message Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Python-Dictionaries-VS-JSON-Strings">Python Dictionaries VS JSON Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Structure-of-a-GridAPPS-D-Message">Structure of a GridAPPS-D Message</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Parsing-Returned-Data">Parsing Returned Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Using-the-STOMP-Client">Using the STOMP Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Specifying-the-Topic">Specifying the Topic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Entering-the-Request-Message">Entering the Request Message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Submitting-a-Request">Submitting a Request</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3.3--Lesson-3.3--Using-the-PowerGrid-Models-API.html">Using the PowerGrid Models API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.4--Lesson-3.4--Using-the-Configuration-File-API.html">Using the Configuration File API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.5--Lesson-3.5--Creating-Running-Simulation-API.html">Running Simulations with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.6--Lesson-3.6--Controlling-Simulation-API.html">Publishing and Subscribing with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.7--Lesson-3.7--Using-the-Timeseries-API.html">Timeseries API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../applications/restoration-WSU/source/index.html">Resilient Restoration (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/VVO-WSU/README.html">Volt-Var Optimization (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/DER-dispatch-NREL/README.html">DER Dispatch (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/solar-forecast-NREL/README.html">Solar Forecasting (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/grid-forecast-NREL/README.html">Grid Forecasting (NREL)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../services/dnp3/source/index.html">GridAPPS-D DNP3 Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/sensor-simulator/source/index.html">GridAPPS-D Sensor Simulator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/voltage-violation/README.html">GridAPPS-D Voltage Violation Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/state-estimator/README.html">GridAPPS-D State Estimator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/alarms/README.html">GridAPPS-D Alarm Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GridAPPS-D</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>API Message Structure</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api_usage/3.2--Lesson-3.2--API-Message-Structure.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="API-Message-Structure">
+<h1>API Message Structure<a class="headerlink" href="#API-Message-Structure" title="Permalink to this headline">¶</a></h1>
+<p>This section introduces the format used for passing messages to the GridAPPS-D API and how to wrap those messages using the GridAPPSD-Python Library.</p>
+<hr class="docutils" />
+<div class="section" id="Python-Dictionaries-VS-JSON-Strings">
+<h2>Python Dictionaries VS JSON Strings<a class="headerlink" href="#Python-Dictionaries-VS-JSON-Strings" title="Permalink to this headline">¶</a></h2>
+<p>One of the confusing aspects of passing messages to and from the GridAPPS-D Platform and APIs is the difference between Python Dictionaries and JSON scripts, which look identical.</p>
+<p><strong>JSON</strong> is a <em>serialization format</em>. That is, JSON is a way of representing structured data in the form of a textual string.</p>
+<p>A <strong>Python Dictionary</strong> is a <em>data structure</em>. That is, it is a way of storing data in memory that provides certain abilities to the code: in the case of dictionaries, those abilities include rapid lookup and enumeration.</p>
+<p>It is possible to convert between the two by importing the JSON library: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">json</span></code>. Full documentation of JSON-Python interoperability and usage is available in <a class="reference external" href="https://docs.python.org/3/library/json.html">Python Docs</a>.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">json.dumps()</span></code> method to serialize a dictionary as a JSON string. Use the <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code> to import a JSON file and convert it into a dictionary. But the two are not the same: dictionaries are for working with data in your program, and JSON is for storing it or sending it around between programs.</p>
+<p>With the GridAPPSD-Python Library, it is possible to pass query arguments as either a python dictionary or as a string. Both approaches will provide the same results.</p>
+<p><strong>1) Format API call message as a dictionary</strong></p>
+<p>This is the most direct approach, and will be used most often throughout this set of notebook tutorials. The format and structure of the python dictionary is explained in the next section.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">model_mrid</span> <span class="o">=</span> <span class="s2">&quot;_49AD8E07-3BF9-A4E2-CB8F-C3722F837B62&quot;</span> <span class="c1"># IEEE 13 Node used for all example queries</span>
+
+<span class="c1"># Format message as python dictionary</span>
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_OBJECT_IDS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;modelId&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">,</span>
+    <span class="s2">&quot;objectType&quot;</span><span class="p">:</span> <span class="s2">&quot;LoadBreakSwitch&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Specify correct topic</span>
+<span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.data.powergridmodel&quot;</span>
+
+<span class="c1"># Pass API Call to GridAPPS-D Platform</span>
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>2) Format API call message as a string</strong></p>
+<p>This approach uses quotations (either <code class="docutils literal notranslate"><span class="pre">'</span>&#160; <span class="pre">'</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;</span>&#160;&#160; <span class="pre">&quot;</span></code>) to wrap the API call (identical to the python dictionary) as JSON-formatted text, concatenated into a string.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">model_mrid</span> <span class="o">=</span> <span class="s2">&quot;_49AD8E07-3BF9-A4E2-CB8F-C3722F837B62&quot;</span> <span class="c1"># IEEE 13 Node used for all example queries</span>
+
+<span class="c1"># Format message as JSON text wrapped as a string</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">{</span>
+<span class="s2">    &quot;requestType&quot;: &quot;QUERY_OBJECT_IDS&quot;,</span>
+<span class="s2">    &quot;resultFormat&quot;: &quot;JSON&quot;,</span>
+<span class="s2">    &quot;modelId&quot;: &quot;</span><span class="si">%s</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;objectType&quot;: &quot;LoadBreakSwitch&quot;</span>
+<span class="s2">}</span>
+<span class="s2">&quot;&quot;&quot;</span> <span class="o">%</span> <span class="n">model_mrid</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Specify correct topic</span>
+<span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.data.powergridmodel&quot;</span>
+
+<span class="c1"># Pass API Call to GridAPPS-D Platform</span>
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="Structure-of-a-GridAPPS-D-Message">
+<h2>Structure of a GridAPPS-D Message<a class="headerlink" href="#Structure-of-a-GridAPPS-D-Message" title="Permalink to this headline">¶</a></h2>
+<p>The structure of messages in GridAPPS-D follows that of a Python Dictionary using a data structure that is more generally known as an associative array. An excellent tutorial on advanced usage of the python dictionary structure is available on <a class="reference external" href="https://realpython.com/python-dicts/">Real Python</a>.</p>
+<p>A dictionary consists of a collection of <strong>key-value pairs</strong>. Each key-value pair maps the <strong>key</strong> to its associated <strong>value</strong>.</p>
+<ul class="simple">
+<li><p>A dictionary is defined by enclosing a comma-separated list of key-value pairs in curly braces ( <strong>{ }</strong> ).</p></li>
+<li><p>A colon ( <strong>:</strong> ) separates each key from its associated value.</p></li>
+<li><p>Square brackets ( <strong>[ ]</strong> ) are used for a list of values associated to a particular key.</p></li>
+<li><p>Additional curly braces ( <strong>{ }</strong> ) can be used for cases where multiple key-value pairs (e.g. equipment setpoints) are associated with a particular key (e.g. an equipment class).</p></li>
+</ul>
+<p>The general dictionary format used for GridAPPS-D messages is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>message = {
+    &quot;key1&quot;: &quot;value1&quot;,
+    &quot;key2&quot;: [&quot;value21&quot;, &quot;value22&quot;],
+    &quot;key3&quot;: {
+        &quot;key31&quot;: &quot;value31&quot;,
+        &quot;key32&quot;: &quot;value32&quot;
+        },
+      .
+      .
+      .
+    &quot;key&quot;: &quot;value&quot;
+}
+</pre></div>
+</div>
+<p><strong>Important</strong>: Be sure to pay attention to placement of commas ( <strong>,</strong> ) at the end of each line. Commas are placed at the end of each line <em>except</em> the last line. Incorrect comma placement will result in a syntax exception.</p>
+<p>The particular set of key-value pairs for each GridAPPS-D API is covered in detail in Lessons 2.1 through 2.7.</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="Parsing-Returned-Data">
+<h2>Parsing Returned Data<a class="headerlink" href="#Parsing-Returned-Data" title="Permalink to this headline">¶</a></h2>
+<p>After passing an API call, the GridAPPS-D Platform returns a JSON string that is subsequently converted into a python dictionary by the GridAPPSD-Python Library. This section will outline how to parse the data returned.</p>
+<p>For this example, we are going to use a simple query from the PowerGrid Model API (covered in Lesson 2.2.) to obtain the details of a piece of equipment using its unique mRID (introduced in the next lesson).</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">model_mrid</span> <span class="o">=</span> <span class="s2">&quot;_49AD8E07-3BF9-A4E2-CB8F-C3722F837B62&quot;</span> <span class="c1"># IEEE 13 Node used for all example queries</span>
+
+<span class="c1"># Specify correct topic</span>
+<span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.data.powergridmodel&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;modelId&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">,</span>
+        <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_OBJECT_DICT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;objectType&quot;</span><span class="p">:</span> <span class="s2">&quot;LinearShuntCompensator&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># Pass API Call to GridAPPS-D Platform</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;foo.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">out</span><span class="p">:</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<p>The structure of the python dictionary returned by the API is three key-value pairs for the keys of</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'data'</span></code> – this is the data you requested</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'responseComplete'</span></code> – true or false</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'id'</span></code> – unique id associated with the API response dictionary</p></li>
+</ul>
+<p>A typical API response will the structure below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>response = {
+    &#39;data&#39;: [{&#39;key1&#39;: &#39;value1&#39;,
+        &#39;key2&#39;: [&#39;value21&#39;, &#39;value22&#39;]},
+        {&#39;key1&#39;: &#39;value1&#39;,
+         &#39;key2&#39;: [&#39;value21&#39;, &#39;value22&#39;]}],
+     &#39;responseComplete&#39;: True,
+     &#39;id&#39;: &#39;12345678&#39;
+}
+</pre></div>
+</div>
+<p>The first step is to filter the dictionary to just the data requested: <code class="docutils literal notranslate"><span class="pre">response['data']</span></code>. The result will be a list object.</p>
+<p>Note: <em>some</em> API calls will also need to additional filters of <code class="docutils literal notranslate"><span class="pre">[results][bindings]</span></code>. The STOMP Client presented in the next section is very helpful for previewing the structure of the dictionary returned by GridAPPS-D.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">response</span> <span class="o">=</span> <span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<span class="n">response_obj</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>As <code class="docutils literal notranslate"><span class="pre">response_obj</span></code> is of the python type <code class="docutils literal notranslate"><span class="pre">list</span></code> rather than <code class="docutils literal notranslate"><span class="pre">dict</span></code>, it is necessary to use numerical indices instead of keys to access the values. A simple <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is very helpful here.</p>
+<p>In this example, we want to filter the results to create a list that contains just the name and mRID of the capacitor banks in the model.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">capacitors</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">response_obj</span><span class="p">:</span>
+    <span class="n">cap_name</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="s1">&#39;IdentifiedObject.name&#39;</span><span class="p">]</span>
+    <span class="n">cap_mrid</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="n">cap_name</span><span class="p">,</span>
+                   <span class="n">mrid</span> <span class="o">=</span> <span class="n">cap_mrid</span><span class="p">)</span>
+    <span class="n">capacitors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>[<a class="reference external" href="#Table-of-Contents">Return to Top</a>]</p>
+</div>
+<div class="section" id="Using-the-STOMP-Client">
+<h2>Using the STOMP Client<a class="headerlink" href="#Using-the-STOMP-Client" title="Permalink to this headline">¶</a></h2>
+<p>The GridAPPS-D Visualization App includes a feature to pass API call messages through the GUI using the Simple Text Oriented Messaging Protocol (STOMP).</p>
+<p>Open the Viz App, which is hosted on <a class="reference external" href="http://localhost:8080/">localhost:8080</a> (note: cloud-hosted installations will use the IP address of the server).</p>
+<p>Select <strong>Stomp Client</strong> from the main drop-down menu:</p>
+<p><img alt="menus" src="../_images/menus.png" /></p>
+<p><img alt="select-stomp" src="../_images/menu_select_stomp.png" /></p>
+<p>This opens the STOMP Client, which can be used to pass a message to any of the GridAPPS-D APIs to preview results or debug the API call message.</p>
+<p><img alt="stomp-client" src="../_images/STOMP_client.png" /></p>
+<div class="section" id="Specifying-the-Topic">
+<h3>Specifying the Topic<a class="headerlink" href="#Specifying-the-Topic" title="Permalink to this headline">¶</a></h3>
+<p>The appropriate GridAPPS-D topic needs to be copied and pasted into the <strong>Destination Topic</strong> box at the top of the window. The topic specifies on which channel the STOMP Client will communicate with the GridAPPS-D Platform and to which API the message needs to be delivered.</p>
+<p>A complete list of GridAPPS-D topics was provided in <a class="reference internal" href="3.1--Lesson-3.1--API-Communication-Channels.html"><span class="doc">API Communication Channels</span></a> and will also be provided in context for each of the API calls detailed in subsequent lessons.</p>
+<p><strong>IMPORTANT:</strong> Remember to remove the python wrapping quotations at the beginning and end of the topic. For example, if the python-wrapped topic was</p>
+<p><code class="docutils literal notranslate"><span class="pre">topic</span> <span class="pre">=</span> <span class="pre">&quot;goss.gridappsd.process.request.data.powergridmodel&quot;</span> <span class="pre">#</span> <span class="pre">Specify</span> <span class="pre">the</span> <span class="pre">topic</span></code></p>
+<p>then the topic that is entered in the Stomp Client <strong>Destination Topic</strong> box is simply</p>
+<p><code class="docutils literal notranslate"><span class="pre">goss.gridappsd.process.request.data.powergridmodel</span></code></p>
+<p><strong>IMPORTANT:</strong> The GridAPPSD-Python shortcut functions will not work in the STOMP Client. The full text string versions must be used.</p>
+</div>
+<div class="section" id="Entering-the-Request-Message">
+<h3>Entering the Request Message<a class="headerlink" href="#Entering-the-Request-Message" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Request</strong> box accepts an API call message identical to those provided in these notebook lessons.</p>
+<p><strong>IMPORTANT:</strong> Remember to remove the python wrapping at the beginning and end of the message. For example, if the python-wrapped message was</p>
+<p><code class="docutils literal notranslate"><span class="pre">message</span> <span class="pre">=</span> <span class="pre">&quot;{&quot;requestType&quot;:</span> <span class="pre">&quot;QUERY_MODEL_NAMES&quot;,</span> <span class="pre">&quot;resultFormat&quot;:</span> <span class="pre">&quot;JSON&quot;}&quot;</span> <span class="pre">#</span> <span class="pre">Sample</span> <span class="pre">PowerGrid</span> <span class="pre">Model</span> <span class="pre">API</span> <span class="pre">Call</span></code></p>
+<p>then the message that is entered in the Stomp Client <strong>Request</strong> box is simply</p>
+<p><code class="docutils literal notranslate"><span class="pre">{&quot;requestType&quot;:</span> <span class="pre">&quot;QUERY_MODEL_NAMES&quot;,</span> <span class="pre">&quot;resultFormat&quot;:</span> <span class="pre">&quot;JSON&quot;}</span></code></p>
+<p>The STOMP client will automatically flag any errors in the JSON message.</p>
+</div>
+<div class="section" id="Submitting-a-Request">
+<h3>Submitting a Request<a class="headerlink" href="#Submitting-a-Request" title="Permalink to this headline">¶</a></h3>
+<p>After entering the topic and message, click <strong>Send request</strong> to send the API call to the GridAPPS-D Platform. The response will be displayed in the box below.</p>
+<p><img alt="stomp-output" src="../_images/STOMP_output.png" /></p>
+<p>It can be seen that the response from the STOMP Client is identical to that obtained by passing the same topic and message using the GridAPPSD-Python Library:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">gridappsd</span> <span class="kn">import</span> <span class="n">GridAPPSD</span> <span class="c1"># Import Libraries</span>
+<span class="n">gapps</span> <span class="o">=</span> <span class="n">GridAPPSD</span><span class="p">(</span><span class="s2">&quot;(&#39;localhost&#39;, 61613)&quot;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s1">&#39;system&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;manager&#39;</span><span class="p">)</span> <span class="c1"># Connect to Platform</span>
+<span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.data.powergridmodel&quot;</span> <span class="c1"># Specify correct Topic</span>
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;requestType&quot;</span><span class="p">:</span> <span class="s2">&quot;QUERY_MODEL_NAMES&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;resultFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON&quot;</span>
+<span class="p">}</span> <span class="c1"># Sample PowerGrid Model API message</span>
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span> <span class="c1"># Pass API call to Platform</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a href="#id1"><span class="problematic" id="id2">|GridAPPS-D\_narrow.png|</span></a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="3.3--Lesson-3.3--Using-the-PowerGrid-Models-API.html" class="btn btn-neutral float-right" title="Using the PowerGrid Models API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="3.1--Lesson-3.1--API-Communication-Channels.html" class="btn btn-neutral float-left" title="API Communication Channels" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2017-2021, Battelle Memorial Institute, All rights reserved..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

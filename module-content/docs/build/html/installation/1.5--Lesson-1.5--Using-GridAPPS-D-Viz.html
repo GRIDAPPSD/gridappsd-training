@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Using the GridAPPS-D Viz &mdash; GridAPPS-D 2021_05.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Docker Shortcuts" href="1.6--Lesson-1.6--Docker-Shortcuts.html" />
+    <link rel="prev" title="Running GridAPPS-D" href="1.4--Lesson-1.4--Running-GridAPPS-D.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GridAPPS-D
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation &amp; Runtime</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="windows10/index.html">Windows 10 Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.4--Lesson-1.4--Running-GridAPPS-D.html">Running GridAPPS-D</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using the GridAPPS-D Viz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Accessing-the-GridAPPS-D-Viz">Accessing the GridAPPS-D Viz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Creating-a-Simulation">Creating a Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Power-System-Configuration">Power System Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Simulation-Configuration">Simulation Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Application-Configuration">Application Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Test-Manager-Configuration">Test Manager Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Communication-outages">Communication outages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Equipment-Faults">Equipment Faults</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Custom-Event-Files">Custom Event Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2.5.-Service-Configuration">2.5. Service Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Running-a-Simulation-with-VIZ">Running a Simulation with VIZ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Simulation-Tab">Simulation Tab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Starting,-Pausing,-and-Stopping-a-Simulation">Starting, Pausing, and Stopping a Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Viewing-equipment-names">Viewing equipment names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Opening-and-Closing-Switches">Opening and Closing Switches</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Alarm-Tab">Alarm Tab</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="1.6--Lesson-1.6--Docker-Shortcuts.html">Docker Shortcuts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.7--Lesson-1.7--Cloud-Server-Configuration.html">Cloud Server Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.1--Lesson-2.1--Intro-to-GridAPPS-D.html">GridAPPS-D Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.2--Lesson-2.2--GridAPPS-D-Architecture.html">GridAPPS-D Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.3--Lesson-2.3--GridAPPS-D-Python-Library.html">GridAPPS-D Python Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.4--Lesson-2.4--GridAPPS-D-Application-Structure.html">GridAPPS-D Application Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.5--Lesson-2.5--GridAPPS-D-Service-Structure.html">GridAPPS-D Service Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.6--Lesson-2.6--Common-Information-Model.html">Introduction to the Common Information Model</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D API Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api_usage/3.1--Lesson-3.1--API-Communication-Channels.html">API Communication Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_usage/3.2--Lesson-3.2--API-Message-Structure.html">API Message Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_usage/3.3--Lesson-3.3--Using-the-PowerGrid-Models-API.html">Using the PowerGrid Models API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_usage/3.4--Lesson-3.4--Using-the-Configuration-File-API.html">Using the Configuration File API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_usage/3.5--Lesson-3.5--Creating-Running-Simulation-API.html">Running Simulations with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_usage/3.6--Lesson-3.6--Controlling-Simulation-API.html">Publishing and Subscribing with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_usage/3.7--Lesson-3.7--Using-the-Timeseries-API.html">Timeseries API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../applications/restoration-WSU/source/index.html">Resilient Restoration (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/VVO-WSU/README.html">Volt-Var Optimization (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/DER-dispatch-NREL/README.html">DER Dispatch (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/solar-forecast-NREL/README.html">Solar Forecasting (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/grid-forecast-NREL/README.html">Grid Forecasting (NREL)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../services/dnp3/source/index.html">GridAPPS-D DNP3 Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/sensor-simulator/source/index.html">GridAPPS-D Sensor Simulator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/voltage-violation/README.html">GridAPPS-D Voltage Violation Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/state-estimator/README.html">GridAPPS-D State Estimator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/alarms/README.html">GridAPPS-D Alarm Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GridAPPS-D</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Using the GridAPPS-D Viz</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/installation/1.5--Lesson-1.5--Using-GridAPPS-D-Viz.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Using-the-GridAPPS-D-Viz">
+<h1>Using the GridAPPS-D Viz<a class="headerlink" href="#Using-the-GridAPPS-D-Viz" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Accessing-the-GridAPPS-D-Viz">
+<h2>Accessing the GridAPPS-D Viz<a class="headerlink" href="#Accessing-the-GridAPPS-D-Viz" title="Permalink to this headline">¶</a></h2>
+<p>Start the Platform using the <code class="docutils literal notranslate"><span class="pre">./run.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">./run-gridappsd.sh</span></code> scripts as explained in <a class="reference external" href="1.4--Lesson-1.4-Running-GridAPPS-D.ipynb">Running GridAPPS-D</a>. After the Platform is running, open your browser and navigate to <a class="reference external" href="http://localhost:8080">localhost:8080</a> for desktop installations and <code class="docutils literal notranslate"><span class="pre">your.server.ip.address:8080</span></code> for cloud installations.</p>
+<p>You should see a splash screen with login options for various user roles. The default username and password combinations are available in the <a class="reference external" href="https://github.com/GRIDAPPSD/GOSS-GridAPPS-D/blob/master/gov.pnnl.goss.gridappsd/conf/pnnl.goss.core.security.userfile.cfg">pnnl.goss.core.security.userfile.cfg</a> configuration file.</p>
+<p><img alt="splash-screen" src="../_images/01_login.png" /></p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">./run-gridappsd.sh</span></code> script inside the GridAPPS-D docker container has not been started or has been interrupted, you will see a server connection error when attempting to log in:</p>
+<p><img alt="login-error" src="../_images/02_login_error.png" /></p>
+<p>After logging in, there are two menus in the top left and right corners. On the left is the main menu for using the VIZ features. On the right is the settings menu.</p>
+<p><img alt="menus" src="../_images/menus1.png" /></p>
+<p>The settings menu contains options for changing the color theme from dark to light, the time zone used, and level of logging detail.</p>
+<p><img alt="settings-menu" src="../_images/settings_menu.png" /></p>
+<p><img alt="light-theme" src="../_images/light_theme.png" /></p>
+<p>On the left is the main menu, which has options for creating simulations, comparing simulations, exploring the databases, and passing API calls through the STOMP client. Each of these will be explained in detail below.</p>
+<p><img alt="main-menu" src="../_images/main_menu.png" /></p>
+<hr class="docutils" />
+</div>
+<div class="section" id="Creating-a-Simulation">
+<h2>Creating a Simulation<a class="headerlink" href="#Creating-a-Simulation" title="Permalink to this headline">¶</a></h2>
+<p>To create a simulation from the GridAPPS-D VIZ, select <code class="docutils literal notranslate"><span class="pre">Configure</span> <span class="pre">New</span> <span class="pre">Simulation</span></code> from the main menu:</p>
+<p><img alt="config-new-sim" src="../_images/config_sim_1.png" /></p>
+<hr class="docutils" />
+<div class="section" id="Power-System-Configuration">
+<h3>Power System Configuration<a class="headerlink" href="#Power-System-Configuration" title="Permalink to this headline">¶</a></h3>
+<p>The first tab provides a set of menu options to select the desired distribution feeder on which the simulation will run. Detailed descriptions of the available test feeders inlcuded by default are provided in <a class="reference internal" href="../api_usage/3.3--Lesson-3.3--Using-the-PowerGrid-Models-API.html#7.-Available-Models-in-Default-Installation"><span class="std std-ref">Available Models</span></a>.</p>
+<p><img alt="select-feeder" src="../_images/config_system_config.png" /></p>
+<hr class="docutils" />
+</div>
+<div class="section" id="Simulation-Configuration">
+<h3>Simulation Configuration<a class="headerlink" href="#Simulation-Configuration" title="Permalink to this headline">¶</a></h3>
+<p>The next tab provides several options for specifying</p>
+<ul class="simple">
+<li><p>simulation start time (which determines weather and load data used)</p></li>
+<li><p>simulation duration in seconds</p></li>
+<li><p>simulator used</p></li>
+<li><p>real-time</p>
+<ul>
+<li><p>If checked, 1 sec of clock time equals 1 sec of simulation time</p></li>
+<li><p>If unchecked, the simulation runs as fast as possible (used for generating AI training data)</p></li>
+</ul>
+</li>
+<li><p>simulation name</p></li>
+<li><p>model configuration</p></li>
+</ul>
+<p>The model creation configuration textbox enables modification of the model from the default configuration, inlcuding opening/closing switches, changing DER setpoints, and changing the load profile. Details of the syntax for custom configurations is explained in <a class="reference internal" href="../api_usage/3.5--Lesson-3.5--Creating-Running-Simulation-API.html#simulation_config"><span class="std std-ref">simulation_config settings</span></a></p>
+<p><img alt="simulation-config" src="../_images/config_sim_config.png" /></p>
+<hr class="docutils" />
+</div>
+<div class="section" id="Application-Configuration">
+<h3>Application Configuration<a class="headerlink" href="#Application-Configuration" title="Permalink to this headline">¶</a></h3>
+<p>The application configuration tab enables selection of which app should run during the simulation. The GridAPPS-D VIZ allows for selection of just one app at a time. Two or more apps may be run simultaneously by starting the simulation through the Simulation API and specifying the desired apps using the <a class="reference internal" href="../api_usage/3.5--Lesson-3.5--Creating-Running-Simulation-API.html#application_config"><span class="std std-ref">application_config key</span></a></p>
+<p><img alt="app-config" src="../_images/config_app_config.png" /></p>
+<hr class="docutils" />
+</div>
+<div class="section" id="Test-Manager-Configuration">
+<h3>Test Manager Configuration<a class="headerlink" href="#Test-Manager-Configuration" title="Permalink to this headline">¶</a></h3>
+<p>The Test Manager is used to create realistic operational events during the course of the simulation, including faults, communication outages, and custom event scripts.</p>
+<p>For large models (such as the IEEE 8500 node and 9500 node test systems), it may take several seconds for the model dictionary to load. While the power system model is being queried, a splashscreen will be displayed.</p>
+<p><img alt="test-manager" src="../_images/config_test_dict.png" /></p>
+<hr class="docutils" />
+<div class="section" id="Communication-outages">
+<h4>Communication outages<a class="headerlink" href="#Communication-outages" title="Permalink to this headline">¶</a></h4>
+<p>The first option is to create communication outages for both SCADA measurements and equipment control commands by clicking the <code class="docutils literal notranslate"><span class="pre">CommOutage</span></code> radio button.</p>
+<p>Equipment control commands can be blocked by specifying an Input Outage with options for</p>
+<ul class="simple">
+<li><p>start time</p></li>
+<li><p>end time</p></li>
+<li><p>all equipment (outages all commands for all equipment if checked)</p></li>
+<li><p>equipment type</p></li>
+<li><p>equipment name</p></li>
+<li><p>affected phases</p></li>
+<li><p>CIM control attribute</p></li>
+</ul>
+<p>To add an Input Outage, specify the desired options, click the <code class="docutils literal notranslate"><span class="pre">+</span></code> button, and then click the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">event</span></code> button at the bottom of the page. The speficied outages will then be displayed on the right side under the <code class="docutils literal notranslate"><span class="pre">CommOutage</span></code> tab.</p>
+<p><img alt="comm-input-outage" src="../_images/config_test_input_outage.png" /></p>
+<p>Measurement sensor outages can be created with an Output Outage with options for</p>
+<ul class="simple">
+<li><p>all measurements (all sensors outages if checked)</p></li>
+<li><p>equipment type</p></li>
+<li><p>equipment name</p></li>
+<li><p>affected phases</p></li>
+<li><p>measurement type (voltage, apparent power, position)</p></li>
+</ul>
+<p>To add an Output Outage, specify the desired options, click the <code class="docutils literal notranslate"><span class="pre">+</span></code> button, and then click the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">event</span></code> button at the bottom of the page. The speficied outages will then be displayed on the right side under the <code class="docutils literal notranslate"><span class="pre">CommOutage</span></code> tab.</p>
+<p><img alt="config-input-outage" src="../_images/config_test_output_outage.png" /></p>
+<hr class="docutils" />
+</div>
+<div class="section" id="Equipment-Faults">
+<h4>Equipment Faults<a class="headerlink" href="#Equipment-Faults" title="Permalink to this headline">¶</a></h4>
+<p>The next option is to create a fault on any class of equipment in the model by clicking the <code class="docutils literal notranslate"><span class="pre">Fault</span></code> radio button. Options will appear to select the</p>
+<ul class="simple">
+<li><p>equipment type</p></li>
+<li><p>equipment name</p></li>
+<li><p>phases to be faulted</p></li>
+<li><p>type of fault</p></li>
+<li><p>start time</p></li>
+<li><p>end time</p></li>
+<li><p>fault impedance</p></li>
+</ul>
+<p>After setting the values, click the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">event</span></code> button. The fault will be displayed on the right side of the screen under the <code class="docutils literal notranslate"><span class="pre">Fault</span></code> tab.</p>
+<p>When the simulation reaches the event start time, the logical fault simulator traces the fault up to first upstream switch and opens that switch to clear the fault.</p>
+<p><strong>Note: The GridLAB-D logical fault simulator currently may not process faults in meshed networks correctly and fail to open the appropriate set of switches to clear the fault. This is a known bug with a workaround to open the appropriate switches using a custom Test Manager event file.</strong></p>
+<p><img alt="config-test-fault" src="../_images/config_test_fault.png" /></p>
+<hr class="docutils" />
+</div>
+<div class="section" id="Custom-Event-Files">
+<h4>Custom Event Files<a class="headerlink" href="#Custom-Event-Files" title="Permalink to this headline">¶</a></h4>
+<p>Custom event messages can be written in format of a CIM Difference Message. The format of custom event files is explained in <a class="reference internal" href="../api_usage/3.5--Lesson-3.5--Creating-Running-Simulation-API.html#test_config"><span class="std std-ref">test_config settings</span></a>.</p>
+<p>Event files can be uploaded by clicking the cloud-shaped button and selecting the desired files to be uploaded from your local machine. Click <code class="docutils literal notranslate"><span class="pre">Open</span></code> to upload each file. The custom event will then be displayed under the <code class="docutils literal notranslate"><span class="pre">Command</span></code> tab.</p>
+<p><img alt="custom-event" src="../_images/config_test_upload.png" /></p>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="2.5.-Service-Configuration">
+<h3>2.5. Service Configuration<a class="headerlink" href="#2.5.-Service-Configuration" title="Permalink to this headline">¶</a></h3>
+<p>The last tab is the GridAPPS-D service configuration. This enables selection of particular services that should be run along with the simulation, such as the Sensor Simulator or DNP3 service.</p>
+<p><img alt="service-config" src="../_images/config_test_service.png" /></p>
+<p>After selecting all desired simulation parameters, click <code class="docutils literal notranslate"><span class="pre">Submit</span></code> to start the simulation.</p>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="Running-a-Simulation-with-VIZ">
+<h2>Running a Simulation with VIZ<a class="headerlink" href="#Running-a-Simulation-with-VIZ" title="Permalink to this headline">¶</a></h2>
+<p>After clicking <code class="docutils literal notranslate"><span class="pre">Submit</span></code>, the GridAPPS-D VIZ will generate a new oneline diagram for the desired feeder. Large models, such as the IEEE 8500 and 9500 node test systems, will take several seconds to load. A splashscreen will be displayed while the oneline diagram is being created.</p>
+<p><img alt="sim-loading-oneline" src="../_images/sim_loading_oneline.png" /></p>
+<p>The oneline diagram will then appear in the main window under the <code class="docutils literal notranslate"><span class="pre">Simulation</span></code> tab.</p>
+<p>Across the tab are three more tabs for events loaded into the simulation, applications configured to run, and SCADA alarms received during the simulation.</p>
+<div class="section" id="Simulation-Tab">
+<h3>Simulation Tab<a class="headerlink" href="#Simulation-Tab" title="Permalink to this headline">¶</a></h3>
+<p>The Simulation Tab contains options for viewing and controlling equipment in the feeder model.</p>
+<p><img alt="simulation-tab" src="../_images/sim_simulation_tab.png" /></p>
+<hr class="docutils" />
+<div class="section" id="Starting,-Pausing,-and-Stopping-a-Simulation">
+<h4>Starting, Pausing, and Stopping a Simulation<a class="headerlink" href="#Starting,-Pausing,-and-Stopping-a-Simulation" title="Permalink to this headline">¶</a></h4>
+<p>To start the simulation, click the start button shown above. A “Simulation is starting” message will be displayed while the CIM model is imported, converted, and configured to run with the specified simulation parameters.</p>
+<p>After the simulation starts, a unique simulation ID will be created and displayed in the top left corner. This ID is used by applications to communicate with the correct simulation (as multiple simulations may be running simulateously).</p>
+<p>The simulation may be paused or stopped using the pause and stop button in the top right corner of the simulation window.</p>
+<p><img alt="sim-tab-2" src="../_images/sim_simulation_tab_2.png" /></p>
+<hr class="docutils" />
+</div>
+<div class="section" id="Viewing-equipment-names">
+<h4>Viewing equipment names<a class="headerlink" href="#Viewing-equipment-names" title="Permalink to this headline">¶</a></h4>
+<p>To view the names of devices in the feeder, zoom in using the mouse wheel and hover over the desired piece of equipment. Its name will be displayed below.</p>
+<p><img alt="view-equip-name" src="../_images/sim_view_equip_name.png" /></p>
+</div>
+<div class="section" id="Opening-and-Closing-Switches">
+<h4>Opening and Closing Switches<a class="headerlink" href="#Opening-and-Closing-Switches" title="Permalink to this headline">¶</a></h4>
+<p>Closed switches are displayed as a red breaker square. Open switches are green.</p>
+<p>To open or close a switch, left-click on the square and select the desired state from the menu. Click <code class="docutils literal notranslate"><span class="pre">Apply</span></code></p>
+<p><img alt="select-switch" src="../_images/sim_select_switch.png" /></p>
+<p><img alt="open-switch" src="../_images/sim_open_switch.png" /></p>
+<p><img alt="images-create-plot" src="../_images/sim_create_plot.png" /></p>
+<p><img alt="plots-light-theme" src="../_images/plots_light_theme.png" /></p>
+<p><img alt="events-tab" src="../_images/sim_events_tab.png" /></p>
+<p>[applications-tab](images/1.5/</p>
+</div>
+</div>
+<div class="section" id="Alarm-Tab">
+<h3>Alarm Tab<a class="headerlink" href="#Alarm-Tab" title="Permalink to this headline">¶</a></h3>
+<p>The</p>
+<p><img alt="post-event-alarms" src="../_images/sim_post_event.png" /></p>
+<p><img alt="alarm-tab" src="../_images/sim_alarms_tab.png" /></p>
+<p>Alarms can be acknowledged and removed from the table by clicking the check mark button on the far left of each row.</p>
+<p>The alarm location can be viewed by clicking on the magnifying glass button. This will switch to the Simulation tab and the particular piece of equipment will be highlighted with an expanding circle.</p>
+<p><img alt="alarms-tab" src="../_images/sim_alarm_view_alarm.png" /></p>
+<hr class="docutils" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="1.6--Lesson-1.6--Docker-Shortcuts.html" class="btn btn-neutral float-right" title="Docker Shortcuts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="1.4--Lesson-1.4--Running-GridAPPS-D.html" class="btn btn-neutral float-left" title="Running GridAPPS-D" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2017-2021, Battelle Memorial Institute, All rights reserved..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

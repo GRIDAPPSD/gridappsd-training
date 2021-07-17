@@ -1,0 +1,1137 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Using the Configuration File API &mdash; GridAPPS-D 2021_05.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Running Simulations with the Simulation API" href="3.5--Lesson-3.5--Creating-Running-Simulation-API.html" />
+    <link rel="prev" title="Using the PowerGrid Models API" href="3.3--Lesson-3.3--Using-the-PowerGrid-Models-API.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> GridAPPS-D
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation &amp; Runtime</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/windows10/index.html">Windows 10 Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/1.4--Lesson-1.4--Running-GridAPPS-D.html">Running GridAPPS-D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/1.5--Lesson-1.5--Using-GridAPPS-D-Viz.html">Using the GridAPPS-D Viz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/1.6--Lesson-1.6--Docker-Shortcuts.html">Docker Shortcuts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/1.7--Lesson-1.7--Cloud-Server-Configuration.html">Cloud Server Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.1--Lesson-2.1--Intro-to-GridAPPS-D.html">GridAPPS-D Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.2--Lesson-2.2--GridAPPS-D-Architecture.html">GridAPPS-D Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.3--Lesson-2.3--GridAPPS-D-Python-Library.html">GridAPPS-D Python Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.4--Lesson-2.4--GridAPPS-D-Application-Structure.html">GridAPPS-D Application Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.5--Lesson-2.5--GridAPPS-D-Service-Structure.html">GridAPPS-D Service Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/2.6--Lesson-2.6--Common-Information-Model.html">Introduction to the Common Information Model</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D API Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="3.1--Lesson-3.1--API-Communication-Channels.html">API Communication Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.2--Lesson-3.2--API-Message-Structure.html">API Message Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.3--Lesson-3.3--Using-the-PowerGrid-Models-API.html">Using the PowerGrid Models API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using the Configuration File API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#1.-Introduction-to-the-Configuration-File-API">1. Introduction to the Configuration File API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#2.-API-Syntax-Overview">2. API Syntax Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#2.1.-API-Communication-Channel">2.1. API Communication Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#2.2.-Structure-of-a-Query-Message">2.2. Structure of a Query Message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#2.3.-Specifying-the-configurationType">2.3. Specifying the <code class="docutils literal notranslate"><span class="pre">configurationType</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#3.-Querying-for-GridLab-D-Configuration-Files">3. Querying for GridLab-D Configuration Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#3.1.-Query-for-all-GridLab-D-Files">3.1. Query for all GridLab-D Files</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#3.2.-Query-for-GridLab-D-Base-GLM-File">3.2. Query for GridLab-D Base GLM File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#3.3.-Query-for-GridLab-D-Symbols-File">3.3. Query for GridLab-D Symbols File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#3.4.-Query-for-GridLab-D-Measurement-Types">3.4. Query for GridLab-D Measurement Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#4.-Querying-for-CIM-Dictionary-Files">4. Querying for CIM Dictionary Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#4.1.-Query-for-Model-Dictionary">4.1. Query for Model Dictionary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#4.2.-Query-for-CIM-Feeder-Index">4.2. Query for CIM Feeder Index</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#5.-Querying-for-OpenDSS-Configuration-Files">5. Querying for OpenDSS Configuration Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#5.1.-Query-for-all-OpenDSS-Files">5.1. Query for all OpenDSS Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#5.2.-Query-for-OpenDSS-Base-File">5.2. Query for OpenDSS Base File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#5.3.-Query-for-OpenDSS-Coordinate-File">5.3. Query for OpenDSS Coordinate File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#5.4.-Query-for-Y-Bus-Matrix">5.4. Query for Y-Bus Matrix</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3.5--Lesson-3.5--Creating-Running-Simulation-API.html">Running Simulations with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.6--Lesson-3.6--Controlling-Simulation-API.html">Publishing and Subscribing with the Simulation API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.7--Lesson-3.7--Using-the-Timeseries-API.html">Timeseries API</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../applications/restoration-WSU/source/index.html">Resilient Restoration (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/VVO-WSU/README.html">Volt-Var Optimization (WSU)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/DER-dispatch-NREL/README.html">DER Dispatch (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/solar-forecast-NREL/README.html">Solar Forecasting (NREL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../applications/grid-forecast-NREL/README.html">Grid Forecasting (NREL)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">GridAPPS-D Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../services/dnp3/source/index.html">GridAPPS-D DNP3 Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/sensor-simulator/source/index.html">GridAPPS-D Sensor Simulator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/voltage-violation/README.html">GridAPPS-D Voltage Violation Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/state-estimator/README.html">GridAPPS-D State Estimator Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../services/alarms/README.html">GridAPPS-D Alarm Service</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GridAPPS-D</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Using the Configuration File API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api_usage/3.4--Lesson-3.4--Using-the-Configuration-File-API.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Using-the-Configuration-File-API">
+<h1>Using the Configuration File API<a class="headerlink" href="#Using-the-Configuration-File-API" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="1.-Introduction-to-the-Configuration-File-API">
+<h2>1. Introduction to the Configuration File API<a class="headerlink" href="#1.-Introduction-to-the-Configuration-File-API" title="Permalink to this headline">¶</a></h2>
+<p>The Configuration File API is used to generate power system models that can be solved in GridLab-D or OpenDSS based on the original CIM XML model. The load profile and ZIP parameters can be modified from the nominal values prior to model creation and export.</p>
+<p>In the Application Components diagram (explained in detail with sample code in <a class="reference internal" href="../overview/2.4--Lesson-2.4--GridAPPS-D-Application-Structure.html"><span class="doc">GridAPPS-D Application Structure</span></a>), the Configuration File API is used for configuring parallel simulations and exporting the power system model.</p>
+<p><img alt="04-config-sim-export" src="../_images/04_config_sim_export.png" /></p>
+<p><strong>Application passes query to GridAPPS-D Platform</strong></p>
+<p>First, the application creates a query message for requesting information about the desired power system configuration in the format of a JSON string or equivalant Python dictionary object. The syntax of this message is explained in detail below.</p>
+<p>The application then passes the query through the Configuration File API to the GridAPPS-D Platform, which publishes it to a queue channel on the GOSS Message Bus. If the app is authenticated and authorized to pass queries, the query message is delivered to the Configuration Manager.</p>
+<p><strong>GridAPPS-D Platform responds to Application query</strong></p>
+<p>The Configuration Manager obtains the CIM XML file for the desired power system model and then converts it to the desired output format with all of the requested changes to the model. The Configuration File API then returns the desired information back to the application as a JSON message (for Y-Bus or partial models) or export the files to the directory specified in the</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="2.-API-Syntax-Overview">
+<h2>2. API Syntax Overview<a class="headerlink" href="#2.-API-Syntax-Overview" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="2.1.-API-Communication-Channel">
+<h3>2.1. API Communication Channel<a class="headerlink" href="#2.1.-API-Communication-Channel" title="Permalink to this headline">¶</a></h3>
+<p>All queries passed to the PowerGrid Models API need to use the correct communication channel, which is obtained using the <a class="reference internal" href="3.1--Lesson-3.1--API-Communication-Channels.html"><span class="doc">GridAPPS-D Topics library</span></a>.</p>
+<p>The PowerGrid Model API uses a <code class="docutils literal notranslate"><span class="pre">/queue/</span></code> channel to pull power system model info from the the Blazegraph Database. The base static string used is <code class="docutils literal notranslate"><span class="pre">goss.gridappsd.process.request.config</span></code>, which can be called using the <code class="docutils literal notranslate"><span class="pre">.CONFIG</span></code> method from the topics library.</p>
+<p>When developing in python, it is recommended to use the <code class="docutils literal notranslate"><span class="pre">.CONFIG</span></code> method. When using the STOMP client in GridAPPS-D VIZ, it is necessary to use the base static string.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">gridappsd</span> <span class="kn">import</span> <span class="n">topics</span> <span class="k">as</span> <span class="n">t</span>
+<span class="n">topic</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">CONFIG</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="2.2.-Structure-of-a-Query-Message">
+<h3>2.2. Structure of a Query Message<a class="headerlink" href="#2.2.-Structure-of-a-Query-Message" title="Permalink to this headline">¶</a></h3>
+<p>Queries passed to Configuration File API are formatted as python dictionaries or equivalent JSON scripts wrapped as a python string.</p>
+<p>The accepted set of key-value pairs for the Configuration File API query message is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>message = {
+    &quot;configurationType&quot;: &quot;INSERT QUERY HERE&quot;,
+    &quot;parameters&quot;: {
+        &quot;key1&quot;: &quot;value1&quot;,
+        &quot;key2&quot;: &quot;value2&quot;}
+}
+</pre></div>
+</div>
+<p>The components of the message are as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span></code> – Specifies the type of configuration file requested.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;parameters&quot;:</span></code> – Specifies any specific power system model parameters. Values depend on the particular configurationType.</p></li>
+</ul>
+<p>The usage of each of these message components are explained in detail with code block examples below.</p>
+<p><strong>Important</strong>: Be sure to pay attention to placement of commas ( <strong>,</strong> ) at the end of each JSON line. Commas are placed at the end of each line <em>except</em> the last line. Incorrect comma placement will result in a JsonSyntaxException.</p>
+<p>All of the queries are passed to the Configuration API using the <code class="docutils literal notranslate"><span class="pre">.get_response(topic,</span> <span class="pre">message)</span></code> method for the GridAPPS-D platform connection variable.</p>
+</div>
+<div class="section" id="2.3.-Specifying-the-configurationType">
+<h3>2.3. Specifying the <code class="docutils literal notranslate"><span class="pre">configurationType</span></code><a class="headerlink" href="#2.3.-Specifying-the-configurationType" title="Permalink to this headline">¶</a></h3>
+<p>Below are the possible <code class="docutils literal notranslate"><span class="pre">configurationType</span></code> key-value pairs that are used to specify the type of each query. Executable code block examples are provided for each of the requests in the subsections below.</p>
+<p>The first group of <em>configurationType</em> key-value pairs are for queries for information related to the GridLab-D GLM files and settings:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;GridLab-D</span> <span class="pre">All&quot;</span></code> – <a class="reference external" href="#3.1.-Query-for-all-GridLab-D-Files">Query for all GridLab-D files</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;GridLab-D</span> <span class="pre">Base</span> <span class="pre">GLM&quot;</span></code> – <a class="reference external" href="#3.2.-Query-for-GridLab-D-Base-GLM-File">Query for GridLab-D base GLM file</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;GridLab-D</span> <span class="pre">Symbols&quot;</span></code> – <a class="reference external" href="#3.3.-Query-for-GridLab-D-Symbols-File">Query for GridLab-D symbols file</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;GridLab-D</span> <span class="pre">Simulation</span> <span class="pre">Output&quot;</span></code> – <a class="reference external" href="#3.4.-Query-for-GridLab-D-Measurement-Types">Query for available measurement types</a></p></li>
+</ul>
+<p>The second group of <em>configurationType</em> are for queries for CIM dictionary and feeder index files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;CIM</span> <span class="pre">Dictionary&quot;</span></code> – <a class="reference external" href="#4.1.-Query-for-Model-Dictionary">Query for python dictionary of CIM XML model</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;CIM</span> <span class="pre">Feeder</span> <span class="pre">Index&quot;</span></code> – <a class="reference external" href="#4.2.-Query-for-CIM-Feeder-Index">Query for python dictionary of model mRIDs</a></p></li>
+</ul>
+<p>The third group of <em>configurationType</em> key-value pairs are for queries for OpenDSS model files</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;DSS</span> <span class="pre">All&quot;</span></code> – <a class="reference external" href="#5.1.-Query-for-all-OpenDSS-Files">Query for all OpenDSS model files</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;DSS</span> <span class="pre">Base&quot;</span></code> – <a class="reference external" href="#5.2.-Query-for-OpenDSS-Base-File">Query for OpenDSS version of power system model</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;DSS</span> <span class="pre">Coordinate&quot;</span></code> – <a class="reference external" href="#5.3.-Query-for-OpenDSS-Coordinate-File">Query for list of OpenDSS XY coordinates</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;YBus</span> <span class="pre">Export&quot;</span></code> – <a class="reference external" href="#5.4.-Query-for-Y-Bus-Matrix">Export Y-Bus matrix from OpenDSS</a></p></li>
+</ul>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="3.-Querying-for-GridLab-D-Configuration-Files">
+<h2>3. Querying for GridLab-D Configuration Files<a class="headerlink" href="#3.-Querying-for-GridLab-D-Configuration-Files" title="Permalink to this headline">¶</a></h2>
+<p>This section outlines the details of key-value pairs for the possible queries associated with each value of the <code class="docutils literal notranslate"><span class="pre">queryMeasurement</span></code> key listed above.</p>
+<div class="section" id="3.1.-Query-for-all-GridLab-D-Files">
+<h3>3.1. Query for all GridLab-D Files<a class="headerlink" href="#3.1.-Query-for-all-GridLab-D-Files" title="Permalink to this headline">¶</a></h3>
+<p>This API call generates all the GLM files necessary to solve the power system model in GridLab-D. The query returns a directory where the set of GLM files are located.</p>
+<p>Configuration File request key-value pair:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;GridLab-D</span> <span class="pre">All&quot;</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">parameters</span></code> key has a set of required values as well as some optional values:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;parameters&quot;: {     REQUIRED KEYS                   REQUIRED VALUES
+                &quot;model_id&quot;:                           mRID as string ,
+                &quot;directory&quot;:                          output directory as string ,
+                &quot;simulation_name&quot;:                    string ,
+                &quot;simulation_start_time&quot;:              epoch time number ,
+                &quot;simulation_duration&quot;:                number ,
+                &quot;simulation_id&quot;:                      number ,
+                &quot;simulation_broker_host&quot;:             string ,
+                &quot;simulation_broker_port&quot;:             number ,
+                    OPTIONAL KEYS                  OPTIONAL VALUES
+                &quot;i_fraction&quot;:                         number ,
+                &quot;p_fraction&quot;:                         number ,
+                &quot;z_fraction&quot;:                         number ,
+                &quot;load_scaling_factor&quot;:                number ,
+                &quot;schedule_name&quot;:                      string ,
+                &quot;solver_method&quot;:                      string }
+</pre></div>
+</div>
+<p>The numeric values for the key-value pairs associated with <code class="docutils literal notranslate"><span class="pre">parameters</span></code> can be written as number or as strings. The key-value pairs can be specified in any order.</p>
+<p><strong>Example: Export IEEE 13 node model with constant current loads to GLM files :</strong></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.config&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;configurationType&quot;</span><span class="p">:</span> <span class="s2">&quot;GridLAB-D All&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;directory&quot;</span><span class="p">:</span> <span class="s2">&quot;/tmp/gridlabdsimulation/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">,</span>
+        <span class="s2">&quot;simulation_id&quot;</span><span class="p">:</span> <span class="s2">&quot;12345678&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;simulation_name&quot;</span><span class="p">:</span> <span class="s2">&quot;mysimulation&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;simulation_start_time&quot;</span><span class="p">:</span> <span class="s2">&quot;1518958800&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;simulation_duration&quot;</span><span class="p">:</span> <span class="s2">&quot;60&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;simulation_broker_host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;simulation_broker_port&quot;</span><span class="p">:</span> <span class="s2">&quot;61616&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;schedule_name&quot;</span><span class="p">:</span> <span class="s2">&quot;ieeezipload&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;load_scaling_factor&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;z_fraction&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;i_fraction&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;p_fraction&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;solver_method&quot;</span><span class="p">:</span> <span class="s2">&quot;NR&quot;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="mi">120</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Note:</strong> The output directory is inside the GridAPPS-D Docker Container, not in your Ubuntu or Windows environment. To access the files, it is necessary to change directories to those inside the docker container.</p>
+<p>Open a new Ubuntu terminal and run: * <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-it</span> <span class="pre">gridappsd-docker_gridappsd_1</span> <span class="pre">bash</span></code> * <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/tmp/gridlabdsimulation</span></code> * <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code></p>
+<p>To copy the files to your regular directory, use the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span></code> command. For help using docker, see <a class="reference internal" href="../installation/1.6--Lesson-1.6--Docker-Shortcuts.html"><span class="doc">Docker Shortcuts</span></a> on working with Docker containers.</p>
+<p><img alt="config-file-docker-directory" src="../_images/config_file_docker_directory.png" /></p>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="3.2.-Query-for-GridLab-D-Base-GLM-File">
+<h2>3.2. Query for GridLab-D Base GLM File<a class="headerlink" href="#3.2.-Query-for-GridLab-D-Base-GLM-File" title="Permalink to this headline">¶</a></h2>
+<p>This API call generates a single GLM file that contains the entire power system model that can be solved in GridLab-D. The query returns the entire model GLM file wrapped in a python dictionary.</p>
+<p>Configuration File request key-value pair:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;GridLab-D</span> <span class="pre">Base</span> <span class="pre">GLM&quot;</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">parameters</span></code> key has a set of required values as well as some optional values:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;parameters&quot;: {     REQUIRED KEYS                   REQUIRED VALUES
+                &quot;model_id&quot;:                           mRID as string ,
+                    OPTIONAL KEYS                  OPTIONAL VALUES
+                &quot;i_fraction&quot;:                         number ,
+                &quot;p_fraction&quot;:                         number ,
+                &quot;z_fraction&quot;:                         number ,
+                &quot;load_scaling_factor&quot;:                number ,
+                &quot;schedule_name&quot;:                      string }
+</pre></div>
+</div>
+<p>The numeric values for the key-value pairs associated with <code class="docutils literal notranslate"><span class="pre">parameters</span></code> can be written as number or as strings. The key-value pairs can be specified in any order.</p>
+<p><strong>Example 1: Create GLM base file using nominal load values:</strong></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.config&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;configurationType&quot;</span><span class="p">:</span> <span class="s2">&quot;GridLAB-D Base GLM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Example 2: Create GLM base file using all constant current loads and hourly load curve:</strong></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.config&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;configurationType&quot;</span><span class="p">:</span> <span class="s2">&quot;GridLAB-D Base GLM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">,</span>
+        <span class="s2">&quot;load_scaling_factor&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;z_fraction&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="s2">&quot;i_fraction&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;p_fraction&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;schedule_name&quot;</span><span class="p">:</span> <span class="s2">&quot;ieeezipload&quot;</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="3.3.-Query-for-GridLab-D-Symbols-File">
+<h2>3.3. Query for GridLab-D Symbols File<a class="headerlink" href="#3.3.-Query-for-GridLab-D-Symbols-File" title="Permalink to this headline">¶</a></h2>
+<p>This API call generates a file with all the XY coordinates used by GridLab-D when running a simulation.</p>
+<p>Configuration File request key-value pair:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;GridLab-D</span> <span class="pre">Symbols&quot;</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">parameters</span></code> key has a set of required values as well as some optional values:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;parameters&quot;: {     REQUIRED KEYS                   REQUIRED VALUES
+                &quot;model_id&quot;:                           mRID as string ,
+                    OPTIONAL KEYS                  OPTIONAL VALUES
+                &quot;simulation_id&quot;:                      number }
+</pre></div>
+</div>
+<p>The key-value pairs can be specified in any order.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.config&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;configurationType&quot;</span><span class="p">:</span> <span class="s2">&quot;GridLAB-D Symbols&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="n">model_mrid</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="3.4.-Query-for-GridLab-D-Measurement-Types">
+<h2>3.4. Query for GridLab-D Measurement Types<a class="headerlink" href="#3.4.-Query-for-GridLab-D-Measurement-Types" title="Permalink to this headline">¶</a></h2>
+<p>This API call returns a list of device names and types of available measurement in the GridLab-D format (<strong>not</strong> CIM classes or measurement mRIDs)</p>
+<p>Configuration File request key-value pair:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;GridLab-D</span> <span class="pre">Simulation</span> <span class="pre">Output&quot;</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">parameters</span></code> key has a set of required values as well as some optional values:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;parameters&quot;: {     REQUIRED KEYS                   REQUIRED VALUES
+                &quot;model_id&quot;:                           mRID as string ,
+                    OPTIONAL KEYS                  OPTIONAL VALUES
+                &quot;simulation_id&quot;:                      number }
+</pre></div>
+</div>
+<p>The key-value pairs can be specified in any order.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.config&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;configurationType&quot;</span><span class="p">:</span> <span class="s2">&quot;GridLAB-D Simulation Output&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="p">:{</span><span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="4.-Querying-for-CIM-Dictionary-Files">
+<h2>4. Querying for CIM Dictionary Files<a class="headerlink" href="#4.-Querying-for-CIM-Dictionary-Files" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="4.1.-Query-for-Model-Dictionary">
+<h3>4.1. Query for Model Dictionary<a class="headerlink" href="#4.1.-Query-for-Model-Dictionary" title="Permalink to this headline">¶</a></h3>
+<p>This API generates a python dictionary which maps the CIM mRIDs of objects in the power system model to names of model objects used in other simulators.</p>
+<p>Configuration File request key-value pair:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;CIM</span> <span class="pre">Dictionary&quot;</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">parameters</span></code> key has a set of required values as well as some optional values:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;parameters&quot;: {     REQUIRED KEYS                   REQUIRED VALUES
+                &quot;model_id&quot;:                           mRID as string ,
+                    OPTIONAL KEYS                  OPTIONAL VALUES
+                &quot;simulation_id&quot;:                      number }
+</pre></div>
+</div>
+<p>The key-value pairs can be specified in any order.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.config&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;configurationType&quot;</span><span class="p">:</span> <span class="s2">&quot;CIM Dictionary&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="p">:{</span><span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;_AAE94E4A-2465-6F5E-37B1-3E72183A4E44&quot;</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="4.2.-Query-for-CIM-Feeder-Index">
+<h3>4.2. Query for CIM Feeder Index<a class="headerlink" href="#4.2.-Query-for-CIM-Feeder-Index" title="Permalink to this headline">¶</a></h3>
+<p>This API call returns a python dictionary of the available feeders in the Blazegraph database of power system models.</p>
+<p>Configuration File request key-value pair:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;CIM</span> <span class="pre">Feeder</span> <span class="pre">Index&quot;</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">parameters</span></code> key has a set of required values as well as some optional values:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;parameters&quot;: {     REQUIRED KEYS                   REQUIRED VALUES
+                &quot;model_id&quot;:                           mRID as string ,
+                    OPTIONAL KEYS                  OPTIONAL VALUES
+                &quot;simulation_id&quot;:                      number }
+</pre></div>
+</div>
+<p>The key-value pairs can be specified in any order.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.config&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;configurationType&quot;</span><span class="p">:</span> <span class="s2">&quot;CIM Feeder Index&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="p">:{</span><span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="5.-Querying-for-OpenDSS-Configuration-Files">
+<h2>5. Querying for OpenDSS Configuration Files<a class="headerlink" href="#5.-Querying-for-OpenDSS-Configuration-Files" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="5.1.-Query-for-all-OpenDSS-Files">
+<h3>5.1. Query for all OpenDSS Files<a class="headerlink" href="#5.1.-Query-for-all-OpenDSS-Files" title="Permalink to this headline">¶</a></h3>
+<p>This API call generates all the OpenDSS files necessary to solve the power system model in OpenDSS. The query returns a directory where the set of DSS files are located.</p>
+<p>Configuration File request key-value pair:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;DSS</span> <span class="pre">All&quot;</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">parameters</span></code> key has a set of required values as well as some optional values:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;parameters&quot;: {     REQUIRED KEYS                   REQUIRED VALUES
+                &quot;model_id&quot;:                           mRID as string ,
+                &quot;directory&quot;:                          desired output directory as string ,
+                &quot;simulation_name&quot;:                     string ,
+                &quot;simulation_start_time&quot;:              epoch time number ,
+                &quot;simulation_duration&quot;:                number ,
+                &quot;simulation_id&quot;:                      number ,
+                &quot;simulation_broker_host&quot;:             string ,
+                &quot;simulation_broker_port&quot;:             number ,
+                    OPTIONAL KEYS                  OPTIONAL VALUES
+                &quot;i_fraction&quot;:                         number ,
+                &quot;p_fraction&quot;:                         number ,
+                &quot;z_fraction&quot;:                         number ,
+                &quot;load_scaling_factor&quot;:                number ,
+                &quot;schedule_name&quot;:                      string ,
+                &quot;solver_method&quot;:                      string }
+</pre></div>
+</div>
+<p>The numeric values for the key-value pairs associated with <code class="docutils literal notranslate"><span class="pre">parameters</span></code> can be written as number or as strings. The key-value pairs can be specified in any order.</p>
+<p><strong>Example: Export IEEE 13 node model with constant current loads to DSS files :</strong></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.config&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;configurationType&quot;</span><span class="p">:</span> <span class="s2">&quot;DSS All&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;directory&quot;</span><span class="p">:</span> <span class="s2">&quot;/tmp/dsssimulation/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">,</span>
+        <span class="s2">&quot;simulation_id&quot;</span><span class="p">:</span> <span class="s2">&quot;12345678&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;simulation_name&quot;</span><span class="p">:</span> <span class="s2">&quot;ieee13&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;simulation_start_time&quot;</span><span class="p">:</span> <span class="s2">&quot;1518958800&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;simulation_duration&quot;</span><span class="p">:</span> <span class="s2">&quot;60&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;simulation_broker_host&quot;</span><span class="p">:</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;simulation_broker_port&quot;</span><span class="p">:</span> <span class="s2">&quot;61616&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;schedule_name&quot;</span><span class="p">:</span> <span class="s2">&quot;ieeezipload&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;load_scaling_factor&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;z_fraction&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;i_fraction&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;p_fraction&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;solver_method&quot;</span><span class="p">:</span> <span class="s2">&quot;NR&quot;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Note:</strong> The output directory is inside the GridAPPS-D Docker Container, not in your Ubuntu or Windows environment. To access the files, it is necessary to change directories to those inside the docker container.</p>
+<p>Open a new Ubuntu terminal and run: * <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-it</span> <span class="pre">gridappsd-docker_gridappsd_1</span> <span class="pre">bash</span></code> * <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/tmp/dssdsimulation</span></code> * <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code></p>
+<p>To copy the files to your regular directory, use the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span></code> command. For help using docker, see <a class="reference internal" href="../installation/1.6--Lesson-1.6--Docker-Shortcuts.html"><span class="doc">Docker Shortcuts</span></a> on working with Docker containers.</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="5.2.-Query-for-OpenDSS-Base-File">
+<h3>5.2. Query for OpenDSS Base File<a class="headerlink" href="#5.2.-Query-for-OpenDSS-Base-File" title="Permalink to this headline">¶</a></h3>
+<p>This API call generates a single DSS file that contains the entire power system model that can be solved in OpenDSS. The query returns the entire model DSS file wrapped in a python dictionary.</p>
+<p>Configuration File request key-value pair:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;DSS</span> <span class="pre">Base&quot;</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">parameters</span></code> key has a set of required values as well as some optional values:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;parameters&quot;: {     REQUIRED KEYS                   REQUIRED VALUES
+                &quot;model_id&quot;:                           mRID as string ,
+                    OPTIONAL KEYS                  OPTIONAL VALUES
+                &quot;i_fraction&quot;:                         number ,
+                &quot;p_fraction&quot;:                         number ,
+                &quot;z_fraction&quot;:                         number ,
+                &quot;load_scaling_factor&quot;:                number ,
+                &quot;schedule_name&quot;:                      string }
+</pre></div>
+</div>
+<p>The numeric values for the key-value pairs associated with <code class="docutils literal notranslate"><span class="pre">parameters</span></code> can be written as number or as strings. The key-value pairs can be specified in any order.</p>
+<p><strong>Example 1: Create GLM base file using nominal load values:</strong></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.config&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;configurationType&quot;</span><span class="p">:</span> <span class="s2">&quot;DSS Base&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Example 2: Create GLM base file using all constant current loads and hourly load curve:</strong></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.config&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;configurationType&quot;</span><span class="p">:</span> <span class="s2">&quot;DSS Base&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">,</span>
+        <span class="s2">&quot;load_scaling_factor&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;z_fraction&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="s2">&quot;i_fraction&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;p_fraction&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;schedule_name&quot;</span><span class="p">:</span> <span class="s2">&quot;ieeezipload&quot;</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="5.3.-Query-for-OpenDSS-Coordinate-File">
+<h3>5.3. Query for OpenDSS Coordinate File<a class="headerlink" href="#5.3.-Query-for-OpenDSS-Coordinate-File" title="Permalink to this headline">¶</a></h3>
+<p>This API call generates a file with all the XY coordinates used by OpenDSS when plotting the feeder.</p>
+<p>Configuration File request key-value pair:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;DSS</span> <span class="pre">Coordinate&quot;</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">parameters</span></code> key has a set of required values as well as some optional values:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;parameters&quot;: {     REQUIRED KEYS                   REQUIRED VALUES
+                &quot;model_id&quot;:                           mRID as string ,
+                    OPTIONAL KEYS                  OPTIONAL VALUES
+                &quot;simulation_id&quot;:                      number }
+</pre></div>
+</div>
+<p>The key-value pairs can be specified in any order.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.config&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;configurationType&quot;</span><span class="p">:</span> <span class="s2">&quot;DSS Coordinate&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="5.4.-Query-for-Y-Bus-Matrix">
+<h3>5.4. Query for Y-Bus Matrix<a class="headerlink" href="#5.4.-Query-for-Y-Bus-Matrix" title="Permalink to this headline">¶</a></h3>
+<p>This API call generates a Y-Bus matrix from <strong>either</strong> the model mRID or the simulation id.</p>
+<p><strong>Note:</strong> The GridAPPS-D platform currently does not have an in-built topology processor, so the Y-Bus matrix is NOT updated during the simulation to reflect switching actions or transformer tap changes that happen in real time.</p>
+<p>Configuration File request key-value pair:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;configurationType&quot;:</span> <span class="pre">&quot;YBus</span> <span class="pre">Export&quot;</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">parameters</span></code> key has a set of required values as well as some optional values:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;parameters&quot;: {     REQUIRED KEYS                   REQUIRED VALUES
+                &quot;model_id&quot;:                           mRID as string ,
+                    OR
+                &quot;simulation_id&quot;:                      number }
+</pre></div>
+</div>
+<p>The key-value pairs can be specified in any order.</p>
+<p><strong>Example 1: Request Y-Bus for IEEE 13 node model using model mRID:</strong></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.config&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;configurationType&quot;</span><span class="p">:</span> <span class="s2">&quot;YBus Export&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="n">model_mrid</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Example 2: Request Y-Bus for IEEE 13 node model with all loads set as constant current using model mRID:</strong></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.config&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;configurationType&quot;</span><span class="p">:</span> <span class="s2">&quot;YBus Export&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;_C1C3E687-6FFD-C753-582B-632A27E28507&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;load_scaling_factor&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;schedule_name&quot;</span><span class="p">:</span> <span class="s2">&quot;ieeezipload&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;z_fraction&quot;</span><span class="p">:</span> <span class="s2">&quot;0.4&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;i_fraction&quot;</span><span class="p">:</span> <span class="s2">&quot;0.3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;p_fraction&quot;</span><span class="p">:</span> <span class="s2">&quot;0.3&quot;</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Example 3: Obtain Y-Bus from simulation_id:</strong></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">viz_simulation_id</span> <span class="o">=</span> <span class="s2">&quot;paste id here&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">topic</span> <span class="o">=</span> <span class="s2">&quot;goss.gridappsd.process.request.config&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;configurationType&quot;</span><span class="p">:</span><span class="s2">&quot;YBus Export&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;parameters&quot;</span><span class="p">:{</span><span class="s2">&quot;simulation_id&quot;</span><span class="p">:</span> <span class="n">viz_simulation_id</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">gapps</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<p><a href="#id1"><span class="problematic" id="id2">|GridAPPS-D\_narrow.png|</span></a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="3.5--Lesson-3.5--Creating-Running-Simulation-API.html" class="btn btn-neutral float-right" title="Running Simulations with the Simulation API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="3.3--Lesson-3.3--Using-the-PowerGrid-Models-API.html" class="btn btn-neutral float-left" title="Using the PowerGrid Models API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2017-2021, Battelle Memorial Institute, All rights reserved..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
