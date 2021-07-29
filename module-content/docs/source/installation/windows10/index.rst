@@ -10,8 +10,8 @@ This section contains detailed installation instructions and runtime environment
    :caption: Installation & Runtime
    :maxdepth: 2
 
-   1.1W--Lesson-1.1--Virtual-Machine-Docker-Setup.ipynb
+   1.1W-Virtual-Machine-Docker-Setup.ipynb
 
-   1.2W--Lesson-1.2--Installing-GridAPPS-D.ipynb
+   1.2W-Installing-GridAPPS-D.ipynb
 
-   1.3W--Lesson-1.3--Installing-Python-Tutorials.ipynb
+   1.3W-Installing-Python-Tutorials.ipynb
