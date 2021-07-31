@@ -70,3 +70,6 @@ html_static_path = ['_static']
 # Don't execute notebook contents when writing to html
 nbsphinx_allow_errors = True
 nbsphinx_execute = 'never'  
+
+# Use XeLatex
+latex_engine = 'xelatex'
