@@ -9,3 +9,4 @@ sphinx-rtd-theme
 recommonmark
 gitpython
 myst-parser
+pdftex
