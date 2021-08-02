@@ -72,4 +72,4 @@ nbsphinx_allow_errors = True
 nbsphinx_execute = 'never'  
 
 # Use XeLatex
-latex_engine = 'xelatex'
+# latex_engine = 'xelatex'
