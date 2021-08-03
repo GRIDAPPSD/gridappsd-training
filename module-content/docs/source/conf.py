@@ -72,4 +72,8 @@ nbsphinx_allow_errors = True
 nbsphinx_execute = 'never'  
 
 # Use XeLatex
+<<<<<<< HEAD
 latex_engine = 'lualatex'
+=======
+# latex_engine = 'xelatex'
+>>>>>>> 916f9f1c0b04a1387474ceaba714636389b5bc58
