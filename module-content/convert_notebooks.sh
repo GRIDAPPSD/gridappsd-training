@@ -27,6 +27,8 @@ jupyter nbconvert api_usage/3.4-Using-the-Configuration-File-API --output-dir='.
 jupyter nbconvert api_usage/3.5-Creating-Running-Simulation-API.ipynb --output-dir='./docs/source/api_usage' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 jupyter nbconvert api_usage/3.6-Controlling-Simulation-API.ipynb --output-dir='./docs/source/api_usage' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 jupyter nbconvert api_usage/3.7-Using-the-Timeseries-API.ipynb --output-dir='./docs/source/api_usage' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
+jupyter nbconvert api_usage/3.8-Using-the-Logging-API.ipynb --output-dir='./docs/source/api_usage' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
+
 cp -vr ./api_usage/images ./docs/source/api_usage
 
 cp -vr ./images ./docs/source

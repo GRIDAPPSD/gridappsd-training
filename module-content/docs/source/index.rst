@@ -70,6 +70,7 @@ Bugs in the GridAPPS-D platform can be reported in full detail using the `GOSS-G
    api_usage/3.5-Creating-Running-Simulation-API
    api_usage/3.6-Controlling-Simulation-API
    api_usage/3.7-Using-the-Timeseries-API
+   api_usage/3.8-Using-the-Logging-API
 
 
 .. toctree::
