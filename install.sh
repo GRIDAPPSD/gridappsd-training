@@ -5,6 +5,7 @@ curl --url https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda-latest-Linux-x86_64.sh
 
 # Create virtual environment
+cd
 pip install virtualenv
 python3 -m venv gridappsd-env
 source gridappsd-env/bin/activate
@@ -18,4 +19,5 @@ pip install gridappsd-python
 pip install jupyterlab
 
 # Launch Notebooks
+cd gridappsd-training
 jupyter notebook --port 8890 --ip='0.0.0.0'
