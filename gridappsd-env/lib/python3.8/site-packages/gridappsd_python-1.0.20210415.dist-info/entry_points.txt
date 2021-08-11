@@ -1,0 +1,3 @@
+[console_scripts]
+register_app=gridappsd.register_app:main
+
