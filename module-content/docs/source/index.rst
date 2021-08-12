@@ -39,7 +39,7 @@ Bugs in the GridAPPS-D platform can be reported in full detail using the `GOSS-G
    :maxdepth: 2
 
    installation/windows10/index
-   installation/linux/index
+   installation/ubuntu_linux/index
    installation/macos/index
    installation/1.4-Running-GridAPPS-D
    installation/1.5-Using-GridAPPS-D-Viz
