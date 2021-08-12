@@ -12,4 +12,4 @@ This section contains detailed installation instructions and runtime environment
 
    1.2L-Installing-GridAPPS-D.ipynb
 
-   1.3L--Installing-Python-Tutorials.ipynb
+   1.3L-Installing-Python-Tutorials.ipynb
