@@ -1,0 +1,12 @@
+sphinx == 4.0.2
+nbsphinx >= 0.8.5
+pandoc
+jinja2 == 2.11
+IPython
+ipykernel
+sphinx-autobuild
+sphinx-rtd-theme
+recommonmark
+gitpython
+myst-parser
+pdftex
