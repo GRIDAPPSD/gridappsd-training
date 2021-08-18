@@ -23,7 +23,7 @@ copyright = '2017-2021, Battelle Memorial Institute, All rights reserved.'
 author = 'The GridAPPS-D Team and Community'
 
 # The full version, including alpha/beta/rc tags
-release = '2021_04.0'
+release = '2021.04.0'
 
 
 # -- General configuration ---------------------------------------------------
