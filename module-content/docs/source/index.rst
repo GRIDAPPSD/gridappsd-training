@@ -41,6 +41,7 @@ Bugs in the GridAPPS-D platform can be reported in full detail using the `GOSS-G
    installation/windows10/index
    installation/ubuntu_linux/index
    installation/macos/index
+   installation/virtualbox/index
    installation/1.4-Running-GridAPPS-D
    installation/1.5-Using-GridAPPS-D-Viz
    installation/1.6-Docker-Shortcuts

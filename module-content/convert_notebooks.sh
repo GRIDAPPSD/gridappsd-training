@@ -3,6 +3,11 @@
 jupyter nbconvert installation/windows10/1.1W-Virtual-Machine-Docker-Setup.ipynb --output-dir='./docs/source/installation/windows10' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --EmbedImagesPreprocessor.embed_images=True  --to notebook
 jupyter nbconvert installation/windows10/1.2W-Installing-GridAPPS-D.ipynb --output-dir='./docs/source/installation/windows10' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 jupyter nbconvert installation/windows10/1.3W-Installing-Python-Tutorials.ipynb --output-dir='./docs/source/installation/windows10' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
+
+jupyter nbconvert installation/virtualbox/1.1VB-Virtual-Machine-Docker-Setup.ipynb --output-dir='./docs/source/installation/virtualbox' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --EmbedImagesPreprocessor.embed_images=True  --to notebook
+jupyter nbconvert installation/virtualbox/1.2VB-Installing-GridAPPS-D.ipynb --output-dir='./docs/source/installation/virtualbox' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
+jupyter nbconvert installation/virtualbox/1.3VB-Installing-Python-Tutorials.ipynb --output-dir='./docs/source/installation/virtualbox' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
+
 jupyter nbconvert installation/ubuntu_linux/1.2L-Installing-GridAPPS-D.ipynb --output-dir='./docs/source/installation/ubuntu_linux' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 jupyter nbconvert installation/ubuntu_linux/1.3L-Installing-Python-Tutorials.ipynb --output-dir='./docs/source/installation/ubuntu_linux' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 
@@ -14,6 +19,7 @@ jupyter nbconvert installation/1.6-Docker-Shortcuts.ipynb --output-dir='./docs/s
 jupyter nbconvert installation/1.7-Cloud-Server-Configuration.ipynb --output-dir='./docs/source/installation' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 jupyter nbconvert installation/1.8-Platform-Release-History.ipynb --output-dir='./docs/source/installation' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 jupyter nbconvert installation/1.9-Known-VPN-Proxy-Issues.ipynb --output-dir='./docs/source/installation' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
+jupyter nbconvert installation/1.10-Eclipse-IDE-Setup.ipynb --output-dir='./docs/source/installation' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
 cp -vr ./installation/images ./docs/source/installation
 
 jupyter nbconvert overview/2.1-Intro-to-GridAPPS-D.ipynb --output-dir='./docs/source/overview' --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags 'remove_cell' --to notebook
