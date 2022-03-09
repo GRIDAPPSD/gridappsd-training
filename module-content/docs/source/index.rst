@@ -48,6 +48,7 @@ Bugs in the GridAPPS-D platform can be reported in full detail using the `GOSS-G
    installation/1.7-Cloud-Server-Configuration
    installation/1.8-Platform-Release-History
    installation/1.9-Known-VPN-Proxy-Issues
+   installation/1.10-Eclipse-IDE-Setup
 
 
 .. toctree::
