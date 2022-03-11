@@ -13,7 +13,7 @@ run_config_123 = {
         "applications": []
     },
     "simulation_config": {
-        "start_time": "1570041113",
+        "start_time": "1570041110",
         "duration": "120",
         "simulator": "GridLAB-D",
         "timestep_frequency": "1000",
