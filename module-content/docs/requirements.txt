@@ -11,3 +11,4 @@ recommonmark
 gitpython
 myst-parser
 pdftex
+ipython-genutils
