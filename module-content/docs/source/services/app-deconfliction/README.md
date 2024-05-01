@@ -51,7 +51,7 @@
 
 1.5.1. Compares ResolutionVector to operational values of setpoints and issues platform-level control commands (i.e., CIM “DifferenceBuilder” messages) when needed.  For some devices like transformers a change to a tap position will cause a control command to be issued.  For other devices like batteries any non-zero value will cause a control command to be issued.
 
-**2.**       ***Deconfliction Service Data Structures***
+**2.**     ***Deconfliction Service Data Structures***
 
 **2.1.**   **ConflictMatrix**
 
@@ -75,7 +75,7 @@
 
 2.2.3. Like ConflictMatrix, ResolutionVector is also a living data structure in that the Setpoint Validator may modify it.
 
-**3.**       ***Deconfliction Methodology Stages***
+**3.**     ***Deconfliction Methodology Stages***
 
 **3.1.**   **Overview**
 
@@ -115,7 +115,7 @@
 
 3.4.4. The results of the Optimization deconfliction stage will be the ResolutionVector meaning just a single setpoint value per device as given in the ConflictMatrix.
 
-**4.**      ***Deconfliction Service Interface***
+**4.**     ***Deconfliction Service Interface***
 
 **4.1.**   **Interface with GridAPPS-D**
 
@@ -127,7 +127,7 @@
 
 4.2.2. For the “Cooperative” stage of deconfliction, messages will be sent between the deconfliction service and applications (two-way messaging) on the GridAPPS-D message bus in order to perform deconfliction. The details of these messages have not been established.
 
-**5.**       ***Application Interface***
+**5.**     ***Application Interface***
 
 **5.1.**   **Interface with GridAPPS-D**
 
@@ -139,7 +139,7 @@
 
 5.2.1. Exchange messages by “intelligent” applications for the Cooperation stage of deconfliction.
 
-**6.**       ***Implementation Considerations***
+**6.**     ***Implementation Considerations***
 
 6.1. The existing FY23 deconfliction pipeline prototype handles the basics of the workflow around performing the deconfliction and will be used as the starting point for this deconfliction service. Besides implementing the combined/staged deconfliction, it also needs to run GridLAB-D simulations via the GridAPPS-D platform instead of the “sim-sim” simulation that feeds file-based data to applications.
 
