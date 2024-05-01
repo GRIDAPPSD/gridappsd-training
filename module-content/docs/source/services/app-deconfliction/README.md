@@ -1,4 +1,4 @@
-# Combined Solution Centralized Deconfliction Service Functional Specification
+## Functional Specification: Combined Solution Centralized Deconfliction Service
 
 <ul>
 <li>Last updated: May 1, 2024</li>
