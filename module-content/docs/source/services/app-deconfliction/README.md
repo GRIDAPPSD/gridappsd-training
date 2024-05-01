@@ -1,9 +1,11 @@
 **Combined Solution Centralized Deconfliction Service Functional Specification**
 
 Author: Gary Black
+
 Last updated: May 1, 2024
 
-**1.**   **Deconfliction Service (aka, Deconfliction Pipeline) Workflow**
+
+**1.**     **Deconfliction Service (aka, Deconfliction Pipeline) Workflow**
 
 **1.1.**   **Setpoint Processor**
 
