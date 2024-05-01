@@ -62,10 +62,10 @@
 2.1.3. The ConflictMatrix is a living data structure throughout the first three steps of the workflow.  Each step potentially modifies the ConflictMatrix.  The state of the ConflictMatrix at each step will be logged and it is possible that copies of the ConflictMatrix after different steps are created should they be needed for subsequent workflow steps.
 
 2.1.4. Timestamp related notes:
-
-2.1.4.1. ConflictMatrix maintains timestamps to give the deconfliction methodology knowledge of how “fresh” vs. “stale” this setpoint request for a device is. It could be the request was from the very beginning of a simulation and that the app failed to send any further requests (perhaps it died/exited) at least for that specific device. A stale setpoint request for a device based on an old timestamp would be a strong indication to the deconfliction method to discount if not completely disregard it when determining a deconflicted setpoint given how much might have changed in the current operational state since the setpoint request was made.
-
-2.1.4.2. It is easily possible that new setpoint requests are associated with timestamps that are prior to timestamps that have already been processed. Some apps may take much longer to generate setpoint requests than other apps. It is imperative that the deconfliction service process these “out of timestamp order” requests since discarding them could mean entirely ignoring some apps just based on them taking longer to generate requests.
+<ul>
+<li>ConflictMatrix maintains timestamps to give the deconfliction methodology knowledge of how “fresh” vs. “stale” this setpoint request for a device is. It could be the request was from the very beginning of a simulation and that the app failed to send any further requests (perhaps it died/exited) at least for that specific device. A stale setpoint request for a device based on an old timestamp would be a strong indication to the deconfliction method to discount if not completely disregard it when determining a deconflicted setpoint given how much might have changed in the current operational state since the setpoint request was made.</li>
+<li>It is easily possible that new setpoint requests are associated with timestamps that are prior to timestamps that have already been processed. Some apps may take much longer to generate setpoint requests than other apps. It is imperative that the deconfliction service process these “out of timestamp order” requests since discarding them could mean entirely ignoring some apps just based on them taking longer to generate requests.</li>
+</ul>
 
 **2.2.**   **ResolutionVector**
 
@@ -113,7 +113,7 @@
 
 3.4.3. For the Centralized Deconfliction Service, an algebraic formulation for the optimization will be used to close any remaining gap between setpoint requests. This could potentially include app and device weighting factors.
 
-3.4.4.The results of the Optimization deconfliction stage will be the ResolutionVector meaning just a single setpoint value per device as given in the ConflictMatrix.
+3.4.4. The results of the Optimization deconfliction stage will be the ResolutionVector meaning just a single setpoint value per device as given in the ConflictMatrix.
 
 **4.**      **Deconfliction Service Interface**
 
@@ -125,7 +125,7 @@
 
 4.2.1. Intercepts CIM “DifferenceBuilder” messages that are normally sent to simulations. These messages are the setpoint requests by the applications. The message intercept will be implemented by modifying the GOSS-HELICS bridge for the GridAPPS-D platform.
 
-4.2.2.For the “Cooperative” stage of deconfliction, messages will be sent between the deconfliction service and applications (two-way messaging) on the GridAPPS-D message bus in order to perform deconfliction. The details of these messages have not been established.
+4.2.2. For the “Cooperative” stage of deconfliction, messages will be sent between the deconfliction service and applications (two-way messaging) on the GridAPPS-D message bus in order to perform deconfliction. The details of these messages have not been established.
 
 **5.**       **Application Interface**
 
