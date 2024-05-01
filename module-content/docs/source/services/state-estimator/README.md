@@ -84,7 +84,7 @@ The remainder of these instructions apply only when building the state estimator
     - https://activemq.apache.org/components/cms/download
 ````
 
-4. Building prerequisite libraries requires some other packages to be installed first.  The following apt-get install commands should install those packages if they are not already installed:
+4. Building prerequisite libraries requires additional packages to be installed first.  The following apt-get install commands should install those packages if they are not already installed:
 
 ```` bash
 sudo apt-get install cmake
