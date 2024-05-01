@@ -1,16 +1,17 @@
 **Combined Solution Centralized Deconfliction Service Functional Specification**
 
-Last updated: March 21, 2024
+Author: Gary Black
+Last updated: May 1, 2024
 
-**1.**       **Deconfliction Service (aka, Deconfliction Pipeline) Workflow**
+**1.**   **Deconfliction Service (aka, Deconfliction Pipeline) Workflow**
 
 **1.1.**   **Setpoint Processor**
 
-1.1.1.Compiles setpoint requests into the ConflictMatrix data structure. Note there may be the potential for a “don’t-care” status for a device rather than a setpoint value. The ConflictMatrix is updated as soon as a new setpoint request is made so that it is always up to date.
+1.1.1. Compiles setpoint requests into the ConflictMatrix data structure. Note there may be the potential for a “don’t-care” status for a device rather than a setpoint value. The ConflictMatrix is updated as soon as a new setpoint request is made so that it is always up to date.
 
-1.1.2.Every setpoint request message is processed through the workflow to resolution. This may or may not result in setpoints being dispatched to devices.
+1.1.2. Every setpoint request message is processed through the workflow to resolution. This may or may not result in setpoints being dispatched to devices.
 
-1.1.3.Design rationale: Since every setpoint request from every app will trigger the deconfliction methodology being invoked, this will potentially lead to as many deconflictions being done per a given timestamp as there are apps, subject to the frequency each app is requesting new setpoints.  While this might be considered inefficient to do many deconflictions “on top of each other” for a timestamp, it is central to the design. Given the inherent uncertainty in apps making setpoint requests, there is no way to predict anything beyond setpoint requests that have arrived.
+1.1.3. Design rationale: Since every setpoint request from every app will trigger the deconfliction methodology being invoked, this will potentially lead to as many deconflictions being done per a given timestamp as there are apps, subject to the frequency each app is requesting new setpoints.  While this might be considered inefficient to do many deconflictions “on top of each other” for a timestamp, it is central to the design. Given the inherent uncertainty in apps making setpoint requests, there is no way to predict anything beyond setpoint requests that have arrived.
 
 **1.2.**   **Feasibility Maintainer**
 
