@@ -1,9 +1,9 @@
-#Combined Solution Centralized Deconfliction Service Functional Specification**
+#Combined Solution Centralized Deconfliction Service Functional Specification
 
-<ol>
-<li>Last updated: May 1, 2024
-<li>Author: Gary Black
-</ol>
+<ul>
+<li>Last updated: May 1, 2024</li>
+<li>Author: Gary Black</li>
+</ul>
 
 **1.**   **Deconfliction Service (aka, Deconfliction Pipeline) Workflow**
 
