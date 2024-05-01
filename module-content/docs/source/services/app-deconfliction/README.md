@@ -5,7 +5,7 @@
 <li>Author: Gary Black</li>
 </ul>
 
-**1.**       ***Deconfliction Service (aka, Deconfliction Pipeline) Workflow***
+**1.**     ***Deconfliction Service (aka, Deconfliction Pipeline) Workflow***
 
 **1.1.**   **Setpoint Processor**
 
