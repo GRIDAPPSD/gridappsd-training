@@ -1,7 +1,7 @@
 ## Functional Specification: Combined Solution Centralized Deconfliction Service
 
 <ul>
-<li>Last updated: May 1, 2024</li>
+<li>Last updated: May 22, 2024</li>
 <li>Author: Gary Black</li>
 </ul>
 
@@ -156,3 +156,10 @@
 
 6.5. Even if the staged deconfliction methodology is implemented within a single deconfliction pipeline process initially, it may be that separate processes are subsequently implemented with data such as the ConflictMatrix being passed on the GridAPPS-D message bus as a follow-on implementation. This is seen as a critical step for implementing a distributed decentralized deconfliction service.
 
+6.6. Existing FY23 prototype code uses descriptive names for the devices kept in ConflictMatrix, etc. E.g., "BatteryUnit.battery1". This will be updated to instead use the mRID values that are used in simulation measurement messages. This will require two additional dictionaries to map from mRID values to names and vice versa as existing code references these names. These dictionaries will be made part of the MethodUtil class so that deconfliction methodology code can also access them.
+
+6.7. The modified ieee123 model that adds batteries as loaded from ieee123apps.xml will be made one of the core GridAPPS-D models and named ieee123apps. Measurement mRIDs need to be defined for this model through a Python script so that it can be used for simulations.
+
+6.8. The existing competing apps that use the hardwired 15-minute date for loadshape, solar, and price will be reworked to run with GridLAB-D simulations. The "profit" app that uses price will be omitted since there is no way to get this information from simulations. Using simulation measurement data though will allow us to replace the loadshape and solar data.
+
+6.9. The deconfliction service will need a way to intercept CIM DifferenceBuilder messages coming from apps intended for the simulation. This will require a level of rearchitecture of the GOSS-HELICS bridge to accomplish this. Initially there will still be "setpoints messages" though from the apps and they will not attempt to issue DifferenceBuilder messages directly to the simulation. They will however bundle DifferenceBuilder format messages in these setpoints messages to be one step closer to how it will work when the deconfliction service directly receives DifferenceBuilder messages once intended for the simulation.
