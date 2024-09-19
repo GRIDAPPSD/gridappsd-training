@@ -5,6 +5,8 @@
 <li>Author: Gary Black</li>
 </ul>
 
+This is the functional specification prior to implementation of the FY24 deconfliction service.
+
 **1.**     ***Deconfliction Service (aka, Deconfliction Pipeline) Workflow***
 
 **1.1.**   **Setpoint Processor**
