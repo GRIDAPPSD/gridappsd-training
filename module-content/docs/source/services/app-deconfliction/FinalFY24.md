@@ -5,7 +5,7 @@
 <li>Author: Gary Black</li>
 </ul>
 
-This is the functional specification for the FY24 final deliverable.
+This is the as-implemented functional specification for the FY24 final deliverable.
 
 **1.**     ***Deconfliction Service (aka, Deconfliction Pipeline) Workflow***
 
