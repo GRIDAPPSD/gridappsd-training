@@ -1,7 +1,7 @@
 ## Functional Specification: Combined Solution Centralized Deconfliction Service
 
 <ul>
-<li>Last updated: September 24, 2024</li>
+<li>Last updated: September 25, 2024</li>
 <li>Author: Gary Black</li>
 </ul>
 
@@ -67,7 +67,6 @@ This is the as-implemented functional specification for the FY24 Deconfliction S
 
 2.2.1. Dictionary of the most recent deconflicted (resolved) setpoints for each device.
 
-XXX
 2.2.2. The representation for the ResolutionVector is a dictionary of dimension one with “device” as that dimension, i.e., ResoutionVector\[device\]. Then the value for each entry is a tuple of dimension two with the first value being the timestamp and the second being the deconflicted set-point value, i.e., ResolutionVector\[device\] = (timestamp, setpoint). The timestamp value is set to be the “most recent” timestamp used to determine the deconflicted setpoint for all apps for the device.
 
 2.2.3. Like ConflictMatrix, ResolutionVector can be considered a living data structure in that the Setpoint Validator may modify it. Note however that the ResolutionVector is not persisted throughout the life of the deconfliction service as is the ConflictMatrix. A completely new ResolutionVector is created with every invocation of the final Deconflictor stage performing optimization.
