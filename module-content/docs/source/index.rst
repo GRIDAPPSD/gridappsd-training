@@ -38,17 +38,17 @@ Bugs in the GridAPPS-D platform can be reported in full detail using the `GOSS-G
    :caption: Installation & Runtime
    :maxdepth: 2
 
-   01_installation/windows10/index
-   01_installation/ubuntu_linux/index
-   01_installation/macos/index
-   01_installation/virtualbox/index
-   01_installation/1.4-Running-GridAPPS-D
-   01_installation/1.5-Using-GridAPPS-D-Viz
-   01_installation/1.6-Docker-Shortcuts
-   01_installation/1.7-Cloud-Server-Configuration
-   01_installation/1.8-Platform-Release-History
-   01_installation/1.9-Known-VPN-Proxy-Issues
-   01_installation/1.10-Eclipse-IDE-Setup
+   installation/windows10/index
+   installation/ubuntu_linux/index
+   installation/macos/index
+   installation/virtualbox/index
+   installation/1.4-Running-GridAPPS-D
+   installation/1.5-Using-GridAPPS-D-Viz
+   installation/1.6-Docker-Shortcuts
+   installation/1.7-Cloud-Server-Configuration
+   installation/1.8-Platform-Release-History
+   installation/1.9-Known-VPN-Proxy-Issues
+   installation/1.10-Eclipse-IDE-Setup
 
 
 .. toctree::
