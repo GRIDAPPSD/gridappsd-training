@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "gridappsd-training"
+version = "2024.09.0"
+description = "GridAPPS-D Training"
+authors = ["A. Anderson <19935503+AAndersn@users.noreply.github.com>",
+           "C. Allwardt <3979063+craig8@users.noreply.github.com>"]
+packages = [
+    { include = "module-content" }
+]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+gridappsd-python = "^2024.6.0"
+cim-graph = { git = "https://github.com/PNNL-CIM-Tools/CIM-Graph.git", branch = "feature/68"}
+
+[tool.poetry.extras]
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^2.17.0"
+
+[build-system]
+requires = ["poetry-core>=1.2.0"]
+build-backend = "poetry.core.masonry.api"
