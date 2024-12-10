@@ -1,8 +1,8 @@
-sphinx == 4.0.2
-nbsphinx >= 0.8.5
-markupsafe == 2.0.1
+sphinx
+nbsphinx
+markupsafe
 pandoc
-jinja2 == 2.11
+jinja2
 IPython
 ipykernel
 sphinx-autobuild
