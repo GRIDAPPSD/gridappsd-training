@@ -4,5 +4,5 @@
 source gridappsd-env/bin/activate
 
 # Start Notebooks
-jupyter notebook --port 8890 --ip='0.0.0.0'
+jupyter notebook --ServerApp.port 8890 --ServerApp.ip='0.0.0.0'
 
